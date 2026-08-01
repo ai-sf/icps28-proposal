@@ -838,6 +838,8 @@ table.data .total { color: var(--accent); font-weight: 650; }
 }
 @media (max-width: 640px) {
   .person, .speaker { grid-template-columns: 4.25rem minmax(0, 1fr); gap: 0.9rem; }
+  /* keep the reversed layout (text left, photo right) at mobile photo size */
+  .speaker--reverse { grid-template-columns: minmax(0, 1fr) 4.25rem; }
   .person__photo, .speaker__photo { width: 4.25rem; height: 4.25rem; }
   .figure.inset { grid-template-columns: 1fr; }
   .pager { flex-direction: column; }
