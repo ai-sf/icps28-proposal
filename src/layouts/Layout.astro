@@ -1,0 +1,169 @@
+---
+// Layout: global chrome for the proposal site.
+// Mirrors the PDF's fancyhdr: PaleOak header rule, CherryRose footer rule,
+// logo footer, "ICPS 2028 · ITALY" header right, filigrana watermark.
+import '@fontsource-variable/archivo';
+import '@fontsource-variable/source-serif-4';
+import '../styles/global.css';
+import { chapters } from '../data/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Chapter id from data/site.ts — drives sidebar active state + pager. */
+  chapter?: string;
+  /** Hide sidebar chrome? (cover page uses false) */
+  bare?: boolean;
+}
+
+const { title, description = '', chapter, bare = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const asset = (p: string) => `${base}assets/${p}`;
+
+const idx = chapter ? chapters.findIndex((c) => c.id === chapter) : -1;
+const prev = idx > 0 ? chapters[idx - 1] : null;
+const next = idx >= 0 && idx < chapters.length - 1 ? chapters[idx + 1] : null;
+const canonical = chapter
+  ? `${base}${chapter}/`
+  : `${base}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} — ICPS 2028 · Italy</title>
+    <meta name="description" content={description || 'ICPS 2028 Project Proposal — hosted in Torino and Milano.'} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description || 'ICPS 2028 Project Proposal'} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href={asset('brand/logo-icps28.jpg')} />
+    <link rel="canonical" href={canonical} />
+  </head>
+  <body>
+    <div class="watermark" aria-hidden="true"></div>
+
+    <header class="site-header" data-od-id="site-header">
+      <div class="site-header__inner">
+        <a class="site-header__logo" href={base} aria-label="ICPS 2028 home" data-od-id="site-logo">
+          <img src={asset('brand/logo-icps28.jpg')} alt="ICPS 2028 logo" />
+          <span class="site-header__wordmark">ICPS 2028<em> · ITALY</em></span>
+        </a>
+        <span class="site-header__right">Project Proposal</span>
+        <button class="site-header__burger" data-burger aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="layout">
+      {!bare && (
+        <nav class="sidebar" aria-label="Table of contents" data-od-id="site-toc">
+          <p class="sidebar__label">Table of contents</p>
+          <ol class="sidebar__list">
+            {chapters.map((c) => (
+              <li>
+                <a
+                  class="sidebar__link"
+                  href={`${base}${c.id}/`}
+                  aria-current={c.id === chapter ? 'page' : undefined}
+                >
+                  <span class="sidebar__num">{String(c.num).padStart(2, '0')}</span>
+                  <span>{c.title}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )}
+
+      <main class="main" id="main" data-od-id="main-content">
+        <slot />
+      </main>
+    </div>
+
+    <footer class="site-footer" data-od-id="site-footer">
+      <div class="site-footer__inner">
+        <span class="site-footer__logo">
+          <img src={asset('brand/logo-icps28.jpg')} alt="ICPS 2028 logo" />
+        </span>
+        <span class="site-footer__center">Project Proposal</span>
+        <span class="site-footer__right"><b>ICPS 2028</b> · Italy</span>
+      </div>
+    </footer>
+
+    {!bare && (
+      <div class="drawer" id="drawer" data-drawer>
+        <div class="drawer__backdrop" data-drawer-close></div>
+        <div class="drawer__panel">
+          <div class="drawer__head">
+            <span class="sidebar__label" style="margin:0">Table of contents</span>
+            <button class="drawer__close" data-drawer-close aria-label="Close menu">×</button>
+          </div>
+          <ol class="sidebar__list">
+            {chapters.map((c) => (
+              <li>
+                <a class="sidebar__link" href={`${base}${c.id}/`} data-drawer-close>
+                  <span class="sidebar__num">{String(c.num).padStart(2, '0')}</span>
+                  <span>{c.title}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    )}
+
+    {prev && (
+      <nav class="layout" aria-label="Pagination" style="padding-bottom:0">
+        <div class="pager-spacer"></div>
+        <div class="pager">
+          {prev && (
+            <a class="pager__link" href={`${base}${prev.id}/`}>
+              <span class="pager__dir">← Previous chapter</span>
+              <span class="pager__title">{prev.title}</span>
+            </a>
+          )}
+          {next ? (
+            <a class="pager__link pager__link--next" href={`${base}${next.id}/`}>
+              <span class="pager__dir">Next chapter →</span>
+              <span class="pager__title">{next.title}</span>
+            </a>
+          ) : (
+            <a class="pager__link pager__link--next" href={base}>
+              <span class="pager__dir">Back to cover →</span>
+              <span class="pager__title">ICPS 2028 — Project Proposal</span>
+            </a>
+          )}
+        </div>
+      </nav>
+    )}
+
+    <script>
+      // Mobile drawer + body scroll lock
+      const burger = document.querySelector('[data-burger]');
+      const drawer = document.querySelector('[data-drawer]');
+      if (burger && drawer) {
+        const close = () => {
+          drawer.classList.remove('is-open');
+          burger.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        };
+        burger.addEventListener('click', () => {
+          drawer.classList.add('is-open');
+          burger.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+        });
+        drawer.querySelectorAll('[data-drawer-close]').forEach((el) =>
+          el.addEventListener('click', close),
+        );
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') close();
+        });
+      }
+    </script>
+  </body>
+</html>

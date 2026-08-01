@@ -1,0 +1,21 @@
+---
+// PersonCard — Organizing Committee member (photo, name, role, bio).
+import { asset } from '../utils';
+
+interface Props {
+  photo: string; // path relative to /assets/oc/
+  name: string;
+  role?: string; // e.g. "Finance & Transportation"
+  bio: string;
+}
+const { photo, name, role, bio } = Astro.props;
+---
+
+<article class="person">
+  <img class="person__photo" src={asset(`oc/${photo}`)} alt={`Portrait of ${name}`} loading="lazy" />
+  <div>
+    <h3 class="person__name">{name}</h3>
+    {role && <p class="person__role">{role}</p>}
+    <div class="person__bio"><p>{bio}</p></div>
+  </div>
+</article>

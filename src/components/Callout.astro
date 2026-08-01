@@ -1,0 +1,11 @@
+---
+// Callout — informational aside. Variants: default (blue edge) | rose.
+interface Props {
+  variant?: 'default' | 'rose';
+}
+const { variant = 'default' } = Astro.props;
+---
+
+<div class={['callout', variant === 'rose' ? 'callout--rose' : ''].join(' ')}>
+  <slot />
+</div>

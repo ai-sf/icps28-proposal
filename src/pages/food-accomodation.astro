@@ -1,0 +1,226 @@
+---
+// Chapter 05 — Food & Accomodation (verbatim from 04_accomodation.tex).
+import Layout from '../layouts/Layout.astro';
+import Figure from '../components/Figure.astro';
+import DataTable from '../components/DataTable.astro';
+import { chapters } from '../data/site';
+
+const ch = chapters.find((c) => c.id === 'food-accomodation')!;
+const lead = undefined;
+---
+
+<Layout title={ch.title} description="Food and accommodation for ICPS 2028: programs, venues, and menus in Milano and Torino." chapter={ch.id}>
+  <header class="chapter-head">
+    <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
+    <h1>{ch.title}</h1>
+    {lead && <p class="chapter-head__lead">{lead}</p>}
+  </header>
+
+  <article class="prose">
+    <section>
+      <h2>Our program</h2>
+
+      <p>The Organizing Committee has developed two possible program structures for ICPS 2028, reflecting different budget scenarios while preserving the scientific quality and overall experience of the conference. The primary proposal consists of a seven-day program, offering participants ample time for scientific sessions, workshops, networking activities, cultural experiences, and visits to both conference hubs.</p>
+
+      <Figure src="accomodation/program-a.png" alt="ICPS 2028 Program A" layout="full" />
+
+      <p>A slightly different program, should financial or logistical constraints arise, has also been carefully designed, limiting the cost of catering and museum visits.</p>
+
+      <Figure src="accomodation/program-b.png" alt="ICPS 2028 Program B" layout="full" />
+
+      <p>Every activity included in these programs, including lectures, workshops, scientific visits, poster sessions, roundtable discussions, IAPS activities, and social events, is described in greater detail throughout this proposal.</p>
+      <p>The Organizing Committee proposes to hold ICPS 2028 <strong>from 3 to 8 August 2028</strong>, a period that provides reduced academic commitments and excellent transport availability during the European summer.</p>
+
+      <p>Should exceptional logistical requirements arise from the availability of conference venues or partner institutions, two alternative date windows are currently under consideration:</p>
+      <ul>
+        <li>6-11 August 2028,</li>
+        <li>20-25 August 2028.</li>
+      </ul>
+      <p>These alternatives have been selected to remain within the summer period while avoiding major conflicts with the operational schedules of our hosting institutions and collaborators, and to provide flexibility around the Italian national holiday of Ferragosto (15 August).</p>
+    </section>
+
+    <section>
+      <h2>Accomodation</h2>
+
+      <p>We decided to try something completely new. We decided to split the night’s program between the two cities:</p>
+      <ul>
+        <li>Nights 1-3: Milano,</li>
+        <li>Nights 4-6: Torino.</li>
+      </ul>
+      <p>This dual-city approach is a core feature of our program.  We consequently chose to partner exclusively with <strong>CampusX</strong> to make it logistically seamless, other than conceptually. Campus X is  a student housing network with modern structures in both Milano and Torino.</p>
+
+      <p>Transitioning between the two hubs will be completely seamless. Built directly into the excursion day options (Section 7), it will significantly minimize the logistics load (Section 8).</p>
+
+      <p>Our accommodation selection is based on the logistics of past successful physics events (PLANCKS 2023, CISF2024, CISF2025). By selecting CampusX in both cities, we balance high capacity with excellent connections to public transport. Furthermore, CampusX perfectly fulfills our two non-negotiable requirements:</p>
+      <ul>
+        <li><strong>reliable Wi-Fi</strong>, essential for our attendees,</li>
+        <li><strong>guest kitchens</strong>, giving international students extra flexibility during their stay.</li>
+      </ul>
+
+      <p>By partnering exclusively with CampusX for both cities, we keep the logistics smooth and efficient.</p>
+      <ul>
+        <li><strong>One agreement, better rates:</strong> Instead of dealing with multiple bookings, we can sign a single, large-scale contract. This keeps the paperwork simple and gives us much stronger leverage for group discounts.</li>
+        <li><strong>A seamless transition:</strong> Staying with the same provider creates a sense of familiarity. When participants move from Milano to Torino, they will already know what to expect, making the swap feel completely natural.</li>
+        <li><strong>Top-tier connectivity:</strong> Both CampusX locations are perfectly connected to local public transport, so getting to the main conference venues and evening events will be quick and completely trouble-free for everyone.</li>
+        <li><strong>On-site Meeting Spaces:</strong> Beyond accommodation, CampusX structures are equipped with modern coworking areas, meeting rooms, and auditoriums. This allows us to host smaller parallel sessions, workshops, or brief community meetings directly inside the residence, saving travel time.</li>
+      </ul>
+
+      <Figure src="accomodation/campusx-torino-marconi.png" alt="CampusX Torino - Marconi floor plan" layout="inset" caption="CampusX Torino - Marconi / Floor Plan" />
+
+      <Figure src="accomodation/campusx-torino-vanchiglia.png" alt="CampusX Torino - Vanchiglia kitchen" layout="inset" caption="CampusX Torino - Vanchiglia / The kitchen" />
+
+      <Figure src="accomodation/campusx-milano-bicocca.png" alt="CampusX Milano - Bicocca rooms" layout="inset" caption="CampusX Milano - Bicocca / The rooms" />
+
+      <p>While CampusX remains our primary and preferred solution, we have also identified a reliable secondary plan. These are trusted residences that we know well from our <strong>past successful events</strong>, and both are fully capable of comfortably hosting our 400+ international participants:</p>
+
+      <Figure src="accomodation/meininger-milano.png" alt="Meininger Hotels Milano" layout="inset" imageFirst={false}>
+        <p><strong>In Milano: Meininger Hotels</strong></p>
+        <p>This modern hospitality chain combines the social atmosphere of a hostel with hotel-standard services. By our own past experience from having worked with them within the occasions listed above, we know they offer the massive capacity needed to host our entire group under one roof, featuring flexible multi-bed rooms, guest kitchens, and an entire network of transport links.</p>
+      </Figure>
+
+      <Figure src="accomodation/olimpia-torino.png" alt="Residenza Universitaria Olimpia Torino" layout="inset" imageFirst={false}>
+        <p><strong>In Torino: Residenza Universitaria Olimpia</strong></p>
+        <p>Managed by EDISU, this large-scale university residence is an excellent backup. Located very close to the city center and the main physics hubs, Olimpia can easily absorb 400+ participants, providing a fully equipped academic environment with proven reliability for student groups.</p>
+      </Figure>
+    </section>
+
+    <section>
+      <h2>Venues</h2>
+
+      <p>While the residential structures will provide accommodation and support for smaller workshops, the core academic program will take place within the official lecture halls provided by the host universities.</p>
+      <p>Thanks to our institutional partnerships with the University of Torino (UniTo), the University of Milano-Bicocca, and the University of Milano (Statale), we will secure high-caliber academic spaces that comfortably accommodate our 400+ international participants:</p>
+
+      <Figure src="accomodation/bicocca-magna.png" alt="Milano-Bicocca Aula Magna" layout="inset" imageFirst={false}>
+        <p><strong>Milano-Bicocca: Aula Magna (Building U6):</strong> With a seating capacity of over 900, this state-of-the-art auditorium is the ideal hub for the opening ceremony and major plenary sessions.</p>
+      </Figure>
+
+      <Figure src="accomodation/casa-shuster.png" alt="Casa Shuster Milano" layout="inset" imageFirst={false}>
+        <p><strong>Casa Shuster (Milano):</strong> A contemporary and sophisticated complex, characterized by expansive interior volumes and an extremely versatile spatial layout. The structure stands out for its balance between aesthetics and functionality, offering bright, modular spaces for 500 people. This is the perfect space to hold the AGM, alongside the simultaneous poster sessions and round table discussions in parallel rooms.</p>
+      </Figure>
+
+      <Figure src="accomodation/palazzo-nuovo.png" alt="Palazzo Nuovo Torino" layout="inset" imageFirst={false}>
+        <p><strong>Palazzo Nuovo (Torino):</strong> A historic building located in the heart of the city. The facility features several large-capacity lecture halls, ideal for academic seminars and conferences that require a central location and a strong connection to Torino's university tradition.</p>
+      </Figure>
+
+      <Figure src="accomodation/campus-einaudi.png" alt="Campus Luigi Einaudi Torino" layout="inset" imageFirst={false}>
+        <p><strong>Università degli Studi di Torino - Campus Luigi Einaudi (CLE) - Large Auditoriums:</strong> This modern, award-winning architectural campus features massive lecture halls (such as the Aula Magna and Aula Pareto) with seating for 400–500 people.</p>
+      </Figure>
+    </section>
+
+    <section>
+      <h2>Menus</h2>
+
+      <h3>What can you eat in Italy?</h3>
+
+      <p><strong>Italian cuisine</strong> is one of the country's greatest cultural treasures, renowned worldwide for its simplicity, high quality ingredients, and extraordinary regional diversity. It is now officially part of the UNESCO cultural world heritage.</p>
+
+      <Figure src="food/pizza.png" alt="Pizza" layout="inset">
+        <p>While many international visitors are already familiar with iconic dishes such as pizza and pasta, Italy offers a much broader culinary experience, with each region contributing its own traditions, recipes, and local specialties.</p>
+      </Figure>
+
+      <p>Throughout the conference, participants will have the opportunity to enjoy a wide variety of authentic Italian food, showcasing the country's rich gastronomic heritage. Every meal will combine traditional flavors with fresh, seasonal ingredients, offering an experience that is satisfying and representative of Italian culture.</p>
+
+      <Figure src="food/cappuccino.png" alt="Cappuccino with a cornetto" layout="inset" imageFirst={false}>
+        <p><strong>Coffee breaks</strong> will reflect the everyday Italian tradition of taking a short pause over an espresso and a cornetto. Participants can expect freshly brewed Italian coffee accompanied by a selection of sweet treats such as cornetti, sfogliatine, biscuits, and other traditional baked goods.</p>
+      </Figure>
+
+      <p>To combat the heat and to add a more Italian touch to the conference, the Organizing Committee is also exploraing the possibility of replacing one of the traditional afternoon coffee breaks with an authentic <strong>Gelato Station</strong>. Ice cream stations have become a staple in many marriages, company events, brand promotions, and parties. In collaboration with one of Torino's renowned artisanal gelaterias, this initiative would provide an additional opportunity to experience one of Italy's most iconic culinary traditions in a convivial atmosphere, directly at ICPS. Stations offer a curated selection of 4-6 artisanal flavours, including vegan and lactose-free options, ensuring everyone can participate.</p>
+
+      <p><strong>Lunches and dinners</strong> will feature some of the most representative dishes of Italian cuisine. Fresh pasta prepared with a variety of regional sauces, risotto, meat specialties such as scaloppine, and carefully selected vegetarian options will allow participants to discover the richness of Italian gastronomy while ensuring balanced and nutritious meals throughout the conference.</p>
+
+      <Figure src="food/tiramisu.png" alt="Tiramisu" layout="inset">
+        <p>No Italian meal would be complete without a dessert. A selection of traditional sweets, including regional cakes, pastries, and classic desserts, will be served during the week, offering participants a taste of Italy's rich confectionery tradition.</p>
+      </Figure>
+
+      <p>Food is an essential part of Italian culture and one of the most effective ways of bringing people together. <strong>Sharing meals</strong> has always been at the heart of social life in Italy, and we believe that offering participants an authentic culinary experience will contribute not only to their enjoyment of the conference but also to fostering new friendships following the spirit of ICPS.</p>
+
+      <p>The Organizing Committee is committed to making the eating experience accessible to all participants. During registration, attendees will be invited to communicate allergies, intolerances, and religious or lifestyle dietary preferences. All meals will feature clear and accurate <strong>ingredient labels and allergen information</strong>, allowing every participant to make informed choices.</p>
+
+      <p>The menus served during the conference are intended to provide an overview of Italian cuisine, but the Organizing Committee also encourages attendees to explore the culinary traditions of Torino and Milano independently during their free time. Recommendations for authentic local experiences will be included in the participants' guide.</p>
+
+      <p>On that note …</p>
+
+      <h3>What can you eat in Milano?</h3>
+
+      <p>Milano is proudly cosmopolitan and thus committed to an intersection of cuisines from all over the world. Be ready to the possibility of seeing a restaurant that makes you feel like you never left home. </p>
+
+      <p>However, our specialties were born from layers and layers of history, from the Renaissance to the Austrian rule. Almost everyone was born like a dish for royalty and was then reinterpreted as a popular dish: this transformation is never-ending, leaving every dish an object of free interpretation, therefore, as a surprise. </p>
+
+      <ul>
+        <li><strong>Risotto alla Milanese:</strong> The vivid saffron color became a symbol of Milanese refinement long before it became an icon of Italian cuisine, while bone marrow gives the rice an unexpected richness.</li>
+        <li><strong>Ossobuco alla Milanese:</strong> A slow-cooked veal shank whose marrow is considered the prize. Traditionally served alongside saffron risotto, it shows you something unexpected: what looks like the toughest part of the dish is actually the most tender. </li>
+        <li><strong>Cotoletta alla Milanese:</strong> An example of comfort food. Chop fried in butter until the crust shatters, while the meat remains tender.</li>
+        <li>
+          <Figure src="food/gorgonzola.png" alt="Gorgonzola cheese" layout="inset" imageFirst={false}>
+            <p><strong>Gorgonzola:</strong> Named after one of Milano’s neighborhoods, this blue cheese balances buttery sweetness with sour pungency. A delicious addition to anything!</p>
+          </Figure>
+        </li>
+      </ul>
+
+      <p>Beyond its celebrated restaurants, the city's cafés and pastry shops have long been extensions of Milanese life. These are places in which artists, entrepreneurs, and intellectuals still gather over coffee today: everyday rituals have become enduring traditions.</p>
+
+      <p>Here are some desserts typical of the Milanese area and surroundings: </p>
+
+      <ul>
+        <li><strong>Marron Glacé:</strong> Although perfected through French influence, glazed chestnuts became a hallmark of Milanese haute pâtisserie during the nineteenth century. Producing them requires days of patient candying, resulting in one of Italy's most refined confectioneries.</li>
+        <li><strong>Barbajada:</strong> Created in the early nineteenth century by Milanese café owner Domenico Barbaja, this velvety blend of coffee, chocolate, and milk became the city's favourite indulgence long before cappuccino conquered Italy.</li>
+        <li>
+          <Figure src="food/panettone.png" alt="Panettone" layout="inset">
+            <p><strong>Panettone:</strong> Originally a festive bread in Renaissance Milan, it evolved into a world-renowned dessert with many variants, sweet and savory.</p>
+          </Figure>
+        </li>
+      </ul>
+
+      <p>All of these specialties are usually paired with <strong>wines and liqueurs</strong> from Valtellina’s Nebbiolo to the sparkling Franciacorta. Those looking for a non-alcoholic alternative can still enjoy another classic of Italian taste: <strong>Chinotto</strong>, whose distinctive bittersweet flavour comes from the rare citrus fruit that gives the drink its name, creating a refreshment unlike any other.</p>
+
+      <h3>What can you eat in Torino?</h3>
+
+      <p>Torino comes second only to Milano in being the Italian city less attached to its own traditions, to embrace flavours from everywhere around the world. You can nevertheless find below some traditional dishes in which these influences are often incorporated. </p>
+
+      <p>Torino’s traditional cuisine is originally a fascinating mix of sophisticated tastes savoured by the royal House of Savoy and simple rustic traditions. These two elements reflect Torino’s history and are often revisited through a contemporary lens to introduce a wow factor: just when you thought that a dish couldn’t possibly get any more delicious, Torino’s cooks strike again. </p>
+
+      <p>Here are some examples of Torino’s delicacies of royal heritage:</p>
+      <ul>
+        <li><strong>The Appetizers:</strong> Torino’s famous tradition of serving many appetizers (like "vitello tonnato" or raw beef tartare) directly comes from the rich banquets of the Savoy court.</li>
+        <li><strong>The Pasta Masterpieces:</strong> "Agnolotti del plin", small, pinched pasta pockets stuffed with roasted meat, show how simple ingredients were turned into a perfect mix of precision and flavor.</li>
+      </ul>
+
+      <p>Find below examples of convivial dishes developed from the need to bring people together during the cold Piedmontese winters: </p>
+      <ul>
+        <li>
+          <Figure src="food/bagna-cauda.png" alt="Bagna Cauda" layout="inset" imageFirst={false}>
+            <p><strong>Bagna Cauda:</strong> A warm, rich dip made with garlic, olive oil, and anchovies (which historically arrived in Piedmont along the ancient salt roads), perfect for dipping autumn vegetables.</p>
+          </Figure>
+        </li>
+        <li><strong>Gran Bollito Misto:</strong> A classic dish featuring different cuts of high-quality beef. It’s slow-cooked and served with traditional green and red sauces ("bagnetto verde" and "bagnetto rosso").</li>
+      </ul>
+
+      <p>But Torino's culinary journey doesn't end at the dinner table. Walking under the city’s endless porticoes, you can still feel the 19th-century vibe of its historical cafés. These elegant rooms were the political and cultural hubs of Italy's history, and it was right here that the city’s famous sweet tradition came to life:</p>
+      <ul>
+        <li><strong>Gianduiotto:</strong> This iconic kind of chocolate was born out of pure cleverness during the Napoleonic blockade. Because of a cocoa shortage, chocolatiers used finely ground local hazelnuts from the Langhe hills instead, creating a masterpiece.</li>
+        <li>
+          <Figure src="food/bicerin.png" alt="Bicerin" layout="inset">
+            <p><strong>Bicerin:</strong> A historic, layered drink made of espresso, hot chocolate and heavy cream. Loved by Cavour and later praised by Hemingway, it’s still the ultimate afternoon comfort ritual for locals.</p>
+          </Figure>
+        </li>
+        <li><strong>Tramezzino:</strong> A light but delicious kind of stratified sandwich, created in the 20th-century by Caffè Mulassano.</li>
+      </ul>
+
+      <p>To complete the experience, every meal is usally accompanied by Piedmont's world-class <strong>wine culture</strong>. Rich dishes like Gran Bollito or Agnolotti are always paired with famous local red wines, from the everyday warmth of a Barbera to the royal savour of a Barolo. And if you can’t or don’t wish to drink alcoholic beverages, fear not! For Piedmont is also famous for having invented unique non-alcoholic alternatives such as Crodino, composed of a combination of 15 secret ingredients. Of these, only cardamom, coriander and nutmeg are disclosed to the public… </p>
+
+      <h3>Catering</h3>
+
+      <p>To make this culinary journey even more accessible and authentic, we intend to collaborate with a selection of trusted local catering services and food partners. </p>
+
+      <DataTable
+        headers={['Milano', 'Torino']}
+        rows={[
+          ['Il monello', 'Bready'],
+          ['Procaccini 14', 'Bonfante'],
+          ['', 'MagazziniOz'],
+          ['', 'Finger Food Corner'],
+        ]}
+      />
+    </section>
+  </article>
+</Layout>

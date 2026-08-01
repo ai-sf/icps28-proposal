@@ -1,0 +1,274 @@
+---
+// Chapter 07 — Social program (verbatim from chapters/06_social.tex).
+import Layout from '../layouts/Layout.astro';
+import { chapters } from '../data/site';
+import Figure from '../components/Figure.astro';
+import DataTable from '../components/DataTable.astro';
+
+const ch = chapters.find((c) => c.id === 'social-program')!;
+---
+
+<Layout
+  title={ch.title}
+  description="The ICPS 2028 social program: opening ceremony, excursion day, Milano treasure hunt, FantaICPS, Nations Party and unforgettable evenings in Milano and Torino."
+  chapter={ch.id}
+>
+  <header class="chapter-head">
+    <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
+    <h1>{ch.title}</h1>
+    <p class="chapter-head__lead">If the scientific program has already sparked your curiosity, just wait until you discover what we have prepared for the Social Program!</p>
+  </header>
+
+  <article class="prose">
+    <p>The ICPS we are proposing is designed as a travelling experience, taking you on a journey through some of the most fascinating places our country has to offer. We don't simply want to show you Italy- we want you to experience it through the eyes of those who live here, turning each city into an opportunity to discover its culture, traditions, and the moments that bring people together. The first four days will be spent in <strong>Milano</strong>, the starting point of our journey. During your stay, you will have the opportunity to personalize your experience by choosing the location of a full-day excursion. You can either be captivated by the maritime charm and rich history of <strong>Liguria</strong>, immerse yourself in the breathtaking landscapes and relaxed atmosphere of <strong>Lake Como</strong> or go trekking in the <strong>Lombard Prealps</strong>. <strong>The choice is yours</strong>; which side of Northern Italy would you like to discover?</p>
+
+    <p>The final three days will take us to <strong>Torino</strong>, an elegant city steeped in history, where the social program will end with unique experiences that combine culture, entertainment and local traditions.</p>
+
+    <p>Throughout the week, we will alternate cultural activities, guided tours, team games, themed evenings and plenty of opportunities to socialise. Every experience has been carefully designed not only to help you discover the places we will visit, but above all to connect with the people who will share this adventure with you.</p>
+
+    <p><em>After all, ICPS is much more than a physics conference: it is a place where different cultures meet, friendships are born, and memories are made to last a lifetime</em>.</p>
+
+    <p>To accompany you throughout the journey, we have also prepared a dedicated playlist. Some of the most iconic songs of Italian music will become the soundtrack of your experience, making every stop along the way even more memorable.</p>
+
+    <p>But now... let's take a closer look at everything that awaits you. </p>
+
+    <section>
+      <h2>Opening ceremony</h2>
+
+      <p>The opening ceremony of the conference will take place in the prestigious <strong>Courtyard of Ca’ Granda</strong>, part of the historic headquarters of the <strong>Università degli Studi di Milano</strong>. This architectural complex, originally designed as the Ospedale Maggiore in the 15th century, represents one of the most emblematic examples of Renaissance civic architecture in Northern Italy. Today it stands as a symbol of academic excellence and scientific tradition, hosting one of the country’s leading universities.</p>
+
+      <Figure src="social/ca-granda.jpg" alt="Courtyard of Ca' Granda, Università degli Studi di Milano" />
+
+      <p>The Courtyard itself offers a unique setting where historical heritage and academic life coexist, providing an atmosphere of remarkable elegance and cultural significance. Its monumental arcades and harmonious proportions create a distinguished environment that reflects the intellectual identity of the institution and offers an ideal backdrop for welcoming an international community of young researchers in physics.</p>
+
+      <p>The ceremony will begin with a series of <strong>institutional greetings</strong> from representatives of the local organizing committee and invited academic guests. This will be followed by a formal presentation of the conference, including an overview of the scientific program, highlighting its main thematic areas and an introduction to the social program designed for the week. During this session, participants will also be introduced to selected invited speakers and distinguished guests who will contribute to the academic sessions of the conference.</p>
+
+      <p>Following the formal part of the event, a traditional <strong>Italian aperitivo</strong> will be offered to all participants. The reception will provide a relaxed and informal setting aimed at fostering interaction and networking among attendees from different countries and academic backgrounds. The evening is designed to be intentionally light and welcoming, allowing participants to gradually acclimate to the new environment and time zone while remaining a great opportunity to welcome everybody in our community and to get to know each other.</p>
+
+      <p>In case of adverse weather conditions, the ceremony will be relocated to an indoor venue within the same university complex, ensuring full continuity of the program without changes in timing, capacity or format. The backup solution preserves the academic character of the event while guaranteeing a seamless transition between the formal ceremony and the networking aperitivo. </p>
+    </section>
+
+    <section>
+      <h2>Excursion day</h2>
+
+      <p>The excursion day is designed to be one of the highlights of the Conference Social Program, offering participants the opportunity to experience the diversity of Northern Italy while simultaneously serving as the <strong>transfer day from Milano to Torino</strong>. Combining the excursion with the relocation between the two host cities allows for a more efficient use of resources, minimizing transportation costs without compromising participants' experience.</p>
+
+      <p>Participants will be <strong>divided into groups</strong> according to their preferences and transported by chartered coaches departing from Milano in the morning and arriving in Torino in the evening. The program has been designed to accommodate both the expected attendance of 400 participants and a possible increase to 500 participants while maintaining a balanced distribution across the proposed destinations.</p>
+
+      <DataTable
+        headers={['Destination', 'Scenario A People', 'Scenario A Coaches', 'Scenario B People', 'Scenario B Coaches']}
+        rows={[
+          ['Genova', 80, 2, 100, 2],
+          ['Cinque Terre', 140, 3, 200, 4],
+          ['Lake Como', 120, 3, 125, 3],
+          ['Mountain Trekking', 60, 2, 75, 2],
+        ]}
+        foot={['Total', 400, 10, 500, 11]}
+      />
+
+      <p>Overall, the excursion day highlights the extraordinary diversity of Northern Italy, from the Mediterranean coastline and UNESCO World Heritage Sites to alpine landscapes, historic monuments and lakeside villages. Beyond sightseeing, the program is intended to foster informal networking, cultural exchange and community building before the conference continues in Torino.</p>
+
+      <h3>Liguria</h3>
+      <p>Two of the main destinations of the excursion day are located in Liguria, a seaside region located in the north-western part of Italy well renowned for its stunning coastline and the colorful villages. It is home to the Italian Riviera and attracts visitors from all over the world for its natural beauty and rich culture.</p>
+
+      <Figure src="social/genova.jpg" alt="The harbour and old town of Genova" layout="inset">
+        <p><strong>Genova</strong></p>
+        <p>One of the historically most important ports in the Mediterranean Sea. It is famous for its old town, its aquarium, the beautiful harbor and the songwriting tradition rooting back to Fabrizio De André.</p>
+      </Figure>
+
+      <p>Here participants will have the opportunity to visit the <strong>aquarium of Genova</strong>, one of the largest aquariums in Europe and one of the city's main attractions. Afterwards, they will have free time to explore the UNESCO-listed <strong>historic centre</strong>, wandering through the characteristic <em>vicoli</em> and <em>creuze</em>, discovering elegant squares, medieval architecture and the vibrant old harbour. The combination of maritime history, culture and the relaxed atmosphere of the Italian Riviera makes Genoa an ideal destination for an adventure.</p>
+
+      <Figure src="social/cinque-terre.jpg" alt="The colourful villages of the Cinque Terre" layout="inset">
+        <p><strong>Cinque Terre<br />national park</strong></p>
+        <p>One of Italy's most renowned UNESCO World Heritage sites, the Cinque Terre National Park is famous worldwide for its five colourful villages perched dramatically on the cliffs overlooking the Mediterranean Sea.</p>
+      </Figure>
+
+      <p>Depending on individual preferences, participants may either <strong>explore the villages and panoramic trails</strong> of the National Park or <strong>spend the day relaxing on the beaches</strong> and enjoying these unique views on the Mediterranean sea. The flexibility of this destination makes it suitable for participants with different interests, allowing both a more relaxing or a more adventurous experience, while keeping as a common theme the possibility to visit one of Italy's most iconic landscapes.</p>
+
+      <h3>Lake Como</h3>
+      <p>Another important destination of the excursion day is located on the Lake Como, one of the most fascinating lakes in Italy located in the Lombardy region. It is famous for its crystal-clear water, charming villages and stunning mountain scenery.</p>
+
+      <Figure src="social/lake-como.jpg" alt="Lake Como and the town of Colico" layout="inset">
+        <p><strong>Colico</strong></p>
+        <p>A small town located on the northern shore of Lake Como, is a well-known destination among foreign tourists. It is surrounded on one side by the Italian Alps, while on the other by the waters of the lake.</p>
+      </Figure>
+
+      <p>Participants will be free to spend the day according to their preferences, choosing among <strong>lakeside walks</strong>, visits to the historic Forte Montecchio Nord and the Abbey of Piona, swimming, <strong>relaxing by the lake</strong> or <strong>informal recreational activities</strong> organized spontaneously within the group. This option is selected in order to provide a more relaxed experience, aiming to showcase the classical <strong>slow life</strong> associated with Italian culture. Fresh meadows with a view on tall mountains, the possibility to travel on the lake by boat if you wish to, visiting picturesque Italian towns by the coast… Any of these options is easily at hand here.</p>
+
+      <h3>Mountain trekking</h3>
+      <p>Another group of participant will head towards the Pre-Alpine region located between Milano and Lake Como, where it will be given the possibility to explore different hiking locations. In particular, two possible routes have been chosen, both easily accessible for participants with different levels of experience. These excursions provide an opportunity to enjoy spectacular mountain scenery, forests and panoramic viewpoints. </p>
+
+      <Figure src="social/pian-dei-resinelli.jpg" alt="The Pian dei Resinelli plateau with the Grigne peaks" layout="inset">
+        <p><strong>Pian dei Resinelli</strong></p>
+        <p>Mountain plateau located above the Lecco branch of Lake Como, at an altitude of approximately 1,200 metres. It is well renowned among locals for the distinctive limestone peaks of the Grigne mountain range. </p>
+      </Figure>
+
+      <p>Participants will be able to admire <strong>breathtaking views</strong> over Lake Como, enjoy fresh, cooler air thanks to the starting altitude and take part in an <strong>easy and accessible walk</strong> through the woods, passing wide meadows that provide the perfect setting for a traditional <strong>Italian picnic lunch</strong>. </p>
+
+      <Figure src="social/canzo.jpg" alt="The woods near Canzo under Lake Como" layout="inset">
+        <p><strong>Canzo</strong></p>
+        <p>Small town located in the woods under Lake Como. It is a well known hiking spot among local people for the Spirit of the Woods trail and for the geological interest of the area, showing evident glacial activity.</p>
+      </Figure>
+
+      <p>The main highlight of the excursion is the <strong>Spirit of the Woods trail</strong>, a woodland path featuring hidden sculptures that create a <strong>fairytale-like</strong> atmosphere reminiscent of a Disney movie. This option has been thought in order to offer a more <strong>adventurous</strong> hiking trail, while remaining accessible to hikers of all skill levels.</p>
+    </section>
+
+    <section>
+      <h2>Milano treasure hunt</h2>
+
+      <Figure src="social/leonardo.jpg" alt="Leonardo da Vinci trail through Milano" layout="inset">
+        <p><strong>Following Leonardo's path</strong></p>
+        <p>We offer a <strong>city-wide treasure hunt</strong> on one of the evenings spent in Milano, with the aim of combining a friendly competition with an engaging exploration of the city's <strong>historical and scientific heritage</strong>. Participants will be divided into <strong>small teams</strong> of approximately 10 people and will receive the first riddle at a fixed starting time.</p>
+        <p>The activity will unfold as a sequential <strong>puzzle-based challenges</strong> throughout the city. Each correctly solved riddle will reveal a clue leading participants to the next destination using digital maps.</p>
+      </Figure>
+
+      <p>Upon reaching each location, teams will scan a hidden QR code to unlock the following physics- or mathematics-based challenge, creating a continuous chain of scientific reasoning, teamwork and urban exploration. The event will <strong>conclude at a predefined final location</strong>, where the last and most challenging puzzle will determine the winning team, which will <strong>receive a prize</strong>.</p>
+
+      <p>A possible route has already been designed to connect several of Milano's <strong>most iconic landmarks</strong> through a walk that is both logistically efficient and thematically coherent. Rather than simply guiding participants through the city's main attractions, the treasure hunt is conceived as a journey inspired by the <strong>life and work of Leonardo da Vinci</strong> during his years in Milano. The selected locations, together with the sequence of puzzles, have been chosen to <strong>highlight different aspects of Leonardo's legacy</strong>, ranging from mechanics and engineering to geometry, optics and artistic genius.</p>
+
+      <p>The timing of the treasure hunt has been planned to ensure that the activity concludes early enough for all participants to comfortably return to their accommodation using public transportation, while still enjoying the unique atmosphere of exploring Milano by night.</p>
+    </section>
+
+    <section>
+      <h2>FantaICPS</h2>
+
+      <p>FantaICPS is a fantasy game that has become a long-standing <strong>tradition at AISF national events</strong>. It is inspired by <strong>Fantasanremo</strong>, a fantasy game played during the Sanremo Music Festival that has, in recent years, become an integral part of Italian youth culture. One of the main goals of our social program is to let international participants experience the unique atmosphere and traditions that AISF national events usually offer, and FantaICPS seems like the perfect activity to showcase that.</p>
+
+      <ul>
+        <li><strong>What is FantaICPS?</strong><br>For FantaICPS, each participant receives a fixed amount of <strong>virtual coins</strong> to build their own fantasy team by including “<strong>Players</strong>”, selected conference participants (typically members of the Organizing Committee, IAPS Executive Committee and Committee Presidents). Each Player has a different value according to their role in the Association, ensuring the creation of balanced teams that include Players with different roles in IAPS. During the conference, Players will <strong>earn bonus points</strong> by completing specific actions or challenges and <strong>lose points</strong> through malus events.</li>
+        <li><strong>Chose the rules that will form the FantaICPS Rulebook.</strong><br>Approximately <strong>one month before the beginning of ICPS</strong>, all Players who actively take part in the game can either confirm or decline their participation. Every ICPS Participant will receive access to a <strong>shared document</strong>, where they will be invited to propose ideas for both bonuses and maluses. These can be either general, applying to every Player, or personalized, referring to specific Participants in a fun and light-hearted way. Once the proposal phase is over, a part of the Organizing Committee will review all the suggestions and select the most funny, creative and feasible ones, while giving them an <strong>appropriate Score</strong> according to the difficulty of the bonuses and maluses themself. The chosen bonuses and maluses will then form the official <strong>FantaICPS Rulebook</strong>, which will be public before the beginning of ICPS. Example of bonuses, taken from previous AISF events, may include taking a selfie with one participant from every country or offering some snacks to a participant of your choice, while maluses may include saying the word “FantaICPS” or not attending both scientific or social events.</li>
+        <li><strong>Complete additional side-quests to gain points.</strong><br>In addition to bonuses and maluses given to the Players, each FantaICPS Participant will be given some <strong>side quests</strong> that can be completed during the conference. Whenever a Participant completes their quest, they will gain some points depending on the difficulty of the quest itself, that will be added to the total score obtained by the Players in their team. This rule has been made in order to give a challenge not only to Players but also to each participant, in order to give a similar experience to everyone.</li>
+        <li><strong>Create your own team.</strong><br>Each ICPS Participant will then be able to create their own team through a <strong>specific platform</strong> before the Opening Ceremony takes place. Although each Team can be formed from a specific pool of ICPS participants, <strong>every participant can still crucially influence the game</strong> by helping Players in their team to score points or by completing their personal Side quests. A <strong>Group of volunteers</strong> is created by the Organizing Committee specifically for evaluating the bonuses or maluses. Every ICPS Participant can <strong>inform this Group</strong> about actions performed by Players that may give them either bonuses or maluses, accompanying testimony with a proof (a photo or a video). At the beginning of every day of the Conference, the total score collected by every Player will be shown to all the participants together with the updated ranking of all the Teams in the competition.</li>
+        <li><strong>Win special prices.</strong><br>During the <strong>Closing Ceremony</strong>, the Competition will end and the ICPS participants whose teams obtain the highest amount of points will <strong>receive special prices</strong> according to their placement in the <strong>final ranking</strong>. One important aspect of FantaICPS is that, despite its competitive nature, its main goal is to have fun together; any disputes regarding bonuses, maluses, or scoring will be settled by the Organizing Committee, whose decisions are final.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Nations Party</h2>
+
+      <Figure src="social/nations-1.png" alt="Nations Party illustration" />
+      <Figure src="social/nations-2.png" alt="Nations Party illustration" />
+      <Figure src="social/nations-3.png" alt="Nations Party illustration" />
+    </section>
+
+    <section>
+      <h2>Alice in Turinland</h2>
+
+      <p>What better way to discover Torino than to see it through your own eyes, with the thrill of a game making you see things in a new light time and time again?</p>
+
+      <Figure src="social/alice-in-turinland.png" alt="Alice in Turinland game illustration" />
+
+      <p>That is exactly what <strong>Alice in Turinland</strong> offers: a <strong>one-of-a-kind urban adventure</strong> that transforms the historic streets of Augusta Taurinorum into your playground, where every corner hides a <strong>challenge</strong> and every landmark becomes a <strong>checkpoint in a city-wide race</strong> against rival teams. Picture yourself standing on top of the Monte dei Cappuccini with the sight of the whole city before you, savoring a rich cappuccino as you <strong>plot your next move</strong>, before diving back into the labyrinth of Torino’s squares and arcades to taste the authentic flavors of the region. This is a competition in which <strong>your team battles others for the highest score</strong>, completing tasks that test your creativity and teamwork, all while indulging in the <strong>cuisine of Northern Italy that fuels your quest</strong>.</p>
+
+      <p>And just when you think you have mastered the game, the real twist awaits: our <strong>organizers will embody the Kings</strong> of Hearts, Diamonds, Clubs, and Spades. Depending on which sovereign you choose, you will face a <strong>completely personalized challenge</strong>. Will you remain loyal to your teammates? Will fortune favor you when the cards are dealt? Will you prove sharp enough to read the minds of the Kings? These tailor-made challenges are primarily designed to <strong>forge bonds</strong>. For those who rise to the occasion, incredible prizes await that will forever remind you of this - hopefully glorious - day. </p>
+    </section>
+
+    <section>
+      <h2>Night at the museum</h2>
+
+      <p><em>Are you ready for a night of history, mystery in an intimate atmosphere?</em></p>
+
+      <Figure src="social/museo-egizio-1.jpg" alt="The Egyptian Museum in Torino" layout="inset">
+        <p>Well, for one night, you will have the opportunity to explore one of the world's richest collections of <strong>ancient Egyptian artefacts</strong> in an exclusive after-hours event. Home to over 40,000 findings, the <strong>Egyptian museum</strong> in Torino is considered the oldest museum in the world dedicated entirely to ancient Egyptian civilization and the most important outside of Egypt, preserving more than four millennia of history through a vast collection of archaeological items telling the story of one of humanity's greatest civilizations.</p>
+      </Figure>
+
+      <p>Hosted <strong>after the museum's regular opening hours</strong>, the event will feature a guided tour through the galleries. Be ready for an exciting night of adventure in quiet museum halls that will make you feel like you’re crossing millennia and continents… And release the <strong>Ben Stiller</strong> in you!</p>
+
+      <p>The evening will be organized in collaboration with <strong>Club Silencio</strong>, a Torino-based cultural organization that transforms museums, historical buildings, and cultural venues into vibrant spaces where heritage, music and social life come together. As one of the main social events, it is designed to offer participants a meaningful way to experience Torino while naturally encouraging interaction and exchange in a relaxed setting. The atmosphere will be relaxed and informal, allowing participants to enjoy a calm and easy-going evening.</p>
+
+      <Figure src="social/museo-egizio-2.jpg" alt="Galleries of the Egyptian Museum in Torino" />
+
+      <p>Following the Club Silencio format, the event will combine the guided visit with <strong>live music</strong> and an Italian-style <strong>aperitivo</strong> served within the museum, creating a relaxed atmosphere that supports conversation and networking.</p>
+
+      <p>Beyond its cultural value, the evening will provide a space for participants from all over the world to meet outside the conference program, sharing an informal moment in one of Torino's most iconic museums. </p>
+    </section>
+
+    <section>
+      <h2>Closing ceremony</h2>
+
+      <p>The closing ceremony will take place at <strong>3:00 P.M.</strong> on <strong>Friday</strong>, 8th August. Following the traditional <strong>commemorative group photo</strong>, a hallmark of every IAPS event, all participants will gather inside <strong>Campus Luigi Einaudi</strong>, where the final chapter of the conference will begin.</p>
+
+      <p>The ceremony will open with the announcement of the <strong>winners of the various games</strong> and activities held throughout the week, who will be awarded their well-deserved prizes. Afterwards, the <strong>General Coordinators</strong> will officially close the conference, thanking all participants, volunteers and organizers for contributing to an unforgettable week.</p>
+
+      <p>As the event closes, we hope that participants will carry with them the happiness of having shared meaningful experiences. Yet the conference is not over just yet: <strong>two final activities</strong> will provide the definitive farewell, bringing the week to a memorable conclusion worthy of an event that celebrates both scientific curiosity and the spirit of the IAPS community.</p>
+    </section>
+
+    <section>
+      <h2>Torino Magica</h2>
+
+      <Figure src="social/torino-notturna.jpg" alt="Torino by night" />
+
+      <p>We believe that science, and physics along with it, were born from humanity's desire to understand the world around us. Long before the scientific method, myths and legends represented humanity's first attempts to explain natural phenomena through curious observation and imagination. Ultimately, it is from this continuous search for answers that knowledge itself emerges. For this reason, we have designed an activity that brings together the <strong>rigor of science</strong> and the <strong>charm of traditional folklore</strong>, showing how both stem from the same inexhaustible human curiosity.</p>
+
+      <p>Italy enjoys a vast cultural heritage across many fields, including science, art, history and gastronomy, but also a wealth of <strong>legends and myths</strong> passed down through the centuries. Follow us and we will take you on a journey to discover them. Through this event, we would like to introduce participants to a lesser-known side of our cultural heritage by exploring the city through its legends and symbolism, leaving everyone free to draw their own interpretations.</p>
+
+      <Figure src="social/gran-madre.jpg" alt="Gran Madre church in Torino" layout="inset" imageFirst={false}>
+        <p>We therefore propose a guided evening tour through <strong>Torino Magica</strong>, a city that beautifully combines historical heritage and mystery. Torino is widely known as the first capital of Italy, for its automotive heritage, its chocolate, cinema, jazz, and historic cafés. It is also famous for its rich collection of <strong>local legends</strong>, which portray the city as a <strong>meeting point between opposing forces</strong>: light and darkness, reason and mystery.</p>
+      </Figure>
+
+      <p>These stories intertwine with the city's history and with the architectural choices made by the House of Savoy, creating a cultural heritage that is both fascinating and thought-provoking.</p>
+
+      <p>According to one of Torino's most enduring legends, the city occupies a <strong>unique position</strong> within two mythical triangles that span the whole world. Whether regarded as folklore or simply as a captivating narrative, this duality has become an integral part of the city's cultural imagination. Throughout the centuries, monuments, churches, squares, and architectural details have been interpreted through the lens of these opposing traditions, giving rise to stories in which reason and mystery coexist.</p>
+
+      <p>Following this legendary path, our tour will guide participants through the <strong>landmarks</strong> that have given life to these centuries-old narratives. Moving from the alleged center of reason to that of mystery, participants will discover how this symbolism can create a unique identity of the city. This experience aims to <strong>spark curiosity</strong> and demonstrate how history, art, symbolism, and folklore can <strong>coexist</strong> alongside rational thought. After all, every great scientific discovery begins with a question.</p>
+
+      <p>At the end of the tour, only one final question will remain:</p>
+
+      <p><em>Which side of Torino Magica will you choose to believe in?</em></p>
+    </section>
+
+    <section>
+      <h2>Final night</h2>
+
+      <p><em>Leap into the History, Dive into the Light.</em></p>
+
+      <p>The final night of ICPS will take you to one of Torino’s most precious gems: <strong>Villa della Regina</strong>, the Queen's Villa. Atop the hills, overlooking the city, this royal residence was for centuries the favored retreat of princesses and queens of the <strong>House of Savoy</strong>.</p>
+
+      <p>Built in the early 17th century as a countryside vineyard estate (or “<em>vigna</em>”) for Prince Cardinal Maurizio of Savoy, the villa was later transformed into a lavish <strong>Baroque residence</strong>. It was here that the Savoy sovereigns would spend their time, surrounded by Italian-style gardens. On the final night of ICPS 2028 this UNESCO World Heritage site will host our celebration, offering a location in which to <strong>party like no other</strong>.</p>
+
+      <h3>The Light and Glow night</h3>
+
+      <Figure src="social/villa-regina.jpg" alt="Villa della Regina in Torino" />
+
+      <p>The intriguing history of the villa will soon give way to the party. Because the "Light and Glow night" is meant to be a true <strong>Italian-style party</strong> in the most authentic sense of the word. Picture this: at the entrance, every participant will receive a <strong>fluorescent gadget</strong>, ready to light up the night. The evening will kick off with an explosion of music and light shows, creating a fascinating contrast between Baroque elegance and contemporary energy. </p>
+
+      <p>This, though, is only the beginning; the magical moment has yet to begin. The <strong>lights will go out</strong>, and the party will take on a new hue: welcome to the "glow" phase. The villa will turn into a vibrant <strong>neon glow party</strong>, where your gadgets will come to life, enhanced by special effects and a haze machine that will wrap the atmosphere in a shroud of mystery.</p>
+
+      <p>And for a finale crowning the night, the sky over Torino will ignite with a <strong>fireworks display</strong>, a tribute of light that will mark the peak of our celebration.</p>
+
+      <p>Get ready for a night where history meets the future, and light becomes the party.</p>
+
+      <p><em>See you at Light and Glow night!</em></p>
+    </section>
+
+    <section>
+      <h2>Museum visits</h2>
+
+      <p>We strongly suggest to take some time to enjoy the <strong>cultural and artistic heritage</strong> of Northern Italy. Both Milano and Torino offer world-class cultural institutions that perfectly bridge the gap between humanistic beauty and scientific curiosity. Between one visit and the other, you can relax and socialize in vibrant urban spaces, beautiful parks, and breathtaking viewpoints, experiencing the authentic Italian lifestyle.</p>
+
+      <h3>Milano: the cradle of scientific renaissance and urban culture</h3>
+
+      <Figure src="social/duomo-milano.jpg" alt="The Duomo of Milano" />
+
+      <p>Discover Milano’s unique combination of historical grandeur and technological edge by selecting one of the following venues:</p>
+      <ul>
+        <li><strong>National museum of science and technology “Leonardo da Vinci”</strong>: As Italy's largest science and technology museum, this venue is a must-visit for physics students. Beyond the famous galleries dedicated to <strong>Leonardo’s mechanical drawings and physical experiments</strong>, the museum hosts a state-of-the-art permanent <strong>exhibition on Particle Physics</strong> developed in partnership with CERN, alongside a massive <strong>Space Pavilion</strong> featuring the only Moon rock fragment in Italy.</li>
+        <li><strong>Civic planetarium “Ulrico Hoepli” &amp; Brera's botanical garden</strong>: Nestled in the historic <strong>Porta Venezia park</strong>, Italy’s largest planetarium offers <strong>immersive astrophysics shows</strong> under its majestic 19.6-meter dome. This can be coupled with a walking tour of the Brera district, home to the historic INAF Astronomical Observatory, built by Ruggero Boscovich, where Giovanni Schiaparelli mapped the canals of Mars.</li>
+        <li><strong>Museum of natural history</strong>: The oldest civic museum in Milano, founded in <strong>1838</strong>. Housed in a stunning <strong>Neo-Gothic building</strong> (constructed 1892&nbsp;1907), its first-floor exhibitions feature spectacular, historic dioramas illustrating the world’s major natural ecosystems. This exhibition layout is unique in Italy for its scale and historical value.</li>
+        <li><strong>Duomo di Milano &amp; historical terraces</strong>: For those seeking a classic cultural experience, architectural tours will take students to the <strong>rooftop terraces</strong> of Milano's magnificent <strong>Gothic cathedral</strong>, offering a breathtaking view of the city skyline stretching all the way to the Alps.</li>
+      </ul>
+
+      <h3>Torino: royal elegance and the gateway to the Alps</h3>
+
+      <Figure src="social/museo-torino.jpg" alt="Museo Torino" />
+
+      <p>In the second half of the event, participants will transition to Torino, Italy's first capital, renowned for its baroque architecture, deep scientific roots, industrial pioneering, and stunning alpine backdrop. Participants who stay slightly longer after the conference’s closure will be invited to visit one of the following:</p>
+      <ul>
+        <li><strong>National cinema museum</strong>: Located inside Torino's architectural symbol, the <strong>Mole Antonelliana</strong>, this museum is a spectacular journey through the history of moving images. Physics students will appreciate the interactive sections dedicated to pre-cinema optical toys, shadows, stereoscopy, and the physics of light refraction.</li>
+        <li><strong>Car museum (MAUTO)</strong>: Reflecting Torino’s status as an industrial powerhouse, MAUTO showcases the <strong>evolution of the automobile</strong>. The scientific focus here covers car design, vehicle dynamics, aerodynamics, and the physics of thermodynamic efficiency and lightweight materials.</li>
+        <li><strong>Royal Palace of Torino (Musei Reali) &amp; Royal Gardens</strong>: A spectacular journey through the history of the <strong>Savoy dynasty</strong>. The visit includes the lavish royal apartments, the Royal Armoury, and the majestic Chapel of the Holy Shroud.</li>
+        <li><strong>Choco-story Torino (Museum of Chocolate and Gianduja)</strong>: Torino is the Italian capital of <strong>chocolate</strong> (the birthplace of <em>Gianduja</em>). This interactive museum offers a fun, sweet, and culturally enriching experience for attendees wanting a taste of local traditions.</li>
+      </ul>
+    </section>
+  </article>
+</Layout>

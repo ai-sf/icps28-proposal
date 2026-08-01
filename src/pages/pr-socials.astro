@@ -1,0 +1,176 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Figure from '../components/Figure.astro';
+import Motto from '../components/Motto.astro';
+import { chapters } from '../data/site';
+
+const ch = chapters.find((c) => c.id === 'pr-socials')!;
+---
+<Layout title={ch.title} description="PR and socials strategy for ICPS 2028: values and mission statement, visual identity, editorial line and social engagement, communication offices and media connections, and legal and privacy considerations." chapter={ch.id}>
+  <header class="chapter-head">
+    <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
+    <h1>{ch.title}</h1>
+  </header>
+
+  <article class="prose">
+    <section>
+      <h2>Our values and mission statement</h2>
+
+      <h4>Scientific excellence.</h4>
+      <p>Scientific progress emerges from curious, critical thinking and open discussion. The conference aims to expose participants to high-quality research and inspiring scientific role models while encouraging active engagement with the current challenges physics students encounter in academia worldwide.</p>
+
+      <h4>Community and inclusion.</h4>
+      <p>AISF is committed to creating an environment where every participant feels <strong>welcomed, respected, and valued</strong>. The diversity of perspectives enhances scientific dialogue and contributes to a more enriching conference experience for all. We believe that these human connections are among the most valuable outcomes of any international scientific event.</p>
+      <p>Whenever participant selection is required for activities with limited capacity, such as workshops or scientific visits, with the help of the IAPS Executive Committee, the Organizing Committee will strive to ensure a balanced and inclusive representation of the international physics community. Particular attention will be devoted to promoting <strong>gender balance</strong>, encouraging participation from as many <strong>IAPS Territorial, Local Committees and Individual Members</strong> as possible, and fostering interaction among students from different <strong>academic levels</strong>, from Bachelor's to PhD programs.</p>
+
+      <h4>Innovation and interdisciplinarity.</h4>
+      <p>The most exciting scientific advances increasingly emerge at the boundaries between disciplines. By bringing together experts and students from different fields of physics and round-table with experts from related sciences, we aim to stimulate new ideas and unexpected connections.</p>
+    </section>
+
+    <section>
+      <h2>Our visual identity</h2>
+
+      <h3>Concept</h3>
+      <p>ICPS28's visual identity starts from a single image: <strong>Leonardo da Vinci's flying machine</strong>. The machine embodies a specific habit of mind: da Vinci treated flight as a problem to be solved by changing his <strong>frame of reference</strong> rather than by trying harder within the old one. When the bird's feathered wing didn't yield a workable mechanism, he questioned the model itself, turning in his later studies to the bat's membrane wing instead.</p>
+      <p>That is the same move physicists made when classical frameworks hit their limits and relativity or quantum mechanics were set up for the next generations: it's the assumption that gets put in question, not the observation.</p>
+      <p>None of the physics that has defined the last century was the work of one mind flying alone. Each depended on thousands of researchers, across dozens of countries, agreeing to look at the same problem from enough different angles that something eventually gave way.</p>
+      <p>ICPS is a precious occasion to strengthen connections; its program is built on that same premise: a <strong>scientist dreams and flies, furthest in the company of other scientists</strong>.</p>
+
+      <h3>Logo description</h3>
+      <div class="brandingbox">
+        <Figure src="brand/logo-icps28.jpg" alt="ICPS 2028 — Italy logo" />
+        <p>The ICPS28 trademark depicts <strong>structurally similar yet visually opposite wings.</strong></p>
+        <p><strong>On the left</strong>, in warm tones, there is the representation of the wing of Leonardo da Vinci's flying machine, known for being modeled on the membranous wing of a bat. Inspired by his studies and sketches, we sought to capture the essence of the design through a stylized interpretation that remains faithful to its proportions and character.</p>
+        <p><strong>On the right</strong>, however, the same wing is reimagined as a circuit: its ribs become conductive tracks, while its membrane transforms into interconnected nodes, rendered in blue.</p>
+      </div>
+      <p><strong>The two halves are not in opposition</strong>; they are a single mechanism seen at two different moments in time: Leonardo's machine, a symbol of Italian ingenuity and excellence, evolves into the scientific and technological innovation and quality that continues to shape our country today.</p>
+
+      <h4>The five keywords that capture the entire concept</h4>
+      <ul class="keywords">
+        <li><span class="keywords__term">Connection</span> <span class="keywords__def">→ ICPS28 event and the international scientific community</span></li>
+        <li><span class="keywords__term">Perspective</span> <span class="keywords__def">→ The shift in vision that leads to progress and discovery</span></li>
+        <li><span class="keywords__term">Innovation</span> <span class="keywords__def">→ the frontiers of contemporary physics</span></li>
+        <li><span class="keywords__term">Legacy</span> <span class="keywords__def">→ Italy's cultural and scientific legacy, using Leonardo da Vinci’s and Galileo Galilei’s models</span></li>
+        <li><span class="keywords__term">Ingenium</span> <span class="keywords__def">→ Latin word for talent, problem solving, invention.</span></li>
+      </ul>
+
+      <h3>Official palette and fonts</h3>
+      <Figure src="pr/palette.jpg" alt="ICPS 2028 official colour palette" />
+      <p><strong>Pale Oak</strong> (#E2D1B7) and <strong>Dark Coffee</strong> (#382514) are inspired by aged paper and ink, giving the identity a historical register and placing it within the visual of a Renaissance notebook. <strong>Bright Baltic Blue</strong> (#0060A6) extends the circuit wing's visual into the rest of the identity, standing for precision and technological innovation. <strong>Carbon Black</strong> (#242424) serves as a neutral, functional colour for body text and backgrounds, keeping the palette legible and professional. <strong>Cherry Rose</strong> (#991E3B) is thought of as an accent, used sparingly to highlight key elements or calls to action.</p>
+      <p>The used fonts are <strong>SEGO</strong> for the acronym ICPS8 and for the word ITALY, as well as for titles and focus words; the <strong>Georgia</strong> font is used for subtitles and body text.</p>
+
+      <div class="brandingbox">
+        <p><strong>Black and white logo:</strong></p>
+        <Figure src="pr/logo-bw.png" alt="ICPS 2028 black and white logo" />
+        <p><strong>Banners:</strong></p>
+        <div class="grid-2">
+          <Figure src="pr/banner-bw.jpg" alt="ICPS 2028 banner in black and white" />
+          <Figure src="pr/banner-colored.jpg" alt="ICPS 2028 banner in colour" />
+        </div>
+        <p><strong>Single wing logo</strong> (used to highlight specific sections of the website):</p>
+        <div class="grid-2">
+          <Figure src="pr/wing-warm-left.jpg" alt="ICPS 2028 single wing logo in warm tones" />
+          <Figure src="pr/wing-blue-right.jpg" alt="ICPS 2028 single wing logo in blue" />
+        </div>
+      </div>
+
+      <h3>Conference motto</h3>
+      <Motto text="Curiosity takes flight" />
+      <p>Humanity’s desire to explore the unknown has always driven scientific progress. Inspired by Leonardo da Vinci's visionary design for a flying machine, our motto represents the journey every participant from different countries will undertake to reach ICPS 2028. Our motto celebrates the courage to ask questions and the connections that allow new ideas to take flight.</p>
+
+      <h3>Conference website</h3>
+      <p>The conference website will act as the primary information platform, providing continuously updated practical information, all visual designs, downloadable resources, registration forms, and interactive schedules.</p>
+
+      <h3>Conference Merchandise</h3>
+      <p>To strengthen the identity of ICPS 2028 and <strong>provide participants with gadgets</strong> of the event, the Organising Committee plans to prepare a complete conference merchandise collection.</p>
+      <p>The welcome kit will include the participant badge, conference programme, official T-shirt, notebook and additional promotional material. Depending on sponsorship opportunities, complementary gadgets such as stickers, enamel pins, tote bags, reusable water bottles, and caps may also be included. <strong>Staff members</strong> and volunteers will receive dedicated clothing and identification materials to ensure clear visibility throughout the conference.</p>
+    </section>
+
+    <section>
+      <h2>Editorial line and social engagement</h2>
+      <p>A unified communication strategy will position the International Conference of Physics Students as a welcoming, professionally organized, and internationally recognised event, while celebrating Milano and Torino as the twin host cities, and showcasing the Organizing Committee’s commitment to hospitality and scientific excellence.</p>
+      <p>All communications will follow a coherent visual identity and editorial style to ensure immediate recognisability across platforms and reinforce the ICPS28 brand.</p>
+
+      <h4>Pre-event:</h4>
+      <p>A 12-16 week editorial campaign will build international awareness and maximise registrations along with abstract submissions.</p>
+      <p>The communication plan will combine:</p>
+      <ul>
+        <li>strategic announcements, updates upon registration, and deadlines;</li>
+        <li>program, facilities, and speakers' highlights sponsors and partners spotlights;</li>
+        <li>practical travel and accommodation guidance,</li>
+        <li>and much more.</li>
+      </ul>
+      <p>Throughout the campaign, <strong>TCs will be actively involved</strong> as content co-creators to extend the conference's reach across the IAPS network. The tone of the students' and Organizing Committee profiles will be welcoming to convey hospitality.</p>
+
+      <h4>Live coverage:</h4>
+      <p>The editorial focus will shift to high-frequency, <strong>real-time storytelling</strong> that captures both the scientific substance and the convivial atmosphere of the event. A dedicated live social team will produce short session clips, speaker micro‑interviews, poster‑session highlights, TC takeovers, and sponsor spotlights, together with daily highlight reels and media packs for immediate distribution to AISF, TCs, and partners.</p>
+      <ul>
+        <li>As in previous editions of AISF events, a dedicated <strong>ICPS Media Corner</strong> will be set up throughout the conference. Designed as a professional interview and content creation space, it will feature the official conference branding, roll-up banners, an interview backdrop, and audiovisual equipment. This area will host short interviews with keynote speakers, participants, sponsors, and representatives of partner institutions.</li>
+        <li><strong>Interactive formats</strong> (live Q&amp;A sessions, story polls…) will engage remote audiences and amplify participant contributions, while coordinated cross‑posting with TCs will extend reach across national networks.</li>
+        <li>In addition to this, <strong>AISF’s podcast Fisicaffé</strong> will ensure original voice recordings during the event, culminating in the production of several episodes regarding the various areas of research presented during the event. Fisicaffé is keen on interviewing participants as well as speakers: we wish to capture a living record of nowadays IAPS with as many attendees as possible, because we believe not only in creating memories, but in creating a legacy that feels immediately familiar to IAPS’s members. We have a <strong>dual objective</strong>: first, we will be able to listen to Fisicaffé’s episodes, remembering the time we had years ago, from 2028. Secondly,  whoever didn’t get a chance to take part in ICPS, as well as future generations, will be able to access the Conference’s contents and keynote speakers’ thoughts, as well as feel part of ICPS’s community.</li>
+      </ul>
+
+      <h4>Post-event legacy:</h4>
+      <p>Immediately after the conference, a highlight reel, session recordings, curated <strong>photo galleries</strong>, and a sponsor impact report will be released. Over the following weeks, <strong>thematic playlists, selected recordings, participant testimonials</strong>(also through the Fisicaffè podcast), and follow‑up content that sustain community engagement and feed recruitment for future editions of ICPS will be published.</p>
+      <p>As requested, a <strong>summary report</strong> will be prepared for AISF, IAPS, funding agencies, and institutional partners, covering media, participant engagement, and sponsor visibility, and providing measurable indicators of the conference's outreach and impact.</p>
+      <p>Throughout all phases of the communication campaign, particular attention will be given to coordination and continuous performance monitoring. With these aims in mind, <strong>a shared content calendar</strong> will coordinate AISF, TCs, and partners.</p>
+      <p>Key <strong>performance indicators</strong> will track registrations and abstract conversions driven by social links, TC co‑posts and reposts, hashtag reach and engagement metrics, livestream viewership, and sponsor mentions. These indicators will be used to optimize messaging in real-time and to encourage active participation throughout the week of the conference.</p>
+    </section>
+
+    <section>
+      <h2>Communication offices and media connections</h2>
+      <p>The Organizing Committee aims to promote ICPS 2028 through a <strong>coordinated communication</strong> strategy combining traditional media, digital platforms, scientific outreach, and institutional communication. Messaging will emphasise scientific quality and the renewed sense of belonging to the IAPS community, beyond ours.</p>
+      <p>Communication will be tailored to <strong>different audiences</strong>, including students, researchers, universities, and the general public, while maintaining a consistent visual identity and editorial style throughout the conference.</p>
+      <p>We’re preparing a <strong>professional media kit</strong>, including our visual identity, press releases, and fact sheets, for journalists, sponsors, and institutional partners to ensure consistent and effective communication.</p>
+      <p>To maximize the event's visibility, the Organizing Committee intends to establish collaborations with local, national, and international media outlets that are interested in science and higher education. The following list represents some of the outlets and communication offices that could be involved in promoting the conference:</p>
+
+      <h3>Local and national general purpose news media</h3>
+      <ul>
+        <li><strong>La Stampa</strong>:  one of Italy's leading national newspapers, headquartered in Torino.</li>
+        <li><strong>Corriere della Sera</strong>: Italy's largest national newspapers, headquartered in Milano.</li>
+        <li><strong>TGR Piemonte / TGR Lombardia</strong>: regional branches of the Italian public broadcasting service (RAI). Similar coverage was available for previous AISF initiatives</li>
+        <li><strong>Il Sole 24 Ore</strong>:  Italy's leading newspaper covering economics, innovation, and technology.</li>
+        <li><strong>Wired Italia</strong>: Italian edition of Wired, focusing on science, technology, and innovation.</li>
+        <li><strong>Forbes Next Leaders</strong>: who is currently collaborating with AISF.</li>
+      </ul>
+
+      <h3>Institutional media</h3>
+      <p>The Organizing Committee is also planning collaborations with the communication offices of national and European research institutions, such as:</p>
+      <ul>
+        <li><strong>University of Torino</strong></li>
+        <li><strong>Politecnico of Torino</strong></li>
+        <li><strong>University of Milano</strong></li>
+        <li><strong>University of Milano-Bicocca</strong></li>
+        <li><strong>Politecnico of Milano</strong></li>
+        <li><strong>Media INAF</strong>: outreach and news platform of the Italian National Institute for Astrophysics.</li>
+        <li><strong>Asimmetrie</strong>:  a popular science magazine published by the Italian National Institute for Nuclear Physics (INFN).</li>
+        <li><strong>INRIM</strong> communication office: Italian National Institute of Metrological Research.</li>
+        <li><strong>EGO</strong> communication office: European Gravitational Observatory</li>
+        <li><strong>IFOM</strong> communication office: Molecular Oncology Foundation Institute ETS</li>
+        <li><strong>CNR</strong> communication office: Center of National Research of Italy</li>
+        <li><strong>CNAO</strong> communication office: National Centre for Oncological Hadrontherapy</li>
+        <li><strong>SIF</strong> communication office: Italian Society of Physics</li>
+        <li><strong>Europhysics</strong> News: magazine of the European Physical Society.</li>
+        <li><strong>IOP</strong> Publishing / Institute of Physics</li>
+        <li><strong>CERN</strong> communication office: European Council for Nuclear Research</li>
+        <li><strong>ESA</strong> communication office: European Space Agency</li>
+      </ul>
+      <p>These collaborations could facilitate dissemination through institutional newsletters.</p>
+
+      <h3>Outreach media possibilities</h3>
+      <p>The Organizing Committee also aims to engage with prominent science communicators and digital creators whose audiences closely match the profile of ICPS participants. Possible collaborations may include interviews and live sessions:</p>
+      <ul>
+        <li><strong>BobbyBroccoli</strong>: documentary creator focusing on scientific controversies and research integrity. Interviewed already once by the IAPS team.</li>
+        <li><strong>Clara Nellist</strong>: CERN science communicator and particle physicist.</li>
+        <li><strong>Maria Bosco</strong>: Geopop journalist and science communicator.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Legal and privacy considerations</h2>
+      <p>The Organizing Committee is committed to ensuring that all photography, video recordings, and personal data are managed responsibly and transparently. Participants and guests will be informed in advance about photography and recording practices and asked to accept a simple media release as part of registration.</p>
+      <p>The event website will comply withGeneral Data Protection Regulation (GDPR) and applicable privacy laws: registration and mailing lists will be processed on a lawful basis and retention periods will be defined.</p>
+      <p>Likewise, invited speakers will be consulted regarding the recording and distribution of their presentations, while the use of institutional identities and sponsor materials will always respect the branding guidelines and approval procedures established by the respective organizations.</p>
+    </section>
+  </article>
+</Layout>

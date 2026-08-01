@@ -1,0 +1,11 @@
+---
+// Motto — centered display quote ("Curiosity takes flight").
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+---
+
+<div class="motto">
+  <p class="motto__text">“{text}”</p>
+</div>

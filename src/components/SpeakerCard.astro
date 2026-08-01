@@ -1,0 +1,31 @@
+---
+// SpeakerCard — keynote speaker (photo, name, affiliation, credentials,
+// optional "Connection to AISF" note with link).
+import { asset } from '../utils';
+
+interface Props {
+  photo: string; // path relative to /assets/speakers/
+  name: string;
+  affiliation?: string;
+  detail?: string;   // credential / short description
+  connection?: { label: string; href?: string };
+  /** Flip layout: photo on the right */
+  reverse?: boolean;
+}
+const { photo, name, affiliation, detail, connection, reverse = false } = Astro.props;
+---
+
+<article class={['speaker', reverse ? 'speaker--reverse' : ''].join(' ')}>
+  <img class="speaker__photo" src={asset(`speakers/${photo}`)} alt={`Portrait of ${name}`} loading="lazy" />
+  <div>
+    <h3 class="speaker__name">{name}</h3>
+    {affiliation && <p class="speaker__affil">{affiliation}</p>}
+    {detail && <div class="speaker__detail"><p>{detail}</p></div>}
+    {connection && (
+      <p class="speaker__connection">
+        <strong>Connection to AISF:</strong>{' '}
+        {connection.href ? <a href={connection.href} target="_blank" rel="noopener noreferrer">{connection.label}</a> : connection.label}
+      </p>
+    )}
+  </div>
+</article>

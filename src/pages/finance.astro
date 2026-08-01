@@ -1,0 +1,413 @@
+---
+import Layout from '../layouts/Layout.astro';
+import DataTable from '../components/DataTable.astro';
+import { chapters } from '../data/site';
+
+const ch = chapters.find((c) => c.id === 'finance')!;
+const lead =
+  'To ensure a comprehensive and resilient financial overview for ICPS28, the following section outlines our financial planning structured across two distinct attendance scenarios: a 500 participants model and a 400 participants model.';
+---
+
+<Layout title={ch.title} description="ICPS 2028 project proposal — Finance chapter." chapter={ch.id}>
+  <header class="chapter-head">
+    <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
+    <h1>{ch.title}</h1>
+    <p class="chapter-head__lead">{lead}</p>
+  </header>
+
+  <article class="prose">
+    <p>
+      In line with standard event management practices, each attendance scenario features two
+      separate budgetary paths:
+    </p>
+    <ul>
+      <li>
+        <strong>Plan A (provisional budget):</strong> This represents our optimal operating
+        framework, designed to deliver the highest quality experience across all event components.
+      </li>
+      <li>
+        <strong>Plan B (fallback budget):</strong> This functions as our emergency contingency
+        model, designed to ensure the financial viability and secure execution of the event under a
+        more constrained economic framework.
+      </li>
+    </ul>
+    <p>
+      The primary operational difference between the two configurations lies in a strategic
+      reduction of catering provisions (specifically regarding the frequency and scale of coffee
+      breaks, lunches, and dinners) and a measured downsizing of communication and branding
+      materials, such as speaker and participant prizes.
+    </p>
+
+    <section>
+      <h2>Provisional budget (Plan A) - 500 participants</h2>
+
+      <h4>Accomodation</h4>
+      <DataTable
+        headers={['Group', 'Num. of People', 'Num. of Nights', 'Price / Night (€)', 'Total (€)']}
+        rows={[
+          ['Participants', 500, 6, '35.00', '105,000.00'],
+          ['Guest Speakers', 10, 1, '100.00', '1,000.00'],
+        ]}
+        foot={['Subtotal', '', '', '', '106,000.00']}
+      />
+
+      <h4>Transportation</h4>
+      <DataTable
+        headers={['Transport', 'Num. of People', 'Price (€)', 'Total (€)']}
+        rows={[
+          ['City ticket - Milano', 500, '15.50', '7,750.00'],
+          ['City ticket - Torino', 500, '12.50', '6,250.00'],
+          ['Shuttle OaTO', 80, '6.25', '500.00'],
+          ['Guest speakers', 10, '200.00', '2,000.00'],
+          ['Excursions', 500, '36.30', '18,150.00'],
+        ]}
+        foot={['Subtotal', '', '', '34,650.00']}
+      />
+
+      <h4>Food</h4>
+      <DataTable
+        headers={['Meal', 'Num. of People', 'Num. of Meals', 'Price / Meal (€)', 'Total (€)']}
+        rows={[
+          ['Coffee break', 500, 4, '7.00', '14,000.00'],
+          ['Lunch', 500, 5, '12.00', '30,000.00'],
+          ['Dinner', 500, 5, '15.00', '37,500.00'],
+          ['Nations Party', 500, 1, '20.00', '10,000.00'],
+        ]}
+        foot={['Subtotal', '', '', '', '91,500.00']}
+      />
+
+      <h4>Spaces rent</h4>
+      <DataTable
+        headers={['Event', 'Num. of Events', 'Price / Event (€)', 'Total (€)']}
+        rows={[
+          ['Night at the Egyptian museum', 1, '10,000.00', '10,000.00'],
+          ['Final party', 1, '10,000.00', '10,000.00'],
+          ['Torino Magica', 1, '1,000.00', '1,000.00'],
+        ]}
+        foot={['Subtotal', '', '', '21,000.00']}
+      />
+
+      <h4>Communication</h4>
+      <DataTable
+        headers={['Description', 'Num. of Units', 'Price / Unit (€)', 'Total (€)']}
+        rows={[
+          ['T-Shirt/gadget', 500, '12.00', '6,000.00'],
+          ['Badge, lanyard, communication', 500, '6.00', '3,000.00'],
+          ['Speaker prizes', 15, '50.00', '750.00'],
+          ['Participants prizes', 10, '50.00', '500.00'],
+        ]}
+        foot={['Subtotal', '', '', '10,250.00']}
+      />
+
+      <h4>Summary</h4>
+      <DataTable
+        headers={['Description', 'Amount (€)']}
+        rows={[
+          ['Total', '263,400.00'],
+          ['Additional costs (+10%)', '26,340.00'],
+        ]}
+        foot={['Final Amount', '289,740.00']}
+      />
+    </section>
+
+    <section>
+      <h2>Fallback budget (Plan B) - 500 participants</h2>
+
+      <h4>Accomodation</h4>
+      <DataTable
+        headers={['Group', 'Num. of People', 'Num. of Nights', 'Price / Night (€)', 'Total (€)']}
+        rows={[
+          ['Participants', 500, 6, '35.00', '105,000.00'],
+          ['Guest speakers', 10, 1, '100.00', '1,000.00'],
+        ]}
+        foot={['Subtotal', '', '', '', '106,000.00']}
+      />
+
+      <h4>Transportation</h4>
+      <DataTable
+        headers={['Transport', 'Num. of People', 'Price (€)', 'Total (€)']}
+        rows={[
+          ['City ticket - Milano', 500, '15.50', '7,750.00'],
+          ['City ticket - Torino', 500, '12.50', '6,250.00'],
+          ['Shuttle OaTO', 80, '6.25', '500.00'],
+          ['Guest speakers', 10, '200.00', '2,000.00'],
+          ['Excursions', 500, '36.30', '18,150.00'],
+        ]}
+        foot={['Subtotal', '', '', '34,650.00']}
+      />
+
+      <h4>Food</h4>
+      <DataTable
+        headers={['Meal', 'Num. of People', 'Num. of Meals', 'Price / Meal (€)', 'Total (€)']}
+        rows={[
+          ['Coffee break', 500, 2, '7.00', '7,000.00'],
+          ['Lunch', 500, 3, '12.00', '18,000.00'],
+          ['Dinner', 500, 3, '15.00', '22,500.00'],
+          ['Nations Party', 500, 1, '20.00', '10,000.00'],
+        ]}
+        foot={['Subtotal', '', '', '', '57,500.00']}
+      />
+
+      <h4>Spaces rent</h4>
+      <DataTable
+        headers={['Event', 'Num. of Events', 'Price / Event (€)', 'Total (€)']}
+        rows={[
+          ['Night at the Egyptian museum', 1, '10,000.00', '10,000.00'],
+          ['Final party', 1, '10,000.00', '10,000.00'],
+          ['Torino Magica', 1, '1,000.00', '1,000.00'],
+        ]}
+        foot={['Subtotal', '', '', '21,000.00']}
+      />
+
+      <h4>Communication</h4>
+      <DataTable
+        headers={['Description', 'Num. of Units', 'Price / Unit (€)', 'Total (€)']}
+        rows={[
+          ['T-Shirt/Gadget', 500, '12.00', '6,000.00'],
+          ['Badge, lanyard, communication', 500, '6.00', '3,000.00'],
+          ['Speaker prizes', 15, '30.00', '450.00'],
+          ['Participants prizes', 10, '20.00', '200.00'],
+        ]}
+        foot={['Subtotal', '', '', '9,650.00']}
+      />
+
+      <h4>Summary</h4>
+      <DataTable
+        headers={['Description', 'Amount (€)']}
+        rows={[
+          ['Total', '228,800.00'],
+          ['Additional costs (+10%)', '22,880.00'],
+        ]}
+        foot={['Final Amount', '251,680.00']}
+      />
+    </section>
+
+    <section>
+      <h2>Provisional budget (Plan A) - 400 participants</h2>
+
+      <h4>Accomodation</h4>
+      <DataTable
+        headers={['Group', 'Num. of People', 'Num. of Nights', 'Price / Night (€)', 'Total (€)']}
+        rows={[
+          ['Participants', 400, 6, '35.00', '84,000.00'],
+          ['Guest speakers', 10, 1, '100.00', '1,000.00'],
+        ]}
+        foot={['Subtotal', '', '', '', '85,000.00']}
+      />
+
+      <h4>Transportation</h4>
+      <DataTable
+        headers={['Transport', 'Num. of People', 'Price (€)', 'Total (€)']}
+        rows={[
+          ['City ticket - Milano', 400, '15.50', '6,200.00'],
+          ['City ticket - Torino', 400, '12.50', '5,000.00'],
+          ['Shuttle OaTO', 80, '6.25', '500.00'],
+          ['Guest speakers', 10, '200.00', '2,000.00'],
+          ['Excursions', 400, '40.65', '16,260.00'],
+        ]}
+        foot={['Subtotal', '', '', '29,960.00']}
+      />
+
+      <h4>Food</h4>
+      <DataTable
+        headers={['Meal', 'Num. of People', 'Num. of Meals', 'Price / Meal (€)', 'Total (€)']}
+        rows={[
+          ['Coffee break', 400, 4, '7.00', '11,200.00'],
+          ['Lunch', 400, 5, '12.00', '24,000.00'],
+          ['Dinner', 400, 5, '15.00', '30,000.00'],
+          ['Nations Party', 400, 1, '20.00', '8,000.00'],
+        ]}
+        foot={['Subtotal', '', '', '', '73,200.00']}
+      />
+
+      <h4>Spaces rent</h4>
+      <DataTable
+        headers={['Event', 'Num. of Events', 'Price / Event (€)', 'Total (€)']}
+        rows={[
+          ['Night at the Egyptian museum', 1, '8,000.00', '8,000.00'],
+          ['Final party', 1, '8,000.00', '8,000.00'],
+          ['Torino Magica', 1, '1,000.00', '1,000.00'],
+        ]}
+        foot={['Subtotal', '', '', '17,000.00']}
+      />
+
+      <h4>Communication</h4>
+      <DataTable
+        headers={['Description', 'Num. of Units', 'Price / Unit (€)', 'Total (€)']}
+        rows={[
+          ['T-Shirt/Gadget', 400, '12.00', '4,800.00'],
+          ['Badge, lanyard, communication', 400, '7.50', '3,000.00'],
+          ['Speaker prizes', 15, '50.00', '750.00'],
+          ['Participants prizes', 10, '50.00', '500.00'],
+        ]}
+        foot={['Subtotal', '', '', '9,050.00']}
+      />
+
+      <h4>Summary</h4>
+      <DataTable
+        headers={['Description', 'Amount (€)']}
+        rows={[
+          ['Total', '214,210.00'],
+          ['Additional costs (+10%)', '21,421.00'],
+        ]}
+        foot={['Final Amount', '235,631.00']}
+      />
+    </section>
+
+    <section>
+      <h2>Fallback budget (Plan B) - 400 participants</h2>
+
+      <h4>Accomodation</h4>
+      <DataTable
+        headers={['Group', 'Num. of People', 'Num. of Nights', 'Price / Night (€)', 'Total (€)']}
+        rows={[
+          ['Participants', 400, 6, '35.00', '84,000.00'],
+          ['Guest speakers', 10, 1, '100.00', '1,000.00'],
+        ]}
+        foot={['Subtotal', '', '', '', '85,000.00']}
+      />
+
+      <h4>Transportation</h4>
+      <DataTable
+        headers={['Transport', 'Num. of People', 'Price (€)', 'Total (€)']}
+        rows={[
+          ['City ticket - Milano', 400, '15.50', '6,200.00'],
+          ['City ticket - Torino', 400, '12.50', '5,000.00'],
+          ['Shuttle OaTO', 80, '6.25', '500.00'],
+          ['Guest speakers', 10, '200.00', '2,000.00'],
+          ['Excursions', 400, '40.65', '16,260.00'],
+        ]}
+        foot={['Subtotal', '', '', '29,960.00']}
+      />
+
+      <h4>Food</h4>
+      <DataTable
+        headers={['Meal', 'Num. of People', 'Num. of Meals', 'Price / Meal (€)', 'Total (€)']}
+        rows={[
+          ['Coffee break', 400, 2, '7.00', '5,600.00'],
+          ['Lunch', 400, 3, '12.00', '14,400.00'],
+          ['Dinner', 400, 3, '15.00', '18,000.00'],
+          ['Nations Party', 400, 1, '20.00', '8,000.00'],
+        ]}
+        foot={['Subtotal', '', '', '', '46,000.00']}
+      />
+
+      <h4>Spaces rent</h4>
+      <DataTable
+        headers={['Event', 'Num. of Events', 'Price / Event (€)', 'Total (€)']}
+        rows={[
+          ['Night at the Egyptian museum', 1, '8,000.00', '8,000.00'],
+          ['Final party', 1, '8,000.00', '8,000.00'],
+          ['Torino Magica', 1, '1,000.00', '1,000.00'],
+        ]}
+        foot={['Subtotal', '', '', '17,000.00']}
+      />
+
+      <h4>Communication</h4>
+      <DataTable
+        headers={['Description', 'Num. of Units', 'Price / Unit (€)', 'Total (€)']}
+        rows={[
+          ['T-Shirt/Gadget', 400, '12.00', '4,800.00'],
+          ['Badge, lanyard, communication', 400, '7.50', '3,000.00'],
+          ['Speaker prizes', 15, '30.00', '450.00'],
+          ['Participants prizes', 10, '20.00', '200.00'],
+        ]}
+        foot={['Subtotal', '', '', '8,450.00']}
+      />
+
+      <h4>Summary</h4>
+      <DataTable
+        headers={['Description', 'Amount (€)']}
+        rows={[
+          ['Total', '186,410.00'],
+          ['Additional costs (+10%)', '18,641.00'],
+        ]}
+        foot={['Final Amount', '205,051.00']}
+      />
+    </section>
+
+    <section>
+      <h2>Income</h2>
+      <p>
+        Regarding event funding, the fixed income streams detailed in the subsequent table represent
+        confirmed commitments from established institutional partners and bodies closely affiliated
+        with AISF. These entities have already formally expressed their willingness to support the
+        organization of ICPS. Conversely, the projected external funding allocated under the
+        "Sponsors" entry is thoroughly detailed and broken down in the dedicated section immediately
+        following the budget profiles.
+      </p>
+      <DataTable
+        headers={['Description', 'Num. of Units', 'Price / Unit (€)', 'Total (€)']}
+        rows={[
+          ['Participants Fees', 472, '200.00', '94,400.00'],
+          ['Department of Physics - UniTO', 1, '10,000.00', '10,000.00'],
+          ['Department of Physics - UniMI/MIB', 1, '10,000.00', '10,000.00'],
+          ['PoliTO', 1, '7,000.00', '7,000.00'],
+          ['PoliMI', 1, '7,000.00', '7,000.00'],
+          ['INFN - Torino', 1, '8,000.00', '8,000.00'],
+          ['INFN - Milano', 1, '6,000.00', '6,000.00'],
+          ['INRIM - Torino', 1, '5,000.00', '5,000.00'],
+          ['Intesa San Paolo', 1, '10,000.00', '10,000.00'],
+          ['IUPAP', 1, '11,000.00', '11,000.00'],
+          ['IAPS', 1, '10,000.00', '10,000.00'],
+          ['EPS', 1, '3,000.00', '3,000.00'],
+          ['Sponsors', 1, '111,600.00', '111,600.00'],
+        ]}
+        foot={['Subtotal', '', '', '290,000.00']}
+      />
+      <p>
+        The program remains highly scalable and can easily accommodate variations in attendance
+        without requiring significant changes to its overall structure.
+      </p>
+    </section>
+
+    <section>
+      <h2>Estimated budget for the excursion day (a more detailed overview)</h2>
+      <p>
+        The budget estimates are based on current market prices for full day charter coach rentals
+        and educational group admission fees. The estimates include transportation from Milano to
+        the selected destinations and onward to Torino, as well as entrance fees where applicable.
+        Meals and contingency funds are intentionally excluded, as they are covered separately
+        within the overall conference budget. Activities at each destination are designed to be
+        freely accessible and therefore do not require additional organizational expenses.
+      </p>
+      <p>
+        <strong>Budget assumptions</strong>
+      </p>
+      <ul>
+        <li>
+          Chartered coach (50 seats), full-day service (Milano → excursion destination → Torino):
+          €1,450 per coach
+        </li>
+        <li>Aquarium of Genoa (group rate): €22 per participant</li>
+      </ul>
+
+      <h4>Scenario A - 400 participants</h4>
+      <DataTable
+        headers={['Budget Item', 'Num. of Units', 'Price / Unit (€)', 'Total (€)']}
+        rows={[
+          ['Chartered coaches', 10, '1,450.00', '14,500.00'],
+          ['Aquarium of Genoa tickets', 80, '22.00', '1,760.00'],
+        ]}
+        foot={['Total estimated budget', '', '', '16,260.00']}
+      />
+
+      <h4>Scenario B - 500 participants</h4>
+      <DataTable
+        headers={['Budget Item', 'Num. of Units', 'Price / Unit (€)', 'Total (€)']}
+        rows={[
+          ['Chartered coaches', 11, '1,450.00', '15,950.00'],
+          ['Aquarium of Genoa tickets', 100, '22.00', '2,200.00'],
+        ]}
+        foot={['Total estimated budget', '', '', '18,150.00']}
+      />
+
+      <p>
+        The proposed budget focuses exclusively on the organizational costs directly borne by the
+        conference. By integrating the excursion day with the transfer from Milano to Torino,
+        transportation costs are optimized while still providing participants with the opportunity
+        to experience some of Northern Italy's most iconic natural and cultural destinations.
+      </p>
+    </section>
+  </article>
+</Layout>

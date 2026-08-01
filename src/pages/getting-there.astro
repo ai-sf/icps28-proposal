@@ -1,0 +1,188 @@
+---
+// Chapter 04 — How do I get there? (chapters/03_travel.tex)
+import Layout from '../layouts/Layout.astro';
+import { chapters } from '../data/site';
+import Callout from '../components/Callout.astro';
+
+const ch = chapters.find((c) => c.id === 'getting-there')!;
+---
+<Layout title={ch.title} description="How to reach Torino and Milano — by plane, train, bus, and car, plus visa requirements." chapter={ch.id}>
+  <header class="chapter-head">
+    <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
+    <h1>{ch.title}</h1>
+  </header>
+
+  <article class="prose">
+    <section>
+      <h2>By plane</h2>
+
+      <h3>Milano Airports</h3>
+
+      <p>Together, the Milanese airports form one of Europe's largest airport systems, serving hundreds of international destinations on both full-service and low-cost carriers:</p>
+
+      <ul>
+        <li><strong>Milano Malpensa (MXP):</strong> Northern Italy's largest international airport, offering extensive intercontinental connections. Located at a 40 minutes bus-ride distance from the city center.</li>
+        <li><strong>Milano Linate (LIN):</strong> Conveniently located close to the city centre, primarily serving European and domestic routes.</li>
+        <li><strong>Milano Bergamo-Orio al Serio (BGY):</strong> A major low-cost airline hub, with an extensive network of destinations throughout Europe. Located at a 50 minutes bus-ride distance from the city center.</li>
+      </ul>
+
+      <h3>Caselle Torino Airport (TRN)</h3>
+
+      <p>The airport offers direct connections to major European destinations. It is efficiently served by</p>
+
+      <ul>
+        <li><strong>budget airlines:</strong> Ryanair, Vueling, Wizz Air, and easyJet.</li>
+        <li><strong>full-service carriers:</strong> Lufthansa, Air France, British Airways, ITA Airways, and KLM.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>By train</h2>
+
+      <p>Italy operates one of Europe's most advanced high-speed rail networks. In case participants chose another italian city to land on by plane, Torino and Milano would still be easily reachable through Frecciarossa or Italo services, as well as the national Trenitalia network, encompassing all of Italy’s territory. Train tickets are not expensive, especially when booked in advance.</p>
+
+      <p>International rail connections are available from France, Switzerland, Germany, Austria, and Slovenia. Night train connections are also operated from several European cities through international operators such as "OBB Nightjet.</p>
+
+      <Callout>
+        <p><em>When possible, the Organizing Committee strongly encourages participants to travel to and from the conference by train to maximize the environmental sustainability of the event.</em></p>
+      </Callout>
+    </section>
+
+    <section>
+      <h2>By bus</h2>
+
+      <p>International operators such as FlixBus connect both cities with hundreds of destinations across Europe at competitive prices. Other major operators serving both Torino and Milano include BlaBlaCar Bus, Itabus, MarinoBus, and RegioJet. Both Torino and Milano have main bus terminals fully integrated with the local public transportation systems.</p>
+    </section>
+
+    <section>
+      <h2>By car</h2>
+
+      <p>Both cities are seamlessly connected through the national highway and motorway network and can easily be reached from neighboring countries. Participants travelling from Central and Western Europe can reach the conference within a day's travel through several major Alpine crossings:</p>
+
+      <ul>
+        <li>Mont Blanc Tunnel (France),</li>
+        <li>Fréjus Tunnel (France),</li>
+        <li>Great St. Bernard Tunnel (Switzerland),</li>
+        <li>Simplon Pass (Switzerland),</li>
+        <li>Brenner Pass (Austria).</li>
+      </ul>
+
+      <h4>Transportation between the two cities:</h4>
+
+      <p>The Torino-Milano connection takes approximately one hour, allowing the participants to travel quickly and comfortably between the two conference cities. For more information, please check our dedicated TRANSPORTATION section.</p>
+    </section>
+
+    <section>
+      <h2>VISA requirements</h2>
+
+      <p>Italy is part of the European Union and the Schengen Area.</p>
+
+      <h4>VISA-free entry (up to 90 days for tourism/business):</h4>
+
+      <p>Citizens of the European Union, EEA countries, and the countries listed below do not require a visa to enter Italy:</p>
+
+      <ul class="tag-list">
+        <li>Albania</li>
+        <li>Costa Rica</li>
+        <li>Japan</li>
+        <li>Paraguay</li>
+        <li>Andorra</li>
+        <li>Dominica</li>
+        <li>Kosovo</li>
+        <li>Peru</li>
+        <li>Antigua &amp; Barbuda</li>
+        <li>El Salvador</li>
+        <li>Malaysia</li>
+        <li>Saint Lucia</li>
+        <li>Argentina</li>
+        <li>Georgia</li>
+        <li>Marshall Islands</li>
+        <li>Samoa</li>
+        <li>Australia</li>
+        <li>Grenada</li>
+        <li>Mauritius</li>
+        <li>San Marino</li>
+        <li>Bahamas</li>
+        <li>Guatemala</li>
+        <li>Mexico</li>
+        <li>Serbia</li>
+        <li>Barbados</li>
+        <li>Honduras</li>
+        <li>Micronesia</li>
+        <li>Seychelles</li>
+        <li>Bosnia &amp; Herz.</li>
+        <li>Hong Kong SAR</li>
+        <li>Moldova</li>
+        <li>Singapore</li>
+        <li>Brazil</li>
+        <li>Israel</li>
+        <li>Monaco</li>
+        <li>Solomon Islands</li>
+        <li>Brunei</li>
+        <li>Canada</li>
+        <li>Montenegro</li>
+        <li>South Korea</li>
+        <li>Canada</li>
+        <li>Chile</li>
+        <li>Nauru</li>
+        <li>St. Vincent</li>
+        <li>Colombia</li>
+        <li>Taiwan</li>
+        <li>New Zealand</li>
+        <li>Timor-Leste</li>
+        <li>Tonga</li>
+        <li>Tuvalu</li>
+        <li>Ukraine</li>
+        <li>United Kingdom</li>
+        <li>Trinidad &amp; Tobago</li>
+        <li>UAE</li>
+        <li>United States</li>
+        <li>Uruguay</li>
+        <li>Venezuela</li>
+      </ul>
+
+      <h4>Countries requiring a Schengen VISA:</h4>
+
+      <p>Citizens of the following countries (list not exhaustive) and many other non-Schengen nations are required to hold a valid visa prior to arrival:</p>
+
+      <ul class="tag-list">
+        <li>Algeria</li>
+        <li>China</li>
+        <li>Haiti</li>
+        <li>Pakistan</li>
+        <li>Azerbaijan</li>
+        <li>Congo</li>
+        <li>India</li>
+        <li>Philippines</li>
+        <li>Bangladesh</li>
+        <li>Cuba</li>
+        <li>Indonesia</li>
+        <li>Senegal</li>
+        <li>Bolivia</li>
+        <li>Dominican Rep.</li>
+        <li>Iran</li>
+        <li>South Africa</li>
+        <li>Cambodia</li>
+        <li>Ecuador</li>
+        <li>Iraq</li>
+        <li>Thailand</li>
+        <li>Cameroon</li>
+        <li>Egypt</li>
+        <li>Jamaica</li>
+        <li>Tunisia</li>
+        <li>Chad</li>
+        <li>Ethiopia</li>
+        <li>Jordan</li>
+        <li>Turkey</li>
+        <li>Chile</li>
+        <li>Ghana</li>
+        <li>Kenya</li>
+        <li>Russia</li>
+      </ul>
+
+      <p><strong>Special provisions for Russian citizens.</strong> As of now, Russian citizens can travel to Italy, but the regulations have become significantly stricter. They must apply for a Schengen visa valid for a single entry only, as the European Union has suspended visa facilitation agreements and no longer issues multiple-entry visas.</p>
+
+      <p><strong>AISF support.</strong> AISF will provide official invitation letters and institutional support documentation to facilitate visa applications whenever required.</p>
+    </section>
+  </article>
+</Layout>

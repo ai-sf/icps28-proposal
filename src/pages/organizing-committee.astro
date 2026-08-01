@@ -1,0 +1,291 @@
+---
+// Chapter 2 — Organizing Committee.
+// Verbatim transcription of chapters/01_oc.tex.
+import Layout from '../layouts/Layout.astro';
+import PersonCard from '../components/PersonCard.astro';
+import { chapters } from '../data/site';
+
+const ch = chapters.find((c) => c.id === 'organizing-committee')!;
+
+const lead =
+  "The Organizing Committee currently consists of 28 students from universities across Italy, bringing together diverse academic backgrounds, physics field knowledge, and regional representation. Each member has already contributed to previous AISF events, committed to other scientific engagement, or both.";
+
+const teams = [
+  {
+    title: 'Finance & Transportation',
+    text: 'Responsible for budget management, accounting, financial planning, payment processing, and ensuring full transparency throughout the organization process. This team also checks the availability and connections for transportation during the conference week.',
+  },
+  {
+    title: 'Sponsor & Partner',
+    text: 'Responsible for establishing collaborations with universities, research institutions, public authorities, and private-sector sponsors, as well as managing long-term partnerships, ensuring proper recognition of their contributions.',
+  },
+  {
+    title: 'IT',
+    text: 'Responsible for website development, registration systems, participant databases, technical infrastructure, and audiovisual support during the conference.',
+  },
+  {
+    title: 'PR & Socials',
+    text: 'Responsible for branding, social media management, participant communication before and during the event, media relations, and visual identity.',
+  },
+  {
+    title: 'Food & Accommodation',
+    text: 'Responsible for participant accommodation, catering services, dietary requirements, logistics, and participant welfare. This team is also responsible for part of the recreational activities organized during the event. This group consists mostly of students from the hosting cities to ensure quality control in the local area.',
+  },
+  {
+    title: 'Social program',
+    text: 'Responsible for cultural activities, networking events, excursions, evening programs, and the overall participant experience.',
+  },
+  {
+    title: 'Scientific program',
+    text: 'Develops the academic content, including keynote speakers, round-tables, workshops, poster sessions, scientific partnerships, and maintains the academic quality of the conference.',
+  },
+];
+
+interface Member {
+  photo: string;
+  name: string;
+  role?: string;
+  bio: string;
+}
+
+const blocks: { title: string; members: Member[] }[] = [
+  {
+    title: 'GENERAL COORDINATORS',
+    members: [
+      {
+        photo: 'federico-canterucci.png',
+        name: 'Federico Canterucci',
+        bio: 'Biomedical Physics Master’s student at UniTo and current National President of AISF, after serving as Events Coordinator. Driven by a hands-on approach to new projects, he thrives on empowering people and finding energy in music. In his free time, he explores the beauty of historical decay through Urbex across Northern Italy.',
+      },
+      {
+        photo: 'julia-favaro.png',
+        name: 'Julia Favaro',
+        bio: 'MSc student in Astroparticle Physics at the University of Pisa with a passion for multimessenger physics. She guides visitors at the Virgo gravitational wave detector and has a soft spot for science communication.  In her free time, she coordinates international student events or performs in Greek tragedies. Same skill set, isn\'t it?',
+      },
+      {
+        photo: 'debora-marrone.png',
+        name: 'Debora Marrone',
+        bio: 'Currently a Particle Physics Master’s student in Bari. Shy by default, but mention pop music or sports and there\'s no stopping her. Loves the lab (even on the days it makes her question her life choices) and yes, she\'s the girl with a colour-coded spreadsheet for everything.',
+      },
+    ],
+  },
+  {
+    title: 'AREA COORDINATORS',
+    members: [
+      {
+        photo: 'valerio-tinari.png',
+        name: 'Valerio Tinari',
+        role: 'Finance & Transportation',
+        bio: 'He’s currently having lots of fun working on the MSc thesis within the ATLAS experiment at CERN and serving as National Treasurer of AISF. If he is not in front of the PC running some background fits, either he is wandering around asking for a bigger collider or crying for Scuderia Ferrari’s misfortunes.',
+      },
+      {
+        photo: 'luca-attina.png',
+        name: 'Luca Attinà',
+        role: 'Food & Accomodation',
+        bio: 'Master\'s student in Nuclear and Subnuclear Physics at the University of Torino, currently completing a thesis in astroparticle physics. Passionate about science communication and education, he serves as Events Manager of AISF. In his free time, he enjoys collecting pop culture items, travel souvenirs and chemical elements.',
+      },
+      {
+        photo: 'claudia-franco.png',
+        name: 'Claudia Franco',
+        role: 'Scientific program',
+        bio: 'Master’s student in Theoretical Physics and Complex Systems, navigating the world through the precision of equations, the rhythm of roller skates, the beauty of literature and the freedom of jazz.',
+      },
+      {
+        photo: 'giacomo-galli.png',
+        name: 'Giacomo Galli',
+        role: 'Social program',
+        bio: 'Master\'s graduate in Particle Physics at University of Milano-Bicocca, with a thesis on hardware optimization for the CUPID Experiment. Always open to new challenges and discovering the unknown. Passionate about Japanese culture, video games, TV series, music, and indoor climbing, despite being terribly mid at the latter.',
+      },
+      {
+        photo: 'roberto-ciccarelli.png',
+        name: 'Roberto Ciccarelli',
+        role: 'IT',
+        bio: 'He\'s a PhD candidate in Mathematics at the University of Torino, specializing in computational methods for the n-body problem and canonical analysis of classical field theories. Alongside his research, he is a self-learner of Mandarin Chinese and an enthusiast of everything about technology. He has also contributed as an executive committee member for IAPS and AISF.',
+      },
+      {
+        photo: 'adele-peluso.png',
+        name: 'Adele Peluso',
+        role: 'PR & Communication',
+        bio: 'Adele Peluso is a first-year Student in the Modern and Contemporary European Philosophy Master of the University of Luxembourg and the current AISF’s Concept Manager. In absence of tasks at hand such as managing concepts or organizing transdisciplinary events, Adele loves composing and listening to music, writing, and sword-fighting.',
+      },
+      {
+        photo: 'davide-perillo.png',
+        name: 'Davide Perillo',
+        role: 'Sponsors & Partners',
+        bio: 'Master\'s student in Physics of Matter at the University of Milano UniMi. Interested in the experimental study of materials, neuromorphic devices, smart materials, edge computing, and related technologies.',
+      },
+    ],
+  },
+  {
+    title: 'AREA MEMBERS - Finance & Transportation',
+    members: [
+      {
+        photo: 'tomislav-vojvodic.png',
+        name: 'Tomislav Vojvodić',
+        bio: 'Upcoming Geophysics Master’s student at the University of Bologna. Lost in his own fantasy dream worlds, he might take about (2 ± 1) months to text you back, but when asked he will be so excited to join you for any fun adventure - from a good stout to a disco night, from a dip in the sea to a ride on a death-defying roller coaster, or a journey to the end of the world.',
+      },
+      {
+        photo: 'francesco-ottone.png',
+        name: 'Francesco Ottone',
+        bio: 'Bachelor\'s student in Physics at UniMi (University of Milano). Fascinated by astrophysics including galaxy clusters and astroparticles, he loves science communication and is ready to work absolutely anywhere with a clear view of the stars, freezing in Antarctica is definitely included.',
+      },
+    ],
+  },
+  {
+    title: 'AREA MEMBERS - Food & Accomodation',
+    members: [
+      {
+        photo: 'giorgia-cantore.png',
+        name: 'Giorgia Cantore',
+        bio: 'Master’s student in Theoretical Physics and Complex Systems at the University of Bari. Giorgia tells us that if you talk to her about the small-world model, then you are definitely wonderful people. She often says things like, "Let\'s turn this into a statistic!".',
+      },
+      {
+        photo: 'raimondo-lucariello.png',
+        name: 'Raimondo Lucariello',
+        bio: 'Currently a Master’s student in Complex Systems at the University of Bari, Secretary of AISF and former President of the AISF Bari Local Committee. Driven by curiosity and obsessed with formality, he developed a strong interest in neuroscience.',
+      },
+    ],
+  },
+  {
+    title: 'AREA MEMBERS - Scientific program',
+    members: [
+      {
+        photo: 'sara-atlante.png',
+        name: 'Sara Atlante',
+        bio: 'Bachelor’s student in Physics, currently completing her degree with a thesis within the AMBER experiment at CERN. In her free time, she is involved in a science communication group and she enjoys playing beach-volley, going for runs with her friends, and trying to convince everyone that neutrinos are the coolest particles around, despite the fact that nobody ever seems to find them when needed.',
+      },
+      {
+        photo: 'valerio-tassarotti.png',
+        name: 'Valerio Tassarotti',
+        bio: 'Master\'s student in Experimental Particle Physics at Roma Tre University, researching the double Higgs boson with the ATLAS Roma Tre Group. He was part of the volunteer team for CISF 2026. Beyond physics, his main passions are photography and astrophotography.',
+      },
+      {
+        photo: 'virginia-marchignoli.png',
+        name: 'Virginia Marchignoli',
+        bio: 'Master\'s student in Theoretical Physics at Roma Tre University. She was a part of the volunteer team for CISF 2026. When she is not busy with classes and equations, she loves escaping academic life by exploring nature and travelling.',
+      },
+    ],
+  },
+  {
+    title: 'AREA MEMBERS - Social program',
+    members: [
+      {
+        photo: 'rares-drosu.png',
+        name: 'Rares Drosu',
+        bio: 'He\'s a student in the Master\'s degree program in Nuclear and Subnuclear Physics at the University of Torino. Currently working on his master’s thesis for the ALICE experiment at the LHC. Passionate about science outreach and its communication, he\'s an active member of Torino’s local branch of AISF.',
+      },
+      {
+        photo: 'mario-lisciandrello.png',
+        name: 'Mario Lisciandrello',
+        bio: 'He is about to start a Master\'s degree in Astrophysics at the University of Palermo.  He is interested in accreting objects, but also really enjoys playing sports and cooking for his friends.',
+      },
+      {
+        photo: 'elisa-sogno.png',
+        name: 'Elisa Sogno',
+        bio: 'Currently pursuing her Master’s degree in Physics, she is specializing in environmental and atmospheric physics. Outside of her studies, she is passionate about science communication and was part of the volunteer team that helped organize PLANCKS 2023 in Milano.',
+      },
+    ],
+  },
+  {
+    title: 'AREA MEMBERS - IT',
+    members: [
+      {
+        photo: 'marta-giacomet.png',
+        name: 'Marta Giacomet',
+        bio: 'Physics Bachelor\'s student in Rome, aiming to specialize in High-Performance Computing (HPC) applied to stellar and galactic evolution. Deeply committed to the physics community, she is an active member of the AISF and served on the Organizing Committee for the 10th edition of the CISF. In her free time, she enjoys travelling, listening to music, and watching movies or TV series.',
+      },
+      {
+        photo: 'dario-zarcone.png',
+        name: 'Dario Zarcone',
+        bio: 'PhD candidate in Physics of Complex Systems at the University of Palermo, applying data-driven methods to the study of crime and history. Currently serving as IT Manager for AISF. Outside of physics and coding, when he is not wrestling with servers and datasets, he cultivates new hobbies under the watchful eye of his cat Goro.',
+      },
+    ],
+  },
+  {
+    title: 'AREA MEMBERS - PR & Communication',
+    members: [
+      {
+        photo: 'alice-dautilio.png',
+        name: 'Alice D’Autilio',
+        bio: 'MSc student in Physics of Matter, with a passion for spending far too many hours in the lab. Side-quest of graphic and visual designer for public events, scientific projects, and small companies. SMM for AISF Pisa and LoT25 until 2025. She could randomly disappear for 3 days due to a last-minute flight.',
+      },
+      {
+        photo: 'claudio-scarasciullo.png',
+        name: 'Claudio Scarasciullo',
+        bio: 'Master’s student in Theoretical Physics at University of Bari and wannabe science communicator. Romantic at heart and a big liar, he’ll tell you many stories whether they’re real or a dream, who can say which are which?',
+      },
+      {
+        photo: 'mattia-magaletti.png',
+        name: 'Mattia Magaletti',
+        bio: 'Bachelor’s student in Physics at the University of Bari. Occasionally sketches some clumsy doodles for the local AISF committee. Loves good indie music, alternative comics, offbeat board games, and all kinds of B-movies. A little unusual, maybe even weird, but hey, you work with what you’ve got.',
+      },
+    ],
+  },
+  {
+    title: 'AREA MEMBERS - Sponsors & Partners',
+    members: [
+      {
+        photo: 'lorenzo-sabadini.png',
+        name: 'Lorenzo Sabadini',
+        bio: 'He is nearing the end of his Bachelor\'s degree and is looking forward to starting his Master\'s. He likes lab work, but would prefer it on boats, in Antarctica, or in Australia. In short, if you know someone who’s looking for a physicist to “sacrifice” in some random place, he’s your guy.',
+      },
+      {
+        photo: 'alessandro-lupi.png',
+        name: 'Alessandro Lupi',
+        bio: 'Bachelor\'s student in Physics at UniMi (University of Milano). He\'s into theoretical physics (in particular quantum physics and fundamental interaction), growing plants and theatre.',
+      },
+      {
+        photo: 'maria-rosaria-sivo.png',
+        name: 'Maria Rosaria Sivo',
+        bio: 'Bachelor’s student in Physics at the University of Bologna, driven by a deep passion for Astrophysics and Particle Physics. Enthusiastic about TV series, musicals, and animation, she loves exploring new cultures and languages through travel. Her dream is to carve her place in the scientific world and share its beauty with others.',
+      },
+    ],
+  },
+];
+---
+
+<Layout
+  title={ch.title}
+  description="The ICPS 2028 Organizing Committee — 28 students from universities across Italy, structured into seven teams."
+  chapter={ch.id}
+>
+  <header class="chapter-head">
+    <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
+    <h1>{ch.title}</h1>
+    <p class="chapter-head__lead">{lead}</p>
+    <p class="chapter-head__lead">The committee is structured into seven teams:</p>
+  </header>
+
+  <article class="prose">
+    {teams.map((t) => (
+      <section>
+        <h4>{t.title}</h4>
+        <p>{t.text}</p>
+      </section>
+    ))}
+
+    <p>
+      The committee already includes 28 motivated volunteers, but it is expected to grow with a big
+      contribution of new volunteers before and during the event.
+    </p>
+
+    <p>
+      Please note that every team has separate tasks for organizational and practical purposes, but
+      they continuously dialogue with each other, exchanging ideas and information, and making common
+      decisions towards the same general aim: organizing an ICPS as complete and pleasant as possible,
+      making it unforgettable.
+    </p>
+
+    <section>
+      <h2>Organizational structure</h2>
+      {blocks.map((b) => (
+        <div class="team-block">
+          <h4 class="team-block__title">{b.title}</h4>
+          {b.members.map((m) => (
+            <PersonCard photo={m.photo} name={m.name} role={m.role} bio={m.bio} />
+          ))}
+        </div>
+      ))}
+    </section>
+  </article>
+</Layout>

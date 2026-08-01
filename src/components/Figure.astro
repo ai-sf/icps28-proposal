@@ -1,0 +1,48 @@
+---
+// Figure — image with optional caption; supports two-column (image+text) insets
+// as used throughout the proposal.
+import { asset } from '../utils';
+
+interface Props {
+  src: string; // path relative to /assets/ (no leading slash)
+  alt: string;
+  caption?: string;
+  /** layout: "full" | "inset" (image + text side by side) */
+  layout?: 'full' | 'inset';
+  /** For inset: whether the image comes first (default true) */
+  imageFirst?: boolean;
+  wide?: boolean;
+}
+
+const { src, alt, caption, layout = 'full', imageFirst = true, wide = false } = Astro.props;
+---
+
+{
+  layout === 'inset' ? (
+    <figure class={['inset', wide ? 'wide' : ''].filter(Boolean).join(' ')}>
+      {imageFirst ? (
+        <>
+          <img src={asset(src)} alt={alt} loading="lazy" />
+          <div>
+            <slot />
+            {caption && <figcaption>{caption}</figcaption>}
+          </div>
+        </>
+      ) : (
+        <>
+          <div>
+            <slot />
+            {caption && <figcaption>{caption}</figcaption>}
+          </div>
+          <img src={asset(src)} alt={alt} loading="lazy" />
+        </>
+      )}
+    </figure>
+  ) : (
+    <figure class={wide ? 'wide' : ''}>
+      <img src={asset(src)} alt={alt} loading="lazy" />
+      {caption && <figcaption>{caption}</figcaption>}
+      <slot />
+    </figure>
+  )
+}

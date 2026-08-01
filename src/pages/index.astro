@@ -1,0 +1,48 @@
+---
+// Cover page — mirrors the LaTeX frontespizio (firstPage.tex):
+// AISF logo + association name, "Project Proposal to host", ICPS 2028,
+// motto, ICPS28 logo, presentation info — followed by the table of contents.
+import Layout from '../layouts/Layout.astro';
+import { chapters } from '../data/site';
+import { asset } from '../utils';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="ICPS 2028 · Italy — Project Proposal" description="Project Proposal to host ICPS 2028 in Torino and Milano — presented at the IAPS Annual General Meeting 2026." bare>
+  <section class="cover" aria-label="Cover" data-od-id="cover">
+    <div class="cover__band" aria-hidden="true"></div>
+    <div class="cover__inner">
+      <p class="cover__aisf">
+        <img src={asset('brand/aisf-logo-bg.png')} alt="AISF — Associazione Italiana Studenti di Fisica" />
+      </p>
+      <p class="cover__aisf-name">Associazione Italiana Studenti di Fisica</p>
+
+      <p class="cover__pre">Project Proposal to host</p>
+      <h1 class="cover__title">ICPS 2028</h1>
+      <div class="cover__rule" aria-hidden="true"></div>
+      <p class="cover__motto">“Curiosity takes flight”</p>
+
+      <p class="cover__logo">
+        <img src={asset('brand/logo-icps28.jpg')} alt="ICPS 2028 — Italy logo" />
+      </p>
+
+      <p class="cover__meta">
+        <span>To be presented at the IAPS Annual General Meeting 2026</span>
+        <span>August 2026 · Rabat, Morocco</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="toc" data-od-id="table-of-contents">
+    <p class="toc__label">Table of contents</p>
+    <div class="toc__grid">
+      {chapters.map((c) => (
+        <a class="toc__item" href={`${base}${c.id}/`}>
+          <span class="toc__num">{String(c.num).padStart(2, '0')}</span>
+          <span class="toc__title">{c.title}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>

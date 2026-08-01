@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { chapters } from '../data/site';
+
+const ch = chapters.find((c) => c.id === 'internal-communication')!;
+---
+<Layout title={ch.title} description="How ICPS 2028 will keep participants informed and connected: newsletters, the conference handbook and digital platform, internet access, phone connections, accessibility and inclusion measures, and medical emergencies." chapter={ch.id}>
+  <header class="chapter-head">
+    <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
+    <h1>{ch.title}</h1>
+  </header>
+
+  <article class="prose">
+    <section>
+      <h2>Newsletters and pre-conference communication</h2>
+      <p>To ensure that participants can effectively plan their conference experience, the Organizing Committee will distribute a series of dedicated newsletters in the months preceding the event.</p>
+      <p>These newsletters will provide practical information regarding:</p>
+      <ul>
+        <li>general information and participation fee,</li>
+        <li>accommodation and transportation,</li>
+        <li>educational visits and excursions,</li>
+        <li>workshop and scientific program updates,</li>
+        <li>social events and cultural activities,</li>
+        <li>visa support and travel recommendations.</li>
+      </ul>
+      <p>Dedicated forms will be sent before the conference to collect participants' preferences regarding excursions, educational visits, parallel sessions, and workshops through online forms. This process will allow the Organizing Committee to optimize group allocation and ensure the best possible experience for all attendees.</p>
+      <p>Additional communications may introduce the conference sponsors, partner institutions, research centres, and companies participating in the event, enabling participants to familiarize themselves with the partners they may encounter throughout the conference.</p>
+    </section>
+
+    <section>
+      <h2>Communication during the conference</h2>
+      <p>At the beginning of the conference, every participant will receive a comprehensive conference handbook.</p>
+      <p>The <strong>handbook</strong> (either digital or printed) will include all essential information required to fully enjoy the event, including:</p>
+      <ul>
+        <li>conference schedule,</li>
+        <li>maps of venues and accommodation facilities,</li>
+        <li>transportation information,</li>
+        <li>educational visits and excursion details,</li>
+        <li>scientific program overview,</li>
+        <li>information about sponsors, partners, and exhibitors,</li>
+        <li>local recommendations for Torino and Milano,</li>
+        <li>emergency contacts.</li>
+      </ul>
+      <p>In parallel, a dedicated <strong>digital platform</strong> will be maintained throughout the conference to disseminate urgent notices, schedule changes, transportation updates, and other important communications from the Organizing Committee.</p>
+      <p>Following the event, participants will receive access to a shared repository containing lecture slides, workshop materials, and other educational resources whenever permitted by the respective speakers.</p>
+    </section>
+
+    <section>
+      <h2>Internet access</h2>
+      <p>Conference participants will have access to free Wi-Fi throughout the event venues, accommodation facilities, and common areas. Both hosting universities - the University of Torino and the University of Milano-Bicocca - provide extensive wireless coverage and access to the international <strong>eduroam</strong> network, allowing students and researchers from participating institutions worldwide to connect seamlessly using their home university credentials.</p>
+      <p>The Organizing Committee will ensure that all accommodation facilities provide complimentary internet access for participants.</p>
+    </section>
+
+    <section>
+      <h2>Phone connection and SIM cards</h2>
+      <p>Citizens of European Union and European Economic Area countries can generally use their existing mobile phone plans in Italy under the European <strong>“Roam Like at Home”</strong> regulation, without incurring additional roaming charges.</p>
+      <p>Participants travelling from outside the EU may choose to purchase a prepaid Italian SIM card upon arrival. SIM cards are widely available at airports, railway stations, shopping centres, and authorised retailers throughout the country. According to Italian regulations, the purchase of a SIM card requires a valid passport or identity document for registration.</p>
+      <p>In addition, <strong>eSIM</strong> solutions can be purchased both online before departure and directly in Italy through several providers. Tourist packages with generous data allowances are commonly available during the summer period at affordable prices.</p>
+      <p>Italy benefits from extensive 4G coverage and rapidly expanding 5G networks in all major urban areas, including Torino and Milano.</p>
+    </section>
+
+    <section>
+      <h2>Accessibility and inclusion measures</h2>
+      <p>Accessibility and inclusion will therefore be considered from the earliest stages of the conference planning and integrated directly into the <strong>registration process</strong>, allowing participants to communicate any specific requirements well in advance.</p>
+      <p>The Organizing Committee is committed to supporting participants with reduced mobility to the best of its abilities, working closely with venues and local partners to identify practical solutions and provide individual assistance whenever needed. Printed and digital maps will clearly indicate accessible entrances, facilities, and recommended routes between conference locations.</p>
+      <p>All EU members also have access to the National Health Service. All participants have the right to access healthcare services by paying the full rates established by the Region of Piemonte (for Torino) and Lombardia (for Milano). If applicable and possible, we also advise having private insurance if a medical issue becomes more complicated before the departure for ICPS28.</p>
+      <p>The conference website and all <strong>digital communication</strong> materials will be designed following modern accessibility guidelines. High-contrast graphics, light and dark mode, descriptive alternative text for images, and visual layouts that will help ensure that information is relatively easily available to all participants. Recorded lectures and selected conference media and IG reels will also be made available with captions and transcripts whenever feasible.</p>
+      <p>During registration, participants will be able to indicate dietary requirements, which will be accommodated throughout the conference by providing clearly labelled vegetarian, vegan, halal, kosher, gluten-free, lactose-free, and allergy-safe meal options. Conference merchandise, including the official <strong>ICPS T-shirt</strong>, will also be available in a broad range of unisex sizes.</p>
+      <p>The Organizing Committee is also committed to fostering an environment that respects the <strong>gender identity</strong> of every participant. Unless legal requirements related to accommodation, transportation, or security make it necessary to use official identification paper and legal names, participants will be free to choose the name displayed on their conference badge and other non-administrative materials.</p>
+      <p>As noted in the SOCIAL PROGRAM section (Sec. 7), we propose a variety of excursions and cultural events to fulfill the possible needs and interests of participants of different religious and cultural backgrounds.</p>
+    </section>
+
+    <section>
+      <h2>Medical emergencies</h2>
+      <p>A group of volunteers will closely supervise the entire Conference and be ready for action at all times in case of medical emergencies.</p>
+      <p>Due to Italy’s high temperatures in August, we will ensure that every venue of the Conference offers <strong>air conditioning</strong>. Luckily, public transportation in Italy always features it.</p>
+      <p>We will also seek to collaborate with the <strong>Italian Red Cross</strong>, the public service for medical emergencies, to provide all attendees with first-aid kits and to receive supervision from professionally trained volunteers.</p>
+    </section>
+  </article>
+</Layout>

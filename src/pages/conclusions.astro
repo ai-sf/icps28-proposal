@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Figure from '../components/Figure.astro';
+import { chapters } from '../data/site';
+
+const ch = chapters.find((c) => c.id === 'conclusions')!;
+const lead =
+  'Throughout this proposal, we have presented a conference designed around complementary scientific themes, enriched by interactive formats and a social program celebrating the cultural heritage of the two cities it would be hosted by. Every aspect of the conference has been conceived to encourage interaction and strengthen the international network that makes IAPS such a unique organization.';
+---
+
+<Layout title={ch.title} description="ICPS 2028 project proposal — Conclusions chapter." chapter={ch.id}>
+  <header class="chapter-head">
+    <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
+    <h1>{ch.title}</h1>
+    <p class="chapter-head__lead">{lead}</p>
+  </header>
+
+  <article class="prose">
+    <p>
+      We want every participant to feel that they are not simply attending a conference, but
+      becoming an active part of something much larger than themselves. We hope ICPS 2028 will
+      inspire and encourage imagination. We want every participant to feel empowered and hopeful, a
+      real protagonist in the future of science.
+    </p>
+    <p>
+      Beyond the conference itself, we hope ICPS 2028 will leave a lasting legacy. We aim to
+      strengthen collaborations between Italian universities, research centres, and IAPS members and
+      motivate a new generation of students to take an active role within both AISF and IAPS.
+    </p>
+    <p>
+      The organizational experience acquired by more than twenty student volunteers from across
+      Italy will be put to use for this occasion. The new skills and connections acquired through
+      the preparation of ICPS28 will also contribute to the long-term growth of our association,
+      providing best practices documents that will benefit future generations of organizers.
+    </p>
+    <p>
+      Above all, we hope that every participant will return home carrying much more than lecture
+      notes or conference souvenirs. We hope they will leave Italy with new perspectives on our
+      country, renewed scientific curiosity, and the feeling of having been part of an extensive
+      community united by a common passion for physics.
+    </p>
+    <p>
+      Hosting ICPS 2028 would be both a privilege and a responsibility. It would be the culmination
+      of years of commitment by hundreds of volunteers who have worked to build a vibrant community
+      of physics students across Italy. AISF is ready to embrace this challenge with dedication and
+      genuine enthusiasm for an ICPS worth remembering.
+    </p>
+    <p>We look forward to welcoming the world in the summer of 2028.</p>
+    <p>
+      <strong><em>We hope to see you in Torino and Milano.</em></strong>
+    </p>
+
+    <Figure src="brand/firme.png" alt="Signatures" caption="Signatures" />
+  </article>
+</Layout>

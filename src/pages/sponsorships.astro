@@ -1,0 +1,383 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { chapters } from '../data/site';
+import { asset } from '../utils';
+
+const ch = chapters.find((c) => c.id === 'sponsorships')!;
+const lead = 'Sponsorship activity will be governed by three core principles:';
+---
+
+<Layout title={ch.title} description="ICPS 2028 project proposal — Sponsorship strategy chapter." chapter={ch.id}>
+  <header class="chapter-head">
+    <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
+    <h1>{ch.title}</h1>
+    <p class="chapter-head__lead">{lead}</p>
+  </header>
+
+  <article class="prose">
+    <ul>
+      <li>
+        <strong>Strategic balance</strong>: the sponsorship portfolio we present here is diversified
+        across academic, institutional, corporate, cultural and service partners to address the
+        logistics and resources needed for the quality of the event’s realization while relying on
+        financial stability. This balanced approach reduces dependency on any single funding source
+        and aligns partner contributions with the event’s academic and social program.
+      </li>
+      <li>
+        <strong>Ethical integrity</strong>: the Organizing Committee will exclude organizations
+        whose primary activities are the production of weapons, active war profiteering, or
+        demonstrably environmentally harmful operations. Ethical screening will be applied at the
+        earliest stage of contact and embedded in sponsor agreements to protect the event’s values
+        and reputation.
+      </li>
+      <li>
+        <strong>Operational transparency</strong>: all sponsor offers, in‑kind valuations and
+        contractual commitments will be recorded in a centralised pipeline. Sponsor benefits will be
+        clearly described in written agreements and communicated to internal stakeholders. The
+        pipeline will document contact history, proposed packages, screening outcomes and signed
+        commitments to ensure accountability and auditability.
+      </li>
+    </ul>
+
+    <p>
+      The Organizing Committee will pursue a mixed approach that combines institutional patronage,
+      corporate sponsorship, public funding and targeted in‑kind partnerships.
+    </p>
+    <p>
+      <strong>Institutional engagement</strong> will focus on universities and research centres in
+      Milano and Torino, which will be invited to contribute venue support, endorsement letters,
+      invited speakers and access to laboratory visits; national scientific societies and learned
+      institutions will be approached for patronage and program collaboration.
+    </p>
+    <p>
+      Scientific patronage will be sought from the international bodies that anchor ICPS within the
+      global physics community. The <strong>International Association of Physics Students (IAPS)</strong>, the
+      umbrella organization under which ICPS is held each year, will lend its institutional
+      endorsement and its network of national physics student societies. The{' '}
+      <strong>International Union of Pure and Applied Physics (IUPAP)</strong>, the global body
+      coordinating physics research and education across countries, will be approached for formal
+      patronage, as is customary for major international physics gatherings. The{' '}
+      <strong>European Physical Society (EPS)</strong>, representing the physics community across
+      the continent, will likewise be invited to support the Conference's scientific and educational
+      mission.
+    </p>
+
+    <div class="logo-row">
+      <span class="logo-row__label">Scientific patronage</span>
+      <img src={asset('sponsors/iaps.jpg')} alt="IAPS logo" />
+      <img src={asset('sponsors/iupap.png')} alt="IUPAP logo" />
+      <img src={asset('sponsors/eps.png')} alt="EPS logo" />
+    </div>
+
+    <p>
+      The Committee's core institutional partners are the Departments of Physics at the{' '}
+      <strong>University of Torino (UniTO)</strong> and at the <strong>University of Milano</strong> and{' '}
+      <strong>Milano-Bicocca (UniMI/UniMIB)</strong>. They will be the academic anchors of the
+      conference, contributing in venue support, faculty involvement, all while providing direct
+      access to their research groups. The <strong>Politecnico di Torino</strong> and the{' '}
+      <strong>Politecnico di Milano</strong> will be engaged as technical partners, offering
+      laboratory access and excellent engineering expertise, tangibly experienced by participants in
+      hands-on sessions. <strong>INRIM</strong>, Italy's national metrology institute in Torino,
+      will host visits centred on its work with atomic clocks and quantum technologies used to
+      define physical units of measurement. Finally, <strong>INFN</strong>'s sections in Torino and
+      Milano will give participants direct access to the technologies underpinning CERN-scale
+      experiments.
+    </p>
+
+    <div class="logo-row">
+      <span class="logo-row__label">Core institutional partners</span>
+      <img src={asset('sponsors/unito.png')} alt="University of Torino logo" />
+      <img src={asset('sponsors/unimi.png')} alt="University of Milano logo" />
+      <img src={asset('sponsors/unimib.png')} alt="University of Milano-Bicocca logo" />
+      <img src={asset('sponsors/infn.jpg')} alt="INFN logo" />
+      <img src={asset('sponsors/inrim.jpg')} alt="INRiM logo" />
+      <img src={asset('sponsors/polimi.png')} alt="Politecnico di Milano logo" />
+      <img src={asset('sponsors/polito.png')} alt="Politecnico di Torino logo" />
+    </div>
+
+    <p>
+      Beyond these fundamental partners, the Committee will also seek engagement from other
+      respected institutions in the landscape of Italian science, including the Italian Space Agency
+      (ASI), the Brera Astronomical Observatory, the Scuola Normale Superiore (SNS) and ENEA, the
+      National Agency for New Technologies, Energy and Sustainable Economic Development, each of
+      which could contribute an invited talk, a guided visit or a thematic session. Further
+      laboratory and observatory visits, such as to the Conservation and Restoration Centre of
+      Venaria Reale or the INAF Astrophysical Observatory in Pino Torinese, will also be explored on
+      the same basis.
+    </p>
+    <p>
+      <strong>Industry engagement</strong> will foreground partnerships with the metropolitan
+      industry and technology clusters of northern Italy (including technology firms, advanced
+      manufacTorinog, automotive and aerospace companies, finance and life-sciences firms, and
+      deep-tech startups), offering bespoke packages that combine branding, recruitment
+      opportunities, sponsored workshops and direct access to early-career talent.{' '}
+      <strong>Intesa Sanpaolo</strong>, one of Italy's leading banking groups, will be one of our
+      main financial partners, thus supporting the conference's economic sustainability. The
+      Committee will also pursue engagement with global technology players such as ABB, the
+      electrification and automation leader, and Wolfram Research, the computational software
+      pioneer behind Mathematica. Both are excellent partners for the organization of technical
+      workshops, equipment demonstrations and hands-on computational sessions.
+    </p>
+
+    <div class="logo-row">
+      <span class="logo-row__label">Intesa Sanpaolo</span>
+      <img src={asset('sponsors/intesa-sanpaolo.png')} alt="Intesa Sanpaolo logo" />
+    </div>
+
+    <p>
+      <strong>Public and cultural engagement</strong> will rely on close cooperation with regional
+      authorities. Municipal cultural institutions, such as the cities’ major museums, will help in
+      shaping a program designed to showcase the cultural heritage of Milano and Torino. Support for
+      outreach activities will be sought from public funding schemes and private foundations
+      whenever appropriate.
+    </p>
+    <p>
+      Service providers will be encouraged to supply in‑kind discounts for audiovisual production,
+      catering, accommodation, transport and printing; such in‑kind contributions will be credited
+      as sponsorship value and integrated into partner packages.
+    </p>
+    <p>
+      All approaches will emphasise the <em>educational impact of ICPS</em> and the{' '}
+      <em>opportunity to support the professional development of physics students</em>. Scientific
+      partners will be explicitly invited to host stands and booths, propose invited talks and
+      organize guided visits to laboratories and research centres, while corporate partners will
+      receive measurable engagement metrics and post‑event reporting on visibility and recruitment
+      outcomes.
+    </p>
+
+    <section>
+      <h2>Potential sponsors</h2>
+
+      <h3>Institutes</h3>
+      <ul>
+        <li>
+          <strong>National Institute for Nuclear Physics (INFN)</strong>: INFN anchors the
+          scientific side of the conference as one of Italy's foremost authorities on experimental
+          physics. It lends real academic weight to the event and can open its laboratories to
+          participants while contributing keynote speakers.
+        </li>
+        <li>
+          <strong>National Institute for Astrophysics (INAF)</strong>: The natural point of contact
+          for anything astronomy-related, from public outreach to full observatory visits.
+        </li>
+        <li>
+          <strong>National Research Council (CNR)</strong>: A multidisciplinary research body whose
+          reach spans nearly every scientific field, making it a fitting patron for the event and a
+          potential collaborator on workshops that cross disciplinary boundaries.
+        </li>
+        <li>
+          <strong>National Institute of Metrological Research (INRiM)</strong>: Italy's technical
+          authority on measurement science. A partnership translates naturally into specialist
+          workshops and hands-on demonstrations in metrology and instrumentation.
+        </li>
+        <li>
+          <strong>Ministry of University and Research (MUR)</strong>: The primary national point of
+          contact for the university and research sector, and therefore essential for securing
+          institutional patronage, formal recognition, and access to funding programs or mobility
+          grants tied to scientific activities.
+        </li>
+        <li>
+          <strong>Ministry of Culture (MiC)</strong>: A key partner for the event's public-facing
+          side, opening doors to museums and cultural venues while offering formal patronage that
+          lends institutional weight to evening public programming.
+        </li>
+        <li>
+          <strong>Italian Space Agency (ASI)</strong>: As Italy's reference point for all things
+          space, ASI carries high institutional visibility and could contribute both speakers and
+          technical content to space-themed sessions.
+        </li>
+        <li>
+          <strong>HPC Centre / ICSC</strong>: Supplies the computational muscle behind any HPC or
+          data-science workshop, offering resources and hands-on expertise to participants.
+        </li>
+        <li>
+          <strong>Region of Lombardy</strong>: The key regional authority in the Milano area,
+          positioned to offer patronage, regional funding, and logistical backing on the ground. Its
+          Office for Research and Innovation is a further point of contact for co-funding and
+          university-industry initiatives at the regional level.
+        </li>
+        <li>
+          <strong>Region of Piedmont</strong>: A regional authority whose patronage, local
+          contributions, and support for internationalisation could meaningfully strengthen the
+          Torino leg of the program. Its Office for Research and Universities focuses specifically
+          on university internationalisation.
+        </li>
+        <li>
+          <strong>Municipality of Milano (Assessorate for Culture / University)</strong>: A
+          municipal partner able to grant formal patronage, open access to city venues, and help
+          promote the event across Milano's urban fabric.
+        </li>
+        <li>
+          <strong>Municipality of Torino (Assessorate for Culture / Tourism)</strong>: Torino's
+          local interlocutor for patronage and event logistics, particularly well positioned to help
+          integrate evening events into the city's broader cultural offer.
+        </li>
+        <li>
+          <strong>Metropolitan City of Milano</strong>: Coordinates transport and services at the
+          metropolitan scale; useful for promotion efforts that need to reach beyond the city
+          centre.
+        </li>
+        <li>
+          <strong>Metropolitan City of Torino</strong>: The Torino equivalent, handling local
+          coordination, logistics, and territorial promotion across the wider metropolitan area.
+        </li>
+        <li>
+          <strong>University of Milano</strong>: A major public university with strong physics and
+          interdisciplinary departments, well suited to serve as a host partner. Beyond venues, it
+          could supply faculty speakers, laboratory visits, and a pool of student volunteers, all
+          while lending institutional credibility to the event.
+        </li>
+        <li>
+          <strong>Politecnico di Milano</strong>: A leading technical university whose strength lies
+          in applied physics, engineering, and industry relations: a strategic partner for
+          technology-focused workshops, laboratory demonstrations, and any activity that calls for
+          corporate liaison.
+        </li>
+        <li>
+          <strong>University of Torino</strong>: The principal academic partner in Torino, offering
+          local venues and departmental expertise.
+        </li>
+        <li>
+          <strong>Politecnico di Torino</strong>: Closely tied to the automotive, aerospace, and
+          advanced manufacturing clusters of the region, making it a natural fit for career events,
+          industry engagement, and applied-technology sessions with a hands-on component.
+        </li>
+        <li>
+          <strong>Pino Torinese Observatory and Planetarium</strong>: A regional observatory and
+          planetarium built for high-impact public outreach.
+        </li>
+        <li>
+          <strong>Brera Astronomical Observatory</strong>: A historic research observatory with deep
+          outreach experience, ideal for guided visits, public lectures, and specialist talks tied
+          to the astronomy strand of the program.
+        </li>
+        <li>
+          <strong>National Centre for Oncological Hadrontherapy (CNAO)</strong>: A clinical and
+          research centre specialising in hadron therapy, and a natural fit for medical-physics
+          sessions.
+        </li>
+        <li>
+          <strong>FIRC Institute of Molecular Oncology (IFOM)</strong>: A biomedical research
+          institute with strong translational and molecular expertise, ideal for interdisciplinary
+          sessions that link physics with biology and medicine through imaging and instrumentation.
+        </li>
+        <li>
+          <strong>International School for Advanced Studies (SISSA)</strong>: An internationally
+          recognised graduate school with particular strength in theoretical and computational
+          physics, neuroscience, and applied mathematics.
+        </li>
+        <li>
+          <strong>Scuola Normale Superiore (SNS)</strong>: One of Italy's most selective research
+          and teaching institutions, distinguished in fundamental physics and mathematics. A
+          strategic partner for attracting distinguished speakers and engaging top-level graduate
+          students in advanced topical sessions.
+        </li>
+        <li>
+          <strong>Merate Observatory</strong>: A regional INAF observatory that offers an appealing
+          alternative excursion site, well suited to astronomy outreach and technical demonstrations.
+        </li>
+        <li>
+          <strong>Academy of Sciences of Torino (AST)</strong>: A historic scientific academy that
+          lends institutional endorsement and authoritative visibility to scientific programming,
+          with expert speakers and archival venues of its own to offer.
+        </li>
+        <li>
+          <strong>Torino Astronomical Observatory (OATo)</strong>: A regional astronomical
+          observatory offering guided visits and planetarium sessions, backed by outreach staff
+          experienced in high-impact public evenings.
+        </li>
+        <li>
+          <strong
+            >National Agency for New Technologies, Energy and Sustainable Economic Development
+            (ENEA)</strong
+          >: A national research agency positioned to contribute expert speakers on energy and
+          sustainability, alongside institutional support for the applied-science tracks of the
+          program.
+        </li>
+        <li>
+          <strong>Conservation and Restoration Centre of Venaria Reale</strong>: One of Europe's
+          foremost centres for the conservation of cultural heritage, where physics, chemistry,
+          materials science, and advanced imaging converge in the preservation of artworks,
+          archaeological artefacts, and historical monuments.
+        </li>
+      </ul>
+
+      <h3>Companies &amp; industries</h3>
+      <ul>
+        <li>
+          <strong>CESI</strong>: A research and testing centre in electrical engineering, able to
+          bring technical workshops and real industry case studies on energy systems into the
+          applied-physics tracks.
+        </li>
+        <li>
+          <strong>ABB</strong>: A global leader in electrification and automation, positioned to
+          sponsor technical sessions and equipment demonstrations while offering strong corporate
+          branding and recruitment engagement across the conference.
+        </li>
+        <li>
+          <strong>SAES Getters</strong>: An advanced materials company whose sponsorship could
+          support materials-science sessions and equipment demonstrations, alongside broader
+          industry-academic collaboration.
+        </li>
+        <li>
+          <strong>Huawei</strong>: A technology partner bringing ICT expertise and demonstration
+          equipment to technical sessions on 5G and advanced communications.
+        </li>
+        <li>
+          <strong>Fondazione Bracco</strong>: A philanthropic foundation supporting science and
+          education, with the capacity to fund outreach strands, travel scholarships, and
+          high-visibility cultural programming.
+        </li>
+        <li>
+          <strong>Fondazione Cariplo</strong>: A leading philanthropic foundation with a strong
+          track record in underwriting outreach and travel scholarships, well-positioned to support
+          the event's legacy and long-term impact.
+        </li>
+        <li>
+          <strong>Zanichelli</strong>: A leading Italian academic publisher offering a natural
+          publishing partnership, from conference proceedings to promotional reach into academic
+          audiences and support for student-facing educational resources.
+        </li>
+        <li>
+          <strong>Wolfram Research</strong>: A global leader in computational software and knowledge
+          engines, able to provide software licences and workshop content while giving students
+          hands-on access to Wolfram technologies for data-driven sessions.
+        </li>
+      </ul>
+
+      <h3>Collaborations</h3>
+      <ul>
+        <li>
+          <strong>Confindustria</strong>: The national employers' federation, offering high-level
+          institutional endorsement and a direct line into industry networks and corporate delegates
+          for panels, round-tables, and recruitment outreach.
+        </li>
+        <li>
+          <strong>Manifestazioni UniMI</strong>: A campus events partner able to supply prime
+          lecture halls and logistical coordination, backed by on-site staff and university-wide
+          promotion to maximise student turnout.
+        </li>
+        <li>
+          <strong>CNA</strong>: A national SME confederation with strong local networks, useful for
+          mobilising regional small-business partners and sourcing vetted technical suppliers, as
+          well as facilitating in-kind services from local enterprises.
+        </li>
+        <li>
+          <strong>Centro Scienza</strong>: An interactive science centre bringing hands-on exhibits
+          and outreach workshops, with experience running school engagement and family-oriented
+          public events that could integrate directly into the conference schedule.
+        </li>
+        <li>
+          <strong>INFINITO Science Centre</strong>: An immersive science museum and outreach hub,
+          offering exhibition space and interactive demonstrations that could broaden the event's
+          public reach.
+        </li>
+        <li>
+          <strong>CICAP</strong>: A science-communication organization skilled in critical-thinking
+          outreach, well suited to public debates and media-facing events that strengthen the
+          scientific-literacy strand of the program.
+        </li>
+      </ul>
+    </section>
+  </article>
+</Layout>

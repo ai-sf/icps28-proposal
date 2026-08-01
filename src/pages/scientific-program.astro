@@ -1,0 +1,366 @@
+---
+// Chapter 06 — Scientific program.
+// Verbatim transcription of chapters/05_scientific.tex.
+import Layout from '../layouts/Layout.astro';
+import { chapters } from '../data/site';
+import SpeakerCard from '../components/SpeakerCard.astro';
+import Figure from '../components/Figure.astro';
+
+const ch = chapters.find((c) => c.id === 'scientific-program')!;
+---
+
+<Layout
+  title={ch.title}
+  description="The scientific program of ICPS 2028 — thematic tracks and keynote speakers, roundtable discussions, workshops, scientific lab visits and student contributions across Torino and Milano."
+  chapter={ch.id}
+>
+  <header class="chapter-head">
+    <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
+    <h1>{ch.title}</h1>
+    <p class="chapter-head__lead">The scientific program of the conference is designed as a journey through the core questions of modern physics. Moving beyond the boundaries of isolated subfields, the program encourages an intellectual journey where the laws of the subatomic world, the patterns of complexity, and the architecture of the cosmos continuously echo and challenge one another.</p>
+    <p class="chapter-head__lead">The conference is structured across <strong>two parallel historical and academic hubs</strong>, each embodying a distinct approach to the physical reality: Torino and Milano.</p>
+    <p class="chapter-head__lead">Torino will serve as the core venue for Nuclear, Complex System Physics, and Advanced Technological Physics, whereas Milano will concentrate on the frontiers of Particle, Astrophysics, and Biomedical Physics.</p>
+    <p class="chapter-head__lead">By design, this dual-hub structure mirrors the very nature of scientific progress: a constant dialogue between the abstract and the concrete. While the mind conceives universes in the silence of theoretical calculation, the hand builds the tools to observe them with artisanal alacrity. The program will showcase scientific excellence across theoretical, experimental, computational, and applied physics.</p>
+    <p class="chapter-head__lead">A defining feature of the scientific program will be <strong>the synergy between renowned Italian keynote speakers and distinguished international experts</strong>. Some of Italy's most influential physicists, alongside leading global scientists, currently head major international collaborations around the world. Their diverse participation will provide attendees with a unique perspective on the global scientific landscape, making the conference <strong>a crossroads of ideas and perspectives</strong>.</p>
+    <p class="chapter-head__lead">Through this choice, we aim to inspire participants by presenting outstanding examples of scientific achievement both locally and globally, showcasing our academic foundations while building international bridges and connecting students.</p>
+  </header>
+
+  <article class="prose">
+    <section>
+      <h2>Thematic tracks and keynote speakers in plenary session</h2>
+
+      <h3>Torino Hub</h3>
+
+      <h4>Nuclear and particle physics: the architecture of fundamental</h4>
+
+      <SpeakerCard
+        photo="fabiola-gianotti.png"
+        name="Fabiola Gianotti"
+        affiliation="(CERN)"
+        detail="General Director of CERN (January 2016-January 2026): leading role in the ATLAS experiment and the discovery of the Higgs boson."
+        connection={{ label: '101° Italian Physics Society Congress', href: 'https://www.infn.it/a-roma-il-101-congresso-della-sif/' }}
+      />
+
+      <SpeakerCard
+        photo="guido-tonelli.png"
+        name="Guido Tonelli"
+        affiliation="(University of Pisa / INFN)"
+        detail="Spokesperson of CMS experiment: leading role in the discovery of the Higgs and science communicator."
+        reverse
+      />
+
+      <SpeakerCard
+        photo="luciano-maiani.png"
+        name="Luciano Maiani"
+        affiliation="(Sapienza University)"
+        detail="Dirac Medal and Enrico Fermi Prize. Co-author of the GIM mechanism."
+        connection={{ label: 'HYPE 2018 @ Bologna', href: 'https://www.globalhistories.com/index.php/GHSJ/article/view/272/126' }}
+      />
+
+      <h4>Complex Systems: from networks to collective intelligence</h4>
+
+      <SpeakerCard
+        photo="giorgio-parisi.png"
+        name="Giorgio Parisi"
+        affiliation="(Sapienza University)"
+        detail="Nobel Prize in Physics (2021): expert in complex systems and spin glasses."
+        connection={{ label: 'Fisicaffé special podcast episode', href: 'https://open.spotify.com/episode/0AYBg8Du6au0WWCUGwBC3m?si=a2bc122e829c4d48' }}
+        reverse
+      />
+
+      <SpeakerCard
+        photo="stefano-zapperi.png"
+        name="Stefano Zapperi"
+        affiliation="(University of Milano)"
+        detail="Internationally recognized expert in fracture phenomena and collective behavior."
+        connection={{ label: 'part of the host university of ICPS28 (Milano statale)' }}
+      />
+
+      <SpeakerCard
+        photo="federico-battiston.png"
+        name="Federico Battiston"
+        affiliation="(Central Europan University)"
+        detail="Pioneer of higher-order network theory."
+        reverse
+      />
+
+      <h4>Quantum technologies and the new technological frontier</h4>
+
+      <SpeakerCard
+        photo="francesca-ferlaino.png"
+        name="Francesca Ferlaino"
+        affiliation="(University of Innsbruck / IQOQI)"
+        detail="Erwin Schrödinger Prize: expert in ultracold quantum gases and quantum simulations."
+        connection={{ label: 'recurring TIQIT speaker', href: 'https://ai-sf.it/tiqit/programme/' }}
+      />
+
+      <SpeakerCard
+        photo="hiroshi-amano.png"
+        name="Hiroshi Amano"
+        affiliation="(Nagoya University)"
+        detail="Nobel Prize in Physics 2014: pioneer in the development of efficient blue LEDss through metalorganic vapor phase epitaxy (MOVPE)."
+        connection={{ label: 'Connection to Milano Bicocca host university', href: 'https://www.unimib.it/comunicati/laurea-hiroshi-amano-nobel-led-basso-consumo' }}
+        reverse
+      />
+
+      <SpeakerCard
+        photo="anne-lhuillier.png"
+        name="Anne L'Huillier"
+        affiliation="(Lund University)"
+        detail="Nobel Prize in Physics 2023: pioneer in experimental methods that generate attosecond pulses of light for the study of electron dynamics in matter."
+        connection={{ label: 'CISF24 speaker', href: 'https://ai-sf.it/cisf24/speakers' }}
+      />
+
+      <h3>Milano Hub</h3>
+
+      <h4>Astrophysics, cosmology, gravitational theory</h4>
+
+      <SpeakerCard
+        photo="michele-maggiore.png"
+        name="Michele Maggiore"
+        affiliation="(University of Geneva)"
+        detail="Chief of the new Einstein Telescope experiment: leading theorist in gravitational-wave physics."
+        reverse
+      />
+
+      <SpeakerCard
+        photo="carlo-rovelli.png"
+        name="Carlo Rovelli"
+        affiliation="(Centre de Physique Théorique de Luminy / Aix-Marseille University)"
+        detail="Internationally known writer and science communicator: researcher in quantum field theory and foundations of spacetime."
+      />
+
+      <SpeakerCard
+        photo="marica-branchesi.png"
+        name="Marica Branchesi"
+        affiliation="(Gran Sasso Science Institute)"
+        detail="Included among Time's 100 Most Influential People: expert in multi-messenger astrophysics."
+        connection={{ label: '106° Italian Physics Society Congress', href: 'https://www.pd.infn.it/it/congresso-nazionale-societa-italiana-di-fisica-2020/' }}
+        reverse
+      />
+
+      <h4>Biophysics and physics for health</h4>
+
+      <SpeakerCard
+        photo="maria-giuseppina-bisogni.png"
+        name="Maria Giuseppina Bisogni"
+        affiliation="(University of Pisa / INFN)"
+        detail="Internationally recognized researcher in positron emission tomography (PET) and FLASH therapy."
+        connection={{ label: 'Fisicaffè special podcast episode', href: 'https://open.spotify.com/episode/2HIJBvDOiq7l5UNEjly5yw?si=03b2b8f337934aa4' }}
+      />
+
+      <SpeakerCard
+        photo="maria-chiara-carrozza.png"
+        name="Maria Chiara Carrozza"
+        affiliation="(Scuola Superiore Sant'Anna / CNR)"
+        detail="Former Minister of Education, University and Research and former President and first Female president of the National Center of Research. Working in Biomedical engineering, robotics, human-centered technologies."
+        connection={{ label: '109° Italian Physics Society Congress', href: 'https://www.primapagina.sif.it/article/1746/a-salerno-una-speciale-accoglienza-al-109-congresso-della-sif' }}
+        reverse
+      />
+
+      <SpeakerCard
+        photo="sandro-rossi.png"
+        name="Sandro Rossi"
+        affiliation="(CNAO Foundation)"
+        detail="Director of the National Center of Adronic Oncology."
+        connection={{ label: '101° Italian Physics Society Congress', href: 'https://agenda.infn.it/event/9263/timetable/?view=standard_numbered' }}
+      />
+    </section>
+
+    <section>
+      <h2>Roundtable discussions</h2>
+      <p>Beyond lectures, ICPS 2028 aims to create spaces where physics can engage with the broader challenges facing contemporary society.</p>
+      <p>The Organizing Committee therefore proposes a series of round-table discussions bringing together physicists, engineers, philosophers, science communicators, policy experts, and industry representatives. These sessions will provide participants with the opportunity to explore the ethical and social aspects of scientific progress while engaging directly with leading voices from academia, industry, and public institutions.</p>
+      <p>Designed as highly interactive events, the round-tables will encourage audience participation and open discussion, fostering a dialogue that extends beyond disciplinary boundaries.</p>
+      <p>Find below some of the themes currently under consideration.</p>
+      <p>The final selection will be refined throughout the conference preparation, taking into account the social and geopolitical state of the world in 2028, the availability of invited speakers, and the interests of the attendees.</p>
+
+      <h3>Nuclear energy in the XXI century</h3>
+      <p>As the world seeks pathways toward decarbonization and energy security, nuclear technologies are once again at the centre of public debate.</p>
+      <p>This round-table will address the opportunities and challenges associated with contemporary nuclear energy. Some possible topics below.</p>
+      <ul>
+        <li>Small Modular Reactors (SMRs),</li>
+        <li>Advanced fission technologies,</li>
+        <li>Nuclear fusion research,</li>
+        <li>Nuclear safety and waste management,</li>
+        <li>Non-proliferation and disarmament,</li>
+        <li>The role of nuclear power in a sustainable energy transition.</li>
+      </ul>
+      <p>By bringing together physicists, engineers, policymakers, and science communicators, the discussion aims to provide a balanced perspective on one of the most consequential technological questions of our time.</p>
+      <p>Potential speakers include:</p>
+      <ul>
+        <li>representatives from ITER,</li>
+        <li>science communicator team of The Avvocato dell’Atomo,</li>
+        <li>experts from ENEA (Italian National Agency for New Technologies, Energy and Sustainable Economic Development) and INFN (National Institute of Nuclear Physics),</li>
+        <li>scholars involved in nuclear disarmament initiatives.</li>
+      </ul>
+
+      <h3>Artificial Intelligence in academia and society</h3>
+      <p>Artificial intelligence is rapidly transforming the way science is conducted, from data analysis and simulation to scientific discovery itself. At the same time, its widespread adoption raises important questions regarding transparency, intellectual ownership, and the evolving relationship between humans and increasingly sophisticated computational tools.</p>
+      <p>This discussion will explore the role of AI in scientific research, higher education, and society at large, bringing together experts in artificial intelligence, computational science, philosophers, and scientific methodologies.</p>
+      <p>Potential speakers may include</p>
+      <ul>
+        <li>
+          <p>researchers in high-performance computing, and physics, like the TeRABIT (Network for Research and Academic Big Data in ITaly),</p>
+          <Figure src="speakers/fosca-giannotti.png" alt="Portrait of Fosca Giannotti" layout="inset" imageFirst={false}>
+            <p>computer scientists such as <strong>Fosca Giannotti</strong> (Scuola Normale Superiore),</p>
+          </Figure>
+        </li>
+        <li>representatives from the FAIR foundation (Future Artificial Intelligence Research),</li>
+        <li>representatives from the scientific publishing sector,</li>
+        <li>scholars specializing in the ethical and philosophical implications of emerging technologies, such as Ivana Bartoletti (Digital Ethics Center at Oxford University) or Adriano Fabris (Digital Ethics at the University of Pisa)</li>
+      </ul>
+      <div class="grid-2">
+        <Figure src="speakers/ivana-bartoletti.png" alt="Portrait of Ivana Bartoletti" caption="Ivana Bartoletti" layout="full" />
+        <Figure src="speakers/adriano-fabris.png" alt="Portrait of Adriano Fabris" caption="Adriano Fabris" layout="full" />
+      </div>
+
+      <h3>Peer review and scientific integrity</h3>
+      <p>Scientific progress relies not only on discovery but also on verification.  In an era characterized by rapid information exchange and misinformation, understanding how scientific knowledge is validated has become more important than ever.</p>
+      <p>Organized in collaboration with representatives from CICAP (Italian Committee for the Investigation of Claims of the Pseudosciences)  and members of the scientific community, this roundtable will discuss peer review, scientific skepticism, and ethics of science communication.</p>
+      <Figure src="speakers/bobbybroccoli.png" alt="Portrait of BobbyBroccoli" layout="inset">
+        <p>As part of the discussion, the Organizing Committee will explore the possibility of hosting a remote interview with <strong>BobbyBroccoli</strong>, a popular science communicator known for his in-depth investigations of scientific controversies, research misconduct, and the sociology of science. Such a contribution would provide an engaging perspective on the importance of transparency, integrity, and critical thinking in modern research.</p>
+      </Figure>
+
+      <h3>Space frontiers</h3>
+      <p>From lunar exploration and commercial spaceflight to planetary defence, humanity is entering a new era of space exploration.</p>
+      <p>This roundtable will examine the scientific, technological, and societal challenges associated with humanity's expansion beyond Earth, discussing both current achievements and future ambitions.</p>
+      <p>Potential speakers include:</p>
+      <ul>
+        <li>
+          <Figure src="speakers/roberto-battiston.png" alt="Portrait of Roberto Battiston" layout="inset">
+            <p><strong>Roberto Battiston</strong> (former President of the Italian Space Agency),</p>
+          </Figure>
+        </li>
+        <li>
+          <Figure src="speakers/andrea-ferrero.png" alt="Portrait of Andrea Ferrero" layout="inset">
+            <p><strong>Andrea Ferrero</strong> (former President of CICAP and science communicator),</p>
+          </Figure>
+        </li>
+        <li>
+          <Figure src="speakers/ersilia-vaudo-scarpetta.png" alt="Portrait of Ersilia Vaudo Scarpetta" layout="inset">
+            <p><strong>Ersilia Vaudo Scarpetta</strong> (science communicator at ESA),</p>
+          </Figure>
+        </li>
+        <li>
+          <p>subject to availability, remote contributions from Italian astronauts such as Samanta Cristoforetti or Luca Parmitano.</p>
+          <div class="grid-2">
+            <Figure src="speakers/samanta-cristoforetti.png" alt="Portrait of Samanta Cristoforetti" caption="Samanta Cristoforetti" layout="full" />
+            <Figure src="speakers/luca-parmitano.png" alt="Portrait of Luca Parmitano" caption="Luca Parmitano" layout="full" />
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Workshops</h2>
+      <p>Following the tradition established by previous ICPS editions, the Organizing Committee aims to complement the lecture program with a series of interactive workshops designed to be both intellectually stimulating and practically useful for young physicists. Each session will be led by experienced researchers, educators, or professionals from industry and academia, offering active participation and demonstrations.</p>
+      <p>To ensure interaction and effective supervision, each workshop will be limited to approximately 25 participants. Each workshop will be offered in two independent sessions, each lasting two hours.</p>
+      <p>During the application process for the conference, participants will be invited to indicate their workshop preferences and self assess their level of preparation through a dedicated registration form. This information will help the Organizing Committee allocate places fairly and ensure that participants can fully benefit from the activities.</p>
+      <p>To maximize accessibility and prevent overcrowding, each participant will be allowed to attend only one workshop. This policy will ensure that as many conference attendees as possible can participate in this part of the program.</p>
+      <p>Workshop sessions will be scheduled in parallel with poster presentations and informal networking activities, ensuring that all participants have meaningful opportunities for scientific engagement throughout the conference.</p>
+
+      <h3>Suggested physics workshop</h3>
+      <p>The Organizing Committee aims to offer a diverse workshop program covering a broad range of topics across modern physics. The final selection and format of the workshops will be refined throughout the conference preparation, taking into account the expertise and availability of invited instructors, the interests and academic backgrounds of the target audience, and the overall balance of the scientific program. The following list presents some of the workshops currently under consideration.</p>
+      <ul>
+        <li><strong>Data analysis in particle physics</strong>: A hands-on introduction to statistical methods and visualization techniques commonly employed in contemporary experimental physics. In particular, this workshop could introduce newcomers to MADGraph and ROOT, two of the most widely used software frameworks in high-energy physics, created at CERN, covering event generation, simulation, and data analysis.</li>
+        <li><strong>COMSOL multiphysics applications</strong>: COMSOL MultiPhysics is a finite element analysis package that allows the study of physical processes where coupled, nonlinear phenomena are of particular interest. This workshop could provide participants with a hands-on introduction to numerical modelling and a live demonstration of the entire simulation process via a practical example.</li>
+        <li><strong>Quantum computing with Qiskit</strong>: In collaboration with Quantum Technologies laboratories of Politecnico di Milano, ICPS28 could host an introduction to quantum programming and quantum algorithms using IBM’s open source software framework, Qiskit. Participants will explore the fundamental principles of quantum computation and learn how to design and execute simple quantum circuits.</li>
+        <li><strong>Imaging analysis in modern physics</strong>: A practical overview of the image processing and exploration of datasets in modern physics. The workshop may focus on different applications depending on instructor availability and participant interest. Possible case studies include astronomical image processing and medical imaging techniques employed in diagnostics. The activity would be developed in collaboration with researchers from INAF and CTAO for the astrophysical applications, and with scientists from IFOM and CNAO for the biomedical and medical physics perspectives.</li>
+        <li><strong>Introduction to gravitational wave data analysis</strong>: Italy hosts the European Gravitational Observatory and the Advanced Virgo Interferometer. Furthermore, the Italian scientific community is actively involved in the development of the Einstein Telescope, the next-generation European gravitational-wave observatory. Participants will work with authentic datasets from the latest gravitational-wave detectors' observational campaign, learning techniques used to identify and characterize astrophysical signals through an open-source Python package.</li>
+        <li><strong>Arduino microcontrollers</strong>: Primarily for Bachelor students, this workshop could offer an opportunity to learn about Arduino microcontrollers, which originated in the town of Ivrea, not far from Torino! Arduino is an open-source company that produces both hardware and software, allowing the construction of digital devices with interactive (sensing) capabilities.</li>
+        <li>
+          <strong>High Computing Performance (HPC) and scientific programming</strong>
+          <p>Organized in collaboration with researchers from SISSA and Scuola Normale Superiore, Italian excellence schools that offer master's and intensive programs in high-performance computing and scientific programming on modern architectures. This workshop would cover topics like data structures, clustering, and parallelization strategies used in research.</p>
+        </li>
+        <li><strong>Detector physics and R &amp; D activities</strong>: Hands-on laboratory workshop introducing modern electronics, data acquisition setups, and R &amp; D activities conducted in universities spin offs. This workshop aims to explore how scientific instrumentations shape observation and how practical experience drives conceptualization and development of new technologies. This workshop would be created in collaboration with our sponsors and long-time collaborators, like CAEN, spin off company of the National Institute of Nuclear Physics (INFN), who have educational kits and presentations available.</li>
+      </ul>
+
+      <h3>Professional development workshop</h3>
+      <p>Alongside our specific physics topic covering workshops, the Organizing Committee intends to include workshops designed for career orientation and application strategy. Some examples include:</p>
+      <ul>
+        <li><strong>Scientific writing and publishing</strong>: This session would provide practical guidance on preparing manuscripts, navigating peer review, communicating research effectively, and an editorial view on the current landscape of academia.</li>
+        <li><strong>Mastering professional tools for physicists</strong>: A career-oriented workshop covering CV preparation, cover letters, research statements, grant applications, and professional networking</li>
+        <li><strong>I studied physics. Now what?</strong>: A mentoring-focused workshop bringing together alumni from academia, industry, and entrepreneurship to discuss career opportunities with a Physics degree</li>
+      </ul>
+
+      <h3>IAPS workshops</h3>
+      <p>Finally, the Organizing Committee proposes a series of IAPS-focused workshops and networking opportunities to strengthen our international community.</p>
+      <p>These sessions will provide participants with the opportunity to learn from successful projects developed by TC Italy and other IAPS committees, exchange experiences, and explore new formats for student-led scientific and outreach activities.</p>
+      <p>Beyond showcasing existing initiatives, the workshops are intended to serve as spaces to discuss new ideas, encouraging participants to start projects that can continue long after the conference has ended.</p>
+      <ul>
+        <li><strong>Outreach activities and Science Communication.</strong></li>
+        <li><strong>Ideas worth spreading: developing a Project Proposal.</strong></li>
+        <li><strong>Building international collaborations.</strong></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Scientific lab visits</h2>
+      <p>The Organizing Committee has envisioned a program of eight scientific excursions distributed between Torino and Milano, allowing participants to explore some of Northern Italy's most outstanding research facilities.</p>
+      <p>Participants will be divided into six groups, each attending one educational visit. Three groups will depart from Milano, while the remaining three will depart in the following days from Torino.</p>
+      <p>During each excursion slot, participants not involved in visits will be able to attend parallel lectures and scientific activities, ensuring a rich and uninterrupted program for all attendees.</p>
+      <p>This structure allows every participant to personalize their conference experience according to their scientific interests. Attendees will have the opportunity to follow the path that best matches their curiosity and academic background.</p>
+
+      <h4>Conservation and restoration center of Venaria Reale (Torino)</h4>
+      <Figure src="lab/venaria-reale.jpg" alt="Conservation and Restoration Center of Venaria Reale" layout="inset">
+        <p>One of Europe's leading centres for the conservation of cultural heritage, where physics, chemistry, materials science, and advanced imaging techniques are applied to the preservation and restoration of artworks, archaeological artefacts, and historical monuments. Participants will discover how modern scientific methods contribute to safeguarding humanity's cultural legacy.</p>
+      </Figure>
+
+      <h4>INRIM - National Institute of Metrology of Italy (Torino)</h4>
+      <Figure src="lab/inrim.jpg" alt="INRIM — National Institute of Metrology of Italy" layout="inset">
+        <p>Italy's national metrology institute is at the forefront of precision measurement science. Research activities range from quantum technologies and atomic clocks to advanced standards for time, frequency, and fundamental physical constants. The visit will provide insight into the scientific foundations of modern measurement systems.</p>
+      </Figure>
+
+      <h4>Foundation Links- Mario Boella (Torino)</h4>
+      <Figure src="lab/links-mario-boella.jpg" alt="Foundation Links — Mario Boella" layout="inset">
+        <p>A leading research and innovation centre specializing in information and communication technologies, artificial intelligence, photonics, and quantum information science. The institute promotes the transfer of cutting-edge research to industry through collaborations with universities, research organizations, and technology companies.</p>
+      </Figure>
+
+      <h4>Politecnico di Torino laboratories (Torino)</h4>
+      <Figure src="lab/politecnico-torino.jpg" alt="Politecnico di Torino laboratories" layout="inset">
+        <p>Active center in the field of complex systems physics. Research topics include statistical physics, network science, biological systems, collective behaviour, and computational modelling. The laboratories provide an interdisciplinary environment where theoretical approaches are combined with advanced computational methods to address challenges in physics and beyond.</p>
+      </Figure>
+
+      <h4>INAF – Merate Astronomical Observatory (Milano)</h4>
+      <Figure src="lab/merate-observatory.jpg" alt="INAF — Merate Astronomical Observatory" layout="inset">
+        <p>The Merate Observatory is one of the principal research facilities of the Italian National Institute for Astrophysics (INAF). The observatory hosts advanced instrumentation for observational astronomy and contributes to numerous international projects in stellar astrophysics, exoplanet science, instrumentation development, and space missions.</p>
+      </Figure>
+
+      <h4>IFOM - Institute of Molecular Oncology Lab (Milano)</h4>
+      <Figure src="lab/ifom.jpg" alt="IFOM — Institute of Molecular Oncology Lab" layout="inset">
+        <p>A biomedical research centre dedicated to understanding the molecular mechanisms of cancer. The visit will showcase advanced imaging techniques, biophysics applications, and interdisciplinary approaches that connect physics, chemistry, biology, and medicine.</p>
+      </Figure>
+
+      <h4>LASA-Accelerator Laboratory and Applied Superconductivity (Milano)</h4>
+      <Figure src="lab/lasa.jpg" alt="LASA — Accelerator Laboratory and Applied Superconductivity" layout="inset">
+        <p>One of Europe's leading laboratories for accelerator technologies and superconducting systems. LASA contributes to major international projects in particle physics and accelerator science, offering participants a unique opportunity to explore the technologies that power modern high-energy physics experiments.</p>
+      </Figure>
+
+      <h4>Milano Bicocca laboratories (Milano)</h4>
+      <Figure src="lab/milano-bicocca.jpg" alt="Milano Bicocca laboratories" layout="inset">
+        <p>A major hub for particle, astroparticle, and laser physics research. The laboratories are involved in numerous international collaborations, including experiments at CERN and other large-scale scientific infrastructures. Milano-Bicocca hosts internationally recognized research groups working on fundamental physics, advanced instrumentation, and emerging quantum technologies.</p>
+      </Figure>
+    </section>
+
+    <section>
+      <h2>Student contributions</h2>
+      <p>The conference will feature both oral and poster sessions to accommodate a wide range of presentation styles and research topics, and to maximize participation.</p>
+      <p>Any student, regardless of the university of origin and academic level, can ask to give a student talk or to present a poster on an original work of theirs</p>
+
+      <h3>Student lectures</h3>
+      <p>If participants wish not to take part in a scientific excursion in either Milano or Torino, they will have the opportunity to attend student talks on their favourite physics topic.</p>
+      <p>These oral presentations will be organized into thematic sessions. Each session will have multiple speakers in different rooms. Every oral presenter will be allocated a 12-minute time slot for their talk, followed by a 3-minute discussion period. This format ensures that presentations remain focused and engaging, while also providing sufficient time for audience questions and scholarly interaction.</p>
+
+      <h3>Poster session</h3>
+      <p>Parallel to the workshops, a poster session will take place in dedicated spaces where authors can showcase their research visually. These poster sessions offer a more informal environment for discussion, allowing attendees to engage one-on-one with presenters, explore diverse topics, and foster collaborations.</p>
+    </section>
+
+    <section>
+      <h2>Additional activities</h2>
+      <p>ICPS has always been more than a scientific conference. It is also an opportunity to build friendships and develop our vibrant international community of young physicists.</p>
+      <p>To foster interaction beyond formal scientific sessions, the Organizing Committee will organize several light-hearted and engaging activities throughout the week.</p>
+      <p>In particular, we propose a Physics Quiz, featuring questions inspired by Nobel Prizes, famous experiments, scientific history, and contemporary physics. To pass the time, this activity will be conducted in small, spontaneously formed groups on the trip between Torino and Milano, directly on a small digital platform created by our IT team and easily accessible through a QR code.</p>
+    </section>
+  </article>
+</Layout>

@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { chapters } from '../data/site';
+
+const ch = chapters.find((c) => c.id === 'transportation')!;
+---
+<Layout title={ch.title} description="Sustainability and mobility strategy for ICPS 2028: public transport in Milano and Torino and the transfer between the two host cities." chapter={ch.id}>
+  <header class="chapter-head">
+    <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
+    <h1>{ch.title}</h1>
+    <p class="chapter-head__lead">The Organizing Committee is fully committed to minimizing the environmental impact of ICPS 2028 and maximizing the event's sustainability. Consequently, the utilization of Public Transport (TPL - Trasporto Pubblico Locale) is heavily encouraged and considered as the primary mode of transportation throughout the conference. All participants are strongly advised to use public transportation for their journeys to and from airports, as well as for all daily urban movements. The Organizing Committee will provide them with multi-day passes. The use of private charter buses will be treated strictly as an exception, limited only to specific instances where reaching research laboratories or excursion venues via public transportation is impossible.</p>
+  </header>
+
+  <article class="prose">
+    <section>
+      <h2>Sustainability and mobility strategy</h2>
+      <h4>Fear not!</h4>
+      <p>As explained below, Milano and Torino have very efficient public transportation! The Organizing Committee will ensure that every participant receives a handbook including every connection and itinerary advised for the Conference, as mentioned in the section INTERNAL COMMUNICATION. In addition to designating guides for each transit, a  group of volunteers will be available at all times in case any participant were to get lost or unsure about their whereabouts.</p>
+    </section>
+
+    <section>
+      <h2>Milano</h2>
+      <p>Milano features a highly efficient and fully integrated public transport network operated by ATM (Azienda Trasporti Milanesi). The system comprises 5 underground metro lines (M1, M2, M3, M4, M5), an extensive tramway network, and numerous urban bus lines. The vast majority of the event venues, accommodation sites, and social activities within the city will be easily reachable utilizing only this local public transport system.</p>
+      <ul>
+        <li><strong>Public transport options &amp; fares:</strong> To ensure seamless and sustainable mobility, the Organizing Committee will directly provide all registered participants with multi-day public transport tickets covering the entire duration of their stay in Milano. These passes grant unlimited transfers across subway, bus, and tram lines within the Mi1-Mi3 fare zones (covering the entire municipality of Milano). Digital contactless payment is also integrated across the network for any extra personal travel outside the official program.</li>
+        <li><strong>Special and remote venues:</strong> In exceptional instances in which venues or laboratory facilities are not accessible via the public transport network, or for scheduled day excursions, the Organizing Committee will arrange dedicated private transport. For the Milano area, these exceptional transfers will be operated by a highly reliable and certified local Gran Turismo (GT) coach rental company specialized in large-scale event logistics.</li>
+        <li><strong>Navigation and guiding:</strong> To navigate Milano's dense public transport network safely, all participants will receive exhaustive, step-by-step written route instructions for every single transit. Furthermore, groups will always be actively guided and accompanied by dedicated members of the local Organizing Committee staff to ensure no one gets lost.</li>
+        <li>
+          <strong>Airport connections:</strong>
+          <ul>
+            <li><strong>Milano Malpensa Airport (MXP):</strong> Connected directly to Milano Centrale Railway Station via the Malpensa Express train (operated by Trenord). The journey takes approximately 50 minutes, and a single ticket costs €13.00. Alternatively, multiple coach shuttle services link MXP to Milano Centrale for approximately €10.00.</li>
+            <li><strong>Milano Linate Airport (LIN):</strong> Connected directly to the city center via the M4 metro line. The journey from Linate to the central interchange hubs takes less than 15 minutes and requires a standard €2.20 urban ticket.</li>
+            <li><strong>Bergamo Orio al Serio Airport (BGY):</strong> Primarily served by dedicated coach shuttles (e.g., Terravision, Orio Shuttle) connecting directly to Milano Centrale. The travel time is around 50-60 minutes, and fares range between €8.00 and €10.00 for a single journey.</li>
+          </ul>
+        </li>
+        <li><strong>Taxis and ride-hailing:</strong> Official municipal taxis are always metered. Minimum daytime fares start at €4.00 on weekdays, with predetermined fixed tariffs for airport routes (e.g., Linate to any city center location costs a fixed €28.00; Malpensa to central Milano costs a fixed €110.00). Ride-hailing via the Uber app is exclusively available through Uber Black/Van services.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Torino</h2>
+      <p>Torino’s local transport network is managed by GTT (Gruppo Torinese Trasporti) and consists of 1 automated underground metro line, an extensive tram network, and an interconnected web of urban bus routes. Most conference venues, as well as institutional halls and central facilities in Torino, are located within a short distance of public transport links.</p>
+      <ul>
+        <li><strong>Public transport options &amp; fares:</strong> Every participant will receive a multi-day GTT public transport pass directly from the Organizing Committee, fully covering the duration of the event's schedule in Torino. This ticket allows unlimited travel on the urban surface network and the metro system.</li>
+        <li><strong>Special and remote Venues (exception protocol):</strong> For specific laboratory visits or regional excursions located outside the urban transport perimeter where public options are entirely unavailable, the Organizing Committee will organize specific private transport services to ensure timely and secure transfers. All private coach operations in the Torino area will be officially entrusted to Autoturismo Giachino S.r.l., a premier transportation firm with which our association maintains a long-standing, proven, and highly reliable collaboration.</li>
+        <li><strong>Navigation and guiding:</strong> Just as in Milano, participants will be provided with detailed itinerary maps and precise instructions for the local transport network. Organizing Committee volunteers will accompany the delegations during all official movements to guarantee secure and punctual arrivals.</li>
+        <li><strong>Station connections:</strong> Torino Porta Nuova and Torino Porta Susa are the principal railway stations, both directly connected to the urban metro line and major tramways, facilitating immediate access to university facilities and accommodation sites.</li>
+        <li><strong>Airport connection (Torino Caselle - TRN):</strong> The Arriva bus shuttle service links the airport to Torino Porta Nuova and Porta Susa stations. The journey takes roughly 30-40 minutes; tickets cost €7.50 if purchased digitally or via contactless on board (€8.00 if bought on board in cash). Alternatively, the direct rail link between the airport and downtown Torino (Torino Porta Susa) is fully operational via the SFM2 line, taking approximately 30 minutes at standard regional pricing (€3.60).</li>
+        <li><strong>Taxis:</strong> White metered municipal taxis operate extensively. The daytime base fare starts at €4.00, with a typical ride within the city center ranging between €10.00 and €15.00 depending on traffic.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Moving from Milano to Torino</h2>
+      <p>The transition of the conference from Milano to Torino has been meticulously planned to combine a full-day scientific and cultural excursion with the geographical transfer between the two host cities.</p>
+      <ul>
+        <li><strong>Private GT bus transfer &amp; excursion:</strong> At the end of the Milano segment, the transition to Torino will be operated via a fleet of private Gran Turismo (GT) buses. The buses will depart from Milano in the morning, carrying the participants and their luggage directly to the various scheduled excursion destinations located along the territory.</li>
+        <li><strong>Direct arrival to Torino's accommodation:</strong> Following the conclusion of the day’s excursions, the same private fleet of buses will pick up the participants directly from the excursion sites in the evening and drive them straight to their pre-arranged accommodations in Torino. This guarantees a seamless, comfortable transfer without requiring the use of intermediate railway stations or additional public transit during luggage relocation.</li>
+      </ul>
+    </section>
+  </article>
+</Layout>

@@ -1,0 +1,105 @@
+---
+// Chapter 03 — A few words about Italy (chapters/02_cities.tex)
+import Layout from '../layouts/Layout.astro';
+import { chapters } from '../data/site';
+import Figure from '../components/Figure.astro';
+
+const ch = chapters.find((c) => c.id === 'italy')!;
+
+const lead =
+  'Located in Southern Europe, Italy shares borders with France, Switzerland, Austria, and Slovenia, while its central position in the Mediterranean Sea makes it easily accessible from Europe, North Africa, and West Asia. This strategic location has made Italy a crossroads of different cultures, ideas, trade, and scientific exchange for centuries. Every Italian region bears its own unique history and culture, enriched by the diverse peoples who have crossed it. This intricate web of different legacies ultimately gives rise to a feeling of complex uniqueness, characterizing every possible location on the Italian map.';
+---
+<Layout title={ch.title} description="The host cities of ICPS 2028 — a few words about Italy, Torino, and Milano." chapter={ch.id}>
+  <header class="chapter-head">
+    <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
+    <h1>{ch.title}</h1>
+    <p class="chapter-head__lead">{lead}</p>
+  </header>
+
+  <article class="prose">
+    <p>One of Italy's greatest strengths lies in the extraordinary diversity of its landscapes. Within a relatively compact territory, visitors can experience an exceptional variety of natural environments.</p>
+
+    <ul>
+      <li><strong>the North:</strong> Majestic peaks of the Alps, crystal-clear lakes, rolling vineyards, and Piedmont’s renowned hills.</li>
+      <li><strong>the Plains:</strong> Vast agricultural plains, such as the fertile Po Valley.</li>
+      <li><strong>the Coastline:</strong> Thousands of kilometers of coast along the Mediterranean Sea, featuring sandy beaches, dramatic cliffs, and picturesque seaside towns.</li>
+    </ul>
+
+    <p>Italy's climate is welcoming. Summers are generally warm and sunny, particularly in central and southern regions, while northern Italy benefits from milder temperatures thanks to its proximity to the Alps, but it is mildly humid because of its proximity to the Po Valley. The Mediterranean climate ensures long daylight hours, pleasant evenings, and usually favorable weather for cultural visits, social events, and overall exploration throughout the conference period.</p>
+
+    <p>Beyond its cultural heritage, Italy is home to a vibrant scientific community and world-class research infrastructure. Many Italian physicists have contributed to some of the most important discoveries in modern science, from the pioneering work of Galileo Galilei to the six Italian Nobel Laureates:</p>
+
+    <ul>
+      <li>Guglielmo Marconi (1909),</li>
+      <li>Enrico Fermi (1938),</li>
+      <li>Emilio Segrè (1959),</li>
+      <li>Carlo Rubbia (1984),</li>
+      <li>Riccardo Giacconi (2002),</li>
+      <li>Giorgio Parisi (2021).</li>
+    </ul>
+
+    <p>Today, Italian universities, research centers, and institutions such as INFN maintain strong collaborations with leading international scientific organizations, including CERN, ICTP, LIGO-Virgo, ESA, and CTAO, contributing to some of the world's most ambitious research projects.</p>
+
+    <section>
+      <h2>A few words about Torino</h2>
+
+      <p>Torino is a city made of stone, brick, and steel-a living architectural manuscript of the modern era. Cradled by the Alps and bisected by the Po, its urban fabric is shaped by centuries of history, elegantly unfolding beneath the longest network of porticoes in Europe.</p>
+
+      <h4>The city’s soul lies just beneath the surface.</h4>
+
+      <p>Scattered remnants of the <strong>Roman Augusta Taurinorum</strong> are still visible, from the Palatine Towers guarding the old entrance to the remains of the theatre, hinting to a past when this was a strategic outpost.</p>
+
+      <p>Yet, it is the <strong>House of Savoy</strong> that truly shaped Torino’s regal silhouette. The majestic Palazzo Reale, with its elegant facades, and the nearby <strong>Palazzo Madama</strong> -a fascinating hybrid of medieval fortress and Baroque palace- project an image of poise and grace.</p>
+
+      <Figure src="cities/torino-panorama.png" alt="Panorama of Torino with the Alps on the horizon" layout="inset">
+        <p>The genius of Guarino Guarini, meanwhile, finds its highest expression in the swirling, geometric marvel of the Chapel of the Holy Shroud and the dome-less <strong>cupola of San Lorenzo</strong>, where mathematics and Baroque complexity meet.</p>
+      </Figure>
+
+      <p>To walk through the city's historic squares is to enter an open-air theatre. <strong>Piazza Castello</strong> is the beating heart, anchoring the royal palaces with their imposing presence, while the harmonious twin churches of <strong>Piazza San Carlo</strong> depict one of Italy’s most grand gathering spaces, a testament to Baroque urban planning at its finest.</p>
+
+      <Figure src="cities/torino-piazza.png" alt="Piazza Vittorio Veneto in Torino" layout="inset" imageFirst={false}>
+        <p>Further east, the vast, riverside expanse of <strong>Piazza Vittorio Veneto</strong> opens towards the Po and the surrounding hills, where you can let yourself be amazed by the Church of the Great Mother of God.</p>
+      </Figure>
+
+      <p>This grandeur is embedded into the city's very fabric by the famous porticoes: over 18 kilometers of sheltered walkways that connect the city center's streets, offering a graceful sight during daily strolls and shielding from the rains.</p>
+
+      <Figure src="cities/mole-antonelliana.png" alt="The Mole Antonelliana in Torino" layout="inset">
+        <p>The 19th century gifted Torino its most recognizable symbol, the <strong>Mole Antonelliana</strong>. Originally conceived as a synagogue, its soaring spire reaches to the sky with ambition, creating a landmark that all of Italy may recognise.</p>
+      </Figure>
+
+      <p>Today, it houses the National Museum of Cinema and stands as a testament to the city's creativity.</p>
+
+      <p>The industrial spirit took over during the 20th century. The iconic <strong>Lingotto factory</strong>, with its rooftop test track, redefined the concept of an industrial building, transforming a simple place of production into a lesson of modernity and progress.</p>
+
+      <p>Today, Torino feels like a city of seamless transitions. Roman ruins link with Savoy palaces, which in turn look across the river to the hillside Basilica of Superga, a white monument to faith and memory.</p>
+
+      <p>To explore Torino's architectural layers is to walk through a tangible timeline, where the elegance of a royal court, the innovation of industry, and the quiet persistence of history all remain eternally present.</p>
+    </section>
+
+    <section>
+      <h2>A few words about Milano</h2>
+
+      <h4>Milano is composed of nine districts… in which you can truly find whatever may please you.</h4>
+
+      <p>Do you want to access Italian underground music avant-garde of any genre? Come to Milano. Do you want to shop across vintage boutiques selling items of any kind? Come to Milano. Do you want to know what is most fashionable in Europe this incoming season? Come to Milano. Do you want to wander through cinema retrospectives, tiptoe to an opera representation, before dancing all night? Come to Milano. Do you want to meet artists, photographers, fashion designers from all over the world, studying, working for luxurious maisons, or simply seeking inspiration? Come to Milano.</p>
+
+      <Figure src="cities/milano-skyline.jpg" alt="The Milano skyline" layout="inset">
+        <p>Do you love a good combination of skyscrapers and sophisticated historical buildings? Come to Milano. Are you interested in seeing what the future of scientific innovation looks like from the Italian perspective? You can likely guess the answer: come to Milano.</p>
+      </Figure>
+
+      <Figure src="cities/castello-sforzesco.jpg" alt="Castello Sforzesco in Milano" layout="inset" imageFirst={false}>
+        <p>Centuries of history have shaped it, marking its territory with landmarks such as the <strong>San Lorenzo Columns</strong> and various theatres directly inherited by the Roman age, to the <strong>Sforzesco Castle</strong> and the <strong>Sant’Ambrogio Basilica</strong> of Medieval origin, to the Arco della Pace and the worldwide</p>
+      </Figure>
+
+      <p>famous <strong>Teatro alla Scala</strong>, whose rigorous architecture is part of the legacy of the Austrian domination of Milano in the 18th century.</p>
+
+      <Figure src="cities/navigli.jpg" alt="The Navigli canals in Milano" layout="inset">
+        <p>But Milano is much more than promises of grandeur. Come with us visiting secret fresh courtyards that long for you like an oasis, join us for a walk on the side of the city <strong>Navigli</strong> or canals, when at any time of day you can smell a risotto or a ragù being cooked by some <em>nonna</em>.</p>
+      </Figure>
+
+      <p>We wish to bring you to see the most authentic part of this city, which is also the most elegant. By visiting Milano’s universities and meeting their students, you’ll get to know Milano from the perspective of the dreamers that keep it alive.</p>
+
+      <p>And if you feel like you need some time for yourself… you're exactly in the city that mastered this as an art through the <strong>aperitivo</strong> moment. Enjoy fresh drinks served right on point with some appetizers, while friends tell stories and laugh, and feel all your problems vanishing far, far away.</p>
+    </section>
+  </article>
+</Layout>

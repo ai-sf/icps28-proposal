@@ -1,0 +1,22 @@
+{
+  "name": "icps28-proposal-site",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive website version of the ICPS 2028 Project Proposal (AISF), built with Astro and deployable to GitHub Pages.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^7.1.6",
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource-variable/source-serif-4": "^5.3.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.0",
+    "typescript": "^5.0.0"
+  }
+}

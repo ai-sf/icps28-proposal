@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Figure from '../components/Figure.astro';
+import { chapters } from '../data/site';
+
+const ch = chapters.find((c) => c.id === 'introduction')!;
+---
+<Layout title={ch.title} description="The Italian Association of Physics Students (AISF): who we are and the activities of TC Italy, host of ICPS 2028." chapter={ch.id}>
+  <header class="chapter-head">
+    <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
+    <h1>{ch.title}</h1>
+  </header>
+
+  <article class="prose">
+    <section>
+      <h2>What is AISF?</h2>
+      <p>The <strong>Italian Association of Physics Students (AISF)</strong> is the national association representing physics students in Italy and the Italian TC of the International Association of Physics Students (IAPS).</p>
+      <p>Founded with the mission of connecting physics students across the country, AISF promotes scientific excellence, international collaboration, science communication, and professional development opportunities for young physicists. Through its network of Local Committees, AISF creates a vibrant community that bridges universities, research institutions, industry, and society.</p>
+      <p>Today, AISF brings together more than <strong>1500 active members</strong> distributed across <strong>21 Local Committees</strong>, covering universities from Northern to Southern Italy. Over the years, AISF has become one of the most active student scientific associations in Europe, organizing national and international events, outreach activities, educational projects, and professional development initiatives.</p>
+
+      <Figure src="oc/gruppo.jpg" alt="Group photo of the AISF community" />
+
+      <p>AISF has continuously strengthened its international presence through international conferences, exchange programs, and collaborative projects with students from all over the world. The main qualities of our TC are resourcefulness and the ability to create a strong sense of community.</p>
+      <p>Organizing <strong>ICPS 2028</strong> represents a unique opportunity for AISF and Italy. Building upon the experience gained through the successful organization of major scientific and student events, AISF is ready to host the International Conference of Physics Students in an innovative format combining hospitality and a unique perspective on the challenges of contemporary Physics.</p>
+      <p>For this occasion, AISF proposes a bold and unprecedented concept: the first ICPS jointly hosted in two cities, Torino and Milano, offering participants the opportunity to experience two complementary facets of Italian excellence.</p>
+    </section>
+
+    <section>
+      <h2>Summary of TC Italy activities</h2>
+      <p>The Italian Association of Physics Students (AISF) was established in August 2014 on the occasion of the XXIX International Conference of Physics Students in Heidelberg, Germany. Since its funding, AISF has established itself as one of the most dynamic student scientific organizations in Italy through a broad portfolio of national and international initiatives.</p>
+      <p>These initiatives always have two great motivational forces coordinating their organization, to which ICPS is no exception:</p>
+      <ol>
+        <li>building a national and international community of students, united by the passion toward Physics and by a variety of meaningful experiences shared.</li>
+        <li>showcasing the potential of the career of a Physicist, whatever this may be: from research to any application in any field, from dissemination to teaching, from laboratories to theoretical work. This also implies continuous dialogue with universities, institutions, and industry.</li>
+      </ol>
+      <p>This implies taking time during our initiatives to know each other, sharing why Physics is our path, making sure that we offer occasions of knowing Physics from new, unprecedented angles and perspectives. But this also implies deeply caring for each person taking part in our activities, ensuring that they feel respected at all times. Italy has been divided in a state of conflict during most of its history; some scars from this past still haven’t healed today. In addition to this, every region has its own (often many!) dialect, its own habits, its traditions, and cultural heritage. We’re used to bridging different ways of thinking, embracing difference as a proud factor of uniqueness. Without this, we believe no community can be built at all.</p>
+      <p>Finally a steady online presence, concretized through the Association’s different channels, has contributed to the growth in participation and involvement of its members and its broader audience.</p>
+
+      <h3>International cooperation</h3>
+      <p>The last time ICPS was held in Italy was in 2017. Since then, we have hosted multiple international events within the broader network of IAPS.</p>
+      <ul>
+        <li>
+          <a href="https://ai-sf.it/lot/" target="_blank" rel="noopener noreferrer"><strong>Light of Tuscany (LoT)</strong></a><br />
+          An annual international event organized by the AISF LC of Pisa and Florence on the occasion of the International Day of Light. Its main objectives are introducing various branches of optics and their diverse applications in physics, in a multidisciplinary context: including quantum technologies, condensed matter physics, gravitational wave interferometry, spectroscopy and observational astronomy.
+        </li>
+        <li>
+          <a href="https://ai-sf.it/tiqit/" target="_blank" rel="noopener noreferrer"><strong>Trento Innsbruck Quantum Information Tour (TIQIT)</strong></a><br />
+          An annual winter school hosted by the AISF LC of Trento and the LC of Innsbruck (Austria). It has a focus on Bose-Einstein Condensation, Nanoscience, Quantum Optics, and Quantum Information. Students follow a series of lectures on forefront theoretical and experimental research in this field by academics and visit the laboratories with private and public research programs.
+        </li>
+        <li>
+          <a href="https://ai-sf.it/sipe25/" target="_blank" rel="noopener noreferrer"><strong>Spanish Italian Physics Exchange (SIPE)</strong></a><br />
+          A bilateral international student exchange initiative created by AISF in cooperation with the GdeE RSEF (Grupo de Estudiantes de La Real Sociedad Española de Física), first held in Bari, Italy in 2025. SIPE combines scientific dissemination, showcasing ongoing physics research and its links to regional industry, with network building through academic sessions and social activities that foster collaboration between Italian and Spanish students, and territorial enhancement by promoting local cultural and historical heritage through curated visits and cultural programming. Responsibility for organizing SIPE rotates every two years between AISF and GdeE RSEF.
+        </li>
+        <li>
+          <a href="https://ai-sf.it/gipe/" target="_blank" rel="noopener noreferrer"><strong>German Italian Physics Exchange (GIPE)</strong></a><br />
+          An international scientific‑cultural initiative established by AISF in partnership with the Junge Deutsche Physikalische Gesellschaft (jDPG). Born from the desire to build a lasting network among the various components of IAPS (International Association of Physics Students), GIPE brings together students for a mix of scientific talks, cultural activities, and collaborative workshops. Responsibility for organizing the event alternates biennially between AISF and jDPG.
+        </li>
+        <li>
+          <a href="https://plancks23.ai-sf.it/" target="_blank" rel="noopener noreferrer"><strong>PLANCKS 2023</strong></a><br />
+          This edition was hosted in Milano between 12th May and 16th May 2023 and included numerous visits and workshops in collaboration with Milano Bicocca University Physics Department.
+        </li>
+        <li>
+          <a href="https://papap.ai-sf.it/" target="_blank" rel="noopener noreferrer"><strong>Particle &amp; Astroparticle Physics Program (PAPAP)</strong></a><br />
+          An international event in Rome that included visits to the National Gran Sasso Laboratory and the Gran Sasso Science Institute in central Italy and the INFN laboratories in Frascati, Rome. The event had a focus on astroparticle physics, but a number of other topics will be touched upon, including theoretical physics, nuclear physics, high-energy collisions, and cosmology.
+        </li>
+      </ul>
+
+      <h3>National events</h3>
+      <p>AISF organizes the following national annual events, primarily open to its members. These are the occasions in which we gather from anywhere in Italy and renew our feeling of being at home as members of the AISF community.</p>
+      <ul>
+        <li>
+          <strong>Conferenza Italiana Studenti di Fisica (CISF)</strong><br />
+          The annual national conference for Italian physics students, which hosts the Annual General Assembly of the association. Each year, it is held at a different location by a different Italian LC committee and showcases different themes, professors and laboratories of the hosting university.
+        </li>
+        <li>
+          <strong>Sezione Giovani (Youth Section)</strong><br />
+          Since 2015, the Italian Physical Society (SIF), in collaboration with the European Physical Society (EPS) network of young researchers Young Minds and AISF, have organized the Youth Section, a segment of the SIF Congress specifically dedicated to a young audience, with presentations designed to foster their scientific and professional development in a specific field of physics, which changes each year.
+        </li>
+        <li>
+          <strong>INternational SCientific HighliThs (INSIGHT)</strong><br />
+          INSIGHT was an online scientific event designed to highlight the most current research conducted at leading research centers around the world. The event was designed to stimulate discussion and curiosity about the frontiers of physics and emerging technologies. Postdocs and researchers shared their projects, reflections, and predictions, helping to make science accessible, inspiring, and concrete.
+        </li>
+        <li>
+          <strong>PrePLANCKS (PLANCKS Preliminaries)</strong><br />
+          AISF organizes annual eliminations for the PLANCKS International Physics Students’ Competition, featuring challenging interdisciplinary physics problems. Italian participants have also won the last edition of PLANCKS in Eindhoven in 2026.
+        </li>
+        <li>
+          <strong>QISKIT Fall Fest</strong><br />
+          Qiskit Fall Fest is a series of events promoted by IBM dedicated to quantum computing. The student associations AISF UniMi and K!nd4sus Cybersecurity Team, composed of physics and computer science students respectively, organized the 2026's edition, selected from just 55 approved by IBM out of over 600 global applications. The event took place at the Physics and Computer Science departments of the University of Milano.
+        </li>
+      </ul>
+
+      <h3>Local events</h3>
+      <p>Last but not least, each AISF LC is committed to organizing scientific, cultural, and recreational activities at a local level. These initiatives help in keeping our broad network of physics students engaged in their everyday academic life, while sharing experiences and opportunities with their peers. Over the years, AISF communities across Italy have developed a wide variety of activities; here follows a small selection of these:</p>
+      <ul>
+        <li>
+          <strong>Technical Workshops</strong><br />
+          Workshops for younger physicists on different topics including LaTeX, Python, Mathematica, etc.
+        </li>
+        <li>
+          <strong>Fisica al Pub (“Physics at the Pub”)</strong><br />
+          AISF’s most successful outreach initiative. The event brings physics out of the classroom and into informal pubs and cafés, creating an opportunity for students to discuss scientific topics in a relaxed and accessible environment. Each event focuses on a specific theme and features a short talk by a professor or local researcher followed by open discussions.
+        </li>
+        <li>
+          <strong>Academic Seminars</strong><br />
+          Seminars with researchers, professors, and PhD students of the collaborating universities.
+        </li>
+      </ul>
+
+      <h3>Science communication &amp; outreach</h3>
+      <p>As the Association has come to increasingly value science dissemination over the past years, the structure of the events listed above has progressively sought to ensure moments open to a wider, public audience, such as talks, roundtable discussions and the like. We strongly believe that Physics needs to be in touch with a wider public to be generally valued as an asset in our society.</p>
+      <p>This is also why AISF promotes scientific literacy within the following activities, focused only on dissemination and outreach:</p>
+      <ul>
+        <li>
+          <strong>Fisicaffé</strong><br />
+          AISF podcast, available on Spotify, Apple Podcast and YouTube. It's a chorus of voices from across Italy. It fulfills its aim of scientific dissemination in various columns dedicated to all aspects of physics. It also presents the activities of the various local committees via interviews with their professors, researchers, and students from their universities, as well as reports on local and national events, and interdisciplinary moments and connections with other types of non-scientific studies.
+        </li>
+        <li>
+          <strong>Next Leaders</strong><br />
+          AISF collaborates every month by publishing on the academic journal Next Leaders, an initiative by Forbes Italia. Our articles span over any kind of topic within Physics, to make it interesting, accessible and valuable to the wider public. We published articles such as Tune Mass Damper: the giant pendulum hidden in tall buildings (Francesco Ottone, 2026), or Digital restoration and 3D scanning of works of art (Arianna Valli, 2026).
+        </li>
+        <li>
+          <strong>High School Projects</strong><br />
+          Among our outreach initiatives, Ph(easy)Lab stands out as a laboratory based program designed to bring high school students closer to physics through a dynamic, peer-to-peer approach. The goal is to allow students to experience hands-on science and connect directly with the university environment. This valuable activity has been integrated into the Ministry of Education's School-Work Alternation programs.
+        </li>
+        <li>
+          <strong>Virgo Outreach</strong><br />
+          Through AISF’s national network, the European Gravitational Observatory outreach team has been able to recruit new guides for its educational visits. These guides play a key role in welcoming high school students and members of the general public, helping them discover the science behind gravitational-wave detection and the research conducted at one of the world’s leading observatories.
+        </li>
+      </ul>
+
+      <h3>Social media &amp; contacts</h3>
+      <div class="link-table">
+        <div><dt>Website:</dt><dd><a href="https://ai-sf.it/" target="_blank" rel="noopener noreferrer">https://ai-sf.it/</a></dd></div>
+        <div><dt>Instagram:</dt><dd><a href="https://www.instagram.com/aisf_fisica/" target="_blank" rel="noopener noreferrer">@aisf_fisica</a></dd></div>
+        <div><dt>Facebook:</dt><dd><a href="https://www.facebook.com/aisf.fisica?locale=it_IT" target="_blank" rel="noopener noreferrer">@aisf.fisica</a></dd></div>
+        <div><dt>LinkedIn:</dt><dd><a href="https://www.linkedin.com/company/associazione-italiana-studenti-di-fisica/s" target="_blank" rel="noopener noreferrer">associazione-italiana-studenti-di-fisica/</a></dd></div>
+        <div><dt>Spotify:</dt><dd><a href="https://open.spotify.com/show/5hTUu6fKDWthwLPED5SBfT?si=8f5800b5739a441d" target="_blank" rel="noopener noreferrer">Fisicaffé</a></dd></div>
+        <div><dt>YouTube:</dt><dd><a href="https://www.youtube.com/@aisffisica" target="_blank" rel="noopener noreferrer">aisf_fisica</a></dd></div>
+        <div><dt>Mail:</dt><dd><a href="mailto:esecutivo@ai-sf.it">esecutivo@ai-sf.it</a></dd></div>
+      </div>
+    </section>
+  </article>
+</Layout>
