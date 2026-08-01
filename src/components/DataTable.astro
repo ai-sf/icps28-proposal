@@ -8,13 +8,11 @@ interface Props {
   rows: (string | number)[][];
   /** Optional footer row(s), last column styled as total */
   foot?: (string | number)[];
-  /** If true, first column is left-aligned (default true) */
-  firstLeft?: boolean;
   /** Caption shown above the table */
   caption?: string;
 }
 
-const { headers, rows, foot, firstLeft = true, caption } = Astro.props;
+const { headers, rows, foot, caption } = Astro.props;
 ---
 
 <figure>
@@ -29,8 +27,7 @@ const { headers, rows, foot, firstLeft = true, caption } = Astro.props;
       <tbody>
         {rows.map((row) => (
           <tr>
-            {row.map((cell, i) => <td data-left={firstLeft && i === 0 ? true : undefined}>{cell}</td>)}
-          </tr>
+            {row.map((cell) => <td>{cell}</td>)}          </tr>
         ))}
       </tbody>
       {foot && (

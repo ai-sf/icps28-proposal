@@ -40,7 +40,7 @@ const ch = chapters.find((c) => c.id === 'introduction')!; // use YOUR chapter i
 |---|---|---|---|
 | `Figure` | `../components/Figure.astro` | `src` (relative to `/assets/`, no slash), `alt`, `caption?`, `layout: 'full'\|'inset'`, `imageFirst?`, `wide?` | any image; `inset` = image + text side by side (use the default slot for the text) |
 | `Callout` | `../components/Callout.astro` | `variant: 'default'\|'rose'` | quoted asides (e.g. sustainability note), default slot text |
-| `DataTable` | `../components/DataTable.astro` | `headers: string[]`, `rows: (string\|number)[][]`, `foot?`, `firstLeft?`, `caption?` | finance, visa, excursion tables |
+| `DataTable` | `../components/DataTable.astro` | `headers: string[]`, `rows: (string\|number)[][]`, `foot?`, `caption?` | finance, visa, excursion tables |
 | `PersonCard` | `../components/PersonCard.astro` | `photo` (name under `/assets/oc/`), `name`, `role?`, `bio` | OC members |
 | `SpeakerCard` | `../components/SpeakerCard.astro` | `photo` (under `/assets/speakers/`), `name`, `affiliation?`, `detail?`, `connection?: {label, href?}`, `reverse?` | keynote speakers |
 | `Motto` | `../components/Motto.astro` | `text` | "Curiosity takes flight" |
