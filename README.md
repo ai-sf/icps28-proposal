@@ -35,8 +35,10 @@ plus a cover page reproducing the frontespizio (logo, motto
 - **Palette** (verbatim from `config.tex`): PaleOak `#E2D1B7`, DarkCoffee
   `#382514`, BrightBalticBlue `#0060A6`, CarbonBlack `#242424`, CherryRose
   `#991E3B`. Derived tints use `oklch()`.
-- **Type**: display headings use Archivo (geometric grotesque, standing in for
-  the proposal's SEGO font, which is not redistributable); body text uses
+- **Type**: display headings, cover title, and the motto use **SEGO** (bundled
+  from the proposal's design system as woff2 in `src/fonts/`, with the source
+  files kept in `fonts/`), at its natural single weight; Archivo remains the
+  fallback for glyphs SEGO lacks (`·`, `→`, `°`, `—`, `…`). Body text uses
   Georgia with Source Serif 4 Variable as the bundled web fallback.
 - **Layout**: filigrana watermark background, PaleOak header rule, CherryRose
   footer rule — mirroring the compiled PDF's `fancyhdr` chrome.

@@ -90,6 +90,7 @@ Wrapping utilities (plain HTML + classes from global.css):
 
 ## 4. Design rules (do not break)
 
+- Fonts: display contexts (`--font-display`) use the bundled **SEGO** face at weight 400 (single-weight font — do not set heavier weights; use `font-synthesis-weight: none`). Archivo covers glyphs SEGO lacks. Keep body text in Georgia / Source Serif 4.
 - No new CSS files. Use existing classes/components only.
 - No `<style>` blocks in pages. No inline `style=` unless the component contract shows one.
 - Accent (`--accent`, blue) appears max 2× per screen: it's used for the kicker + links. Keep links as `<a>` only.
