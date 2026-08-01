@@ -50,7 +50,7 @@ const canonical = chapter
           <img src={asset('brand/logo-icps28.jpg')} alt="ICPS 2028 logo" />
           <span class="site-header__wordmark">ICPS 2028<em> · ITALY</em></span>
         </a>
-        <span class="site-header__right">Project Proposal</span>
+        <span class="site-header__right">{chapter ? chapters[idx].title : 'Project Proposal'}</span>
         <button class="site-header__burger" data-burger aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
             <path d="M3 6h18M3 12h18M3 18h18" />
@@ -59,7 +59,7 @@ const canonical = chapter
       </div>
     </header>
 
-    <div class="layout">
+    <div class={bare ? 'layout layout--bare' : 'layout'}>
       {!bare && (
         <nav class="sidebar" aria-label="Table of contents" data-od-id="site-toc">
           <p class="sidebar__label">Table of contents</p>
@@ -84,6 +84,31 @@ const canonical = chapter
         <slot />
       </main>
     </div>
+
+    {(prev || next) && (
+      <nav class="layout" aria-label="Pagination" style="padding-bottom:0">
+        <div class="pager-spacer"></div>
+        <div class="pager">
+          {prev && (
+            <a class="pager__link" href={`${base}${prev.id}/`}>
+              <span class="pager__dir">← Previous chapter</span>
+              <span class="pager__title">{prev.title}</span>
+            </a>
+          )}
+          {next ? (
+            <a class="pager__link pager__link--next" href={`${base}${next.id}/`}>
+              <span class="pager__dir">Next chapter →</span>
+              <span class="pager__title">{next.title}</span>
+            </a>
+          ) : (
+            <a class="pager__link pager__link--next" href={base}>
+              <span class="pager__dir">Back to cover →</span>
+              <span class="pager__title">ICPS 2028 — Project Proposal</span>
+            </a>
+          )}
+        </div>
+      </nav>
+    )}
 
     <footer class="site-footer" data-od-id="site-footer">
       <div class="site-footer__inner">
@@ -115,31 +140,6 @@ const canonical = chapter
           </ol>
         </div>
       </div>
-    )}
-
-    {prev && (
-      <nav class="layout" aria-label="Pagination" style="padding-bottom:0">
-        <div class="pager-spacer"></div>
-        <div class="pager">
-          {prev && (
-            <a class="pager__link" href={`${base}${prev.id}/`}>
-              <span class="pager__dir">← Previous chapter</span>
-              <span class="pager__title">{prev.title}</span>
-            </a>
-          )}
-          {next ? (
-            <a class="pager__link pager__link--next" href={`${base}${next.id}/`}>
-              <span class="pager__dir">Next chapter →</span>
-              <span class="pager__title">{next.title}</span>
-            </a>
-          ) : (
-            <a class="pager__link pager__link--next" href={base}>
-              <span class="pager__dir">Back to cover →</span>
-              <span class="pager__title">ICPS 2028 — Project Proposal</span>
-            </a>
-          )}
-        </div>
-      </nav>
     )}
 
     <script>

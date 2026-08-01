@@ -165,6 +165,11 @@ p { max-width: 68ch; }
   gap: var(--gutter);
   align-items: start;
 }
+/* Single-column variant for pages without a sidebar (cover/index) */
+.layout--bare {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: calc(var(--content-max) + var(--gutter) * 2);
+}
 
 /* ============================== SIDEBAR ============================== */
 .sidebar {
@@ -599,8 +604,8 @@ table.data .total { color: var(--accent); font-weight: 650; }
 
 /* ============================== PREV / NEXT NAV ============================== */
 .pager {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   gap: 1rem;
   margin-top: 3.5rem;
   padding-top: 1.5rem;
@@ -616,7 +621,7 @@ table.data .total { color: var(--accent); font-weight: 650; }
   transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
 }
 .pager__link:hover { border-color: var(--baltic-blue); background: color-mix(in oklab, var(--baltic-blue) 4%, white); text-decoration: none; }
-.pager__link--next { text-align: right; }
+.pager__link--next { margin-left: auto; text-align: right; }
 .pager__dir {
   display: block;
   font-family: var(--font-display);
@@ -643,8 +648,7 @@ table.data .total { color: var(--accent); font-weight: 650; }
   align-items: center;
   gap: 1rem;
   font-size: var(--text-sm);
-}
-.site-footer__logo { display: flex; align-items: center; gap: 0.5rem; }
+}.site-footer__logo { display: flex; align-items: center; gap: 0.5rem; }
 .site-footer__logo img { height: 1.9rem; width: auto; }
 .site-footer__center {
   margin: 0 auto;
@@ -836,8 +840,9 @@ table.data .total { color: var(--accent); font-weight: 650; }
   .person, .speaker { grid-template-columns: 4.25rem minmax(0, 1fr); gap: 0.9rem; }
   .person__photo, .speaker__photo { width: 4.25rem; height: 4.25rem; }
   .figure.inset { grid-template-columns: 1fr; }
-  .pager { grid-template-columns: 1fr; }
-  .pager__link--next { text-align: left; }
+  .pager { flex-direction: column; }
+  .pager__link--next { margin-left: 0; text-align: left; }
   .site-footer__right { display: none; }
+  .site-footer__center { margin: 0 auto 0 0; }
   figure.wide { margin-inline: 0; }
 }
