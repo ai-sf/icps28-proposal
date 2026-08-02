@@ -3,6 +3,7 @@
 // Verbatim transcription of chapters/05_scientific.tex.
 import Layout from '../layouts/Layout.astro';
 import { chapters } from '../data/site';
+import { asset } from '../utils';
 import SpeakerCard from '../components/SpeakerCard.astro';
 import Figure from '../components/Figure.astro';
 
@@ -199,58 +200,99 @@ const ch = chapters.find((c) => c.id === 'scientific-program')!;
       <h3>Artificial Intelligence in academia and society</h3>
       <p>Artificial intelligence is rapidly transforming the way science is conducted, from data analysis and simulation to scientific discovery itself. At the same time, its widespread adoption raises important questions regarding transparency, intellectual ownership, and the evolving relationship between humans and increasingly sophisticated computational tools.</p>
       <p>This discussion will explore the role of AI in scientific research, higher education, and society at large, bringing together experts in artificial intelligence, computational science, philosophers, and scientific methodologies.</p>
-      <p>Potential speakers may include</p>
+      <p>Potential speakers may include:</p>
       <ul>
-        <li>
-          <p>researchers in high-performance computing, and physics, like the TeRABIT (Network for Research and Academic Big Data in ITaly),</p>
-          <Figure src="speakers/fosca-giannotti.png" alt="Portrait of Fosca Giannotti" layout="inset" imageFirst={false}>
-            <p>computer scientists such as <strong>Fosca Giannotti</strong> (Scuola Normale Superiore),</p>
-          </Figure>
-        </li>
+        <li>researchers in high-performance computing, and physics, like the TeRABIT (Network for Research and Academic Big Data in ITaly),</li>
+        <li>computer scientists such as <strong>Fosca Giannotti</strong> (Scuola Normale Superiore),</li>
         <li>representatives from the FAIR foundation (Future Artificial Intelligence Research),</li>
         <li>representatives from the scientific publishing sector,</li>
         <li>scholars specializing in the ethical and philosophical implications of emerging technologies, such as Ivana Bartoletti (Digital Ethics Center at Oxford University) or Adriano Fabris (Digital Ethics at the University of Pisa)</li>
       </ul>
-      <div class="grid-2">
-        <Figure src="speakers/ivana-bartoletti.png" alt="Portrait of Ivana Bartoletti" caption="Ivana Bartoletti" layout="full" />
-        <Figure src="speakers/adriano-fabris.png" alt="Portrait of Adriano Fabris" caption="Adriano Fabris" layout="full" />
+      <div class="round-speakers">
+        <div class="round-speaker">
+          <img class="round-speaker__photo" src={asset('speakers/fosca-giannotti.png')} alt="Portrait of Fosca Giannotti" loading="lazy" />
+          <div>
+            <p class="round-speaker__name">Fosca Giannotti</p>
+            <p class="round-speaker__role">Scuola Normale Superiore</p>
+          </div>
+        </div>
+        <div class="round-speaker">
+          <img class="round-speaker__photo" src={asset('speakers/ivana-bartoletti.png')} alt="Portrait of Ivana Bartoletti" loading="lazy" />
+          <div>
+            <p class="round-speaker__name">Ivana Bartoletti</p>
+            <p class="round-speaker__role">Digital Ethics Center, Oxford University</p>
+          </div>
+        </div>
+        <div class="round-speaker">
+          <img class="round-speaker__photo" src={asset('speakers/adriano-fabris.png')} alt="Portrait of Adriano Fabris" loading="lazy" />
+          <div>
+            <p class="round-speaker__name">Adriano Fabris</p>
+            <p class="round-speaker__role">Digital Ethics, University of Pisa</p>
+          </div>
+        </div>
       </div>
 
       <h3>Peer review and scientific integrity</h3>
       <p>Scientific progress relies not only on discovery but also on verification.  In an era characterized by rapid information exchange and misinformation, understanding how scientific knowledge is validated has become more important than ever.</p>
       <p>Organized in collaboration with representatives from CICAP (Italian Committee for the Investigation of Claims of the Pseudosciences)  and members of the scientific community, this roundtable will discuss peer review, scientific skepticism, and ethics of science communication.</p>
-      <Figure src="speakers/bobbybroccoli.png" alt="Portrait of BobbyBroccoli" layout="inset">
-        <p>As part of the discussion, the Organizing Committee will explore the possibility of hosting a remote interview with <strong>BobbyBroccoli</strong>, a popular science communicator known for his in-depth investigations of scientific controversies, research misconduct, and the sociology of science. Such a contribution would provide an engaging perspective on the importance of transparency, integrity, and critical thinking in modern research.</p>
-      </Figure>
+      <p>As part of the discussion, the Organizing Committee will explore the possibility of hosting a remote interview with <strong>BobbyBroccoli</strong>, a popular science communicator known for his in-depth investigations of scientific controversies, research misconduct, and the sociology of science. Such a contribution would provide an engaging perspective on the importance of transparency, integrity, and critical thinking in modern research.</p>
+      <div class="round-speakers">
+        <div class="round-speaker">
+          <img class="round-speaker__photo" src={asset('speakers/bobbybroccoli.png')} alt="Portrait of BobbyBroccoli" loading="lazy" />
+          <div>
+            <p class="round-speaker__name">BobbyBroccoli</p>
+            <p class="round-speaker__role">Science communicator</p>
+          </div>
+        </div>
+      </div>
 
       <h3>Space frontiers</h3>
       <p>From lunar exploration and commercial spaceflight to planetary defence, humanity is entering a new era of space exploration.</p>
       <p>This roundtable will examine the scientific, technological, and societal challenges associated with humanity's expansion beyond Earth, discussing both current achievements and future ambitions.</p>
       <p>Potential speakers include:</p>
       <ul>
-        <li>
-          <Figure src="speakers/roberto-battiston.png" alt="Portrait of Roberto Battiston" layout="inset">
-            <p><strong>Roberto Battiston</strong> (former President of the Italian Space Agency),</p>
-          </Figure>
-        </li>
-        <li>
-          <Figure src="speakers/andrea-ferrero.png" alt="Portrait of Andrea Ferrero" layout="inset">
-            <p><strong>Andrea Ferrero</strong> (former President of CICAP and science communicator),</p>
-          </Figure>
-        </li>
-        <li>
-          <Figure src="speakers/ersilia-vaudo-scarpetta.png" alt="Portrait of Ersilia Vaudo Scarpetta" layout="inset">
-            <p><strong>Ersilia Vaudo Scarpetta</strong> (science communicator at ESA),</p>
-          </Figure>
-        </li>
-        <li>
-          <p>subject to availability, remote contributions from Italian astronauts such as Samanta Cristoforetti or Luca Parmitano.</p>
-          <div class="grid-2">
-            <Figure src="speakers/samanta-cristoforetti.png" alt="Portrait of Samanta Cristoforetti" caption="Samanta Cristoforetti" layout="full" />
-            <Figure src="speakers/luca-parmitano.png" alt="Portrait of Luca Parmitano" caption="Luca Parmitano" layout="full" />
-          </div>
-        </li>
+        <li><strong>Roberto Battiston</strong> (former President of the Italian Space Agency),</li>
+        <li><strong>Andrea Ferrero</strong> (former President of CICAP and science communicator),</li>
+        <li><strong>Ersilia Vaudo Scarpetta</strong> (science communicator at ESA),</li>
+        <li>subject to availability, remote contributions from Italian astronauts such as Samanta Cristoforetti or Luca Parmitano.</li>
       </ul>
+      <div class="round-speakers">
+        <div class="round-speaker">
+          <img class="round-speaker__photo" src={asset('speakers/roberto-battiston.png')} alt="Portrait of Roberto Battiston" loading="lazy" />
+          <div>
+            <p class="round-speaker__name">Roberto Battiston</p>
+            <p class="round-speaker__role">Former President of the Italian Space Agency</p>
+          </div>
+        </div>
+        <div class="round-speaker">
+          <img class="round-speaker__photo" src={asset('speakers/andrea-ferrero.png')} alt="Portrait of Andrea Ferrero" loading="lazy" />
+          <div>
+            <p class="round-speaker__name">Andrea Ferrero</p>
+            <p class="round-speaker__role">Former President of CICAP and science communicator</p>
+          </div>
+        </div>
+        <div class="round-speaker">
+          <img class="round-speaker__photo" src={asset('speakers/ersilia-vaudo-scarpetta.png')} alt="Portrait of Ersilia Vaudo Scarpetta" loading="lazy" />
+          <div>
+            <p class="round-speaker__name">Ersilia Vaudo Scarpetta</p>
+            <p class="round-speaker__role">Science communicator at ESA</p>
+          </div>
+        </div>
+        <div class="round-speaker">
+          <img class="round-speaker__photo" src={asset('speakers/samanta-cristoforetti.png')} alt="Portrait of Samanta Cristoforetti" loading="lazy" />
+          <div>
+            <p class="round-speaker__name">Samanta Cristoforetti</p>
+            <p class="round-speaker__role">Italian astronaut</p>
+          </div>
+        </div>
+        <div class="round-speaker">
+          <img class="round-speaker__photo" src={asset('speakers/luca-parmitano.png')} alt="Portrait of Luca Parmitano" loading="lazy" />
+          <div>
+            <p class="round-speaker__name">Luca Parmitano</p>
+            <p class="round-speaker__role">Italian astronaut</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section>
