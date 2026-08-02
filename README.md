@@ -59,10 +59,10 @@ npm run preview   # serve the built site locally
 3. The included workflow (`.github/workflows/deploy.yml`) builds the site and
    publishes it automatically on every push to `main`.
 
-The workflow sets `BASE_PATH=/<repo>/`, so the site works at
-`https://<user>.github.io/<repo>/` without changes. For a user/org page
-(`https://<user>.github.io/`) or a custom domain, set `SITE` and omit
-`BASE_PATH` in the workflow.
+The workflow sets `BASE_PATH=/<repo>/` and `SITE=https://<owner>.github.io/`
+automatically, so the site works at `https://<user>.github.io/<repo>/` without
+changes. For a user/org page (`https://<user>.github.io/`) or a custom domain,
+adjust `SITE` and omit `BASE_PATH` in the workflow.
 
 ## Project structure
 

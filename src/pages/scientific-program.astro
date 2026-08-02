@@ -4,6 +4,7 @@
 import Layout from '../layouts/Layout.astro';
 import { chapters } from '../data/site';
 import { asset } from '../utils';
+import ChapterHead from '../components/ChapterHead.astro';
 import SpeakerCard from '../components/SpeakerCard.astro';
 import Figure from '../components/Figure.astro';
 
@@ -15,11 +16,7 @@ const ch = chapters.find((c) => c.id === 'scientific-program')!;
   description="The scientific program of ICPS 2028 — thematic tracks and keynote speakers, roundtable discussions, workshops, scientific lab visits and student contributions across Torino and Milano."
   chapter={ch.id}
 >
-  <header class="chapter-head">
-    <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
-    <h1>{ch.title}</h1>
-    <p class="chapter-head__lead">The scientific program of the conference is designed as a journey through the core questions of modern physics. Moving beyond the boundaries of isolated subfields, the program encourages an intellectual journey where the laws of the subatomic world, the patterns of complexity, and the architecture of the cosmos continuously echo and challenge one another.</p>
-  </header>
+  <ChapterHead chapter={ch.id} lead="The scientific program of the conference is designed as a journey through the core questions of modern physics. Moving beyond the boundaries of isolated subfields, the program encourages an intellectual journey where the laws of the subatomic world, the patterns of complexity, and the architecture of the cosmos continuously echo and challenge one another." />
 
   <article class="prose">
     <p>The conference is structured across <strong>two parallel historical and academic hubs</strong>, each embodying a distinct approach to the physical reality: Torino and Milano.</p>

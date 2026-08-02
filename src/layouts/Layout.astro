@@ -23,9 +23,9 @@ const asset = (p: string) => `${base}assets/${p}`;
 const idx = chapter ? chapters.findIndex((c) => c.id === chapter) : -1;
 const prev = idx > 0 ? chapters[idx - 1] : null;
 const next = idx >= 0 && idx < chapters.length - 1 ? chapters[idx + 1] : null;
-const canonical = chapter
-  ? `${base}${chapter}/`
-  : `${base}`;
+// Absolute canonical URL from Astro's site config (Astro.url.pathname already
+// includes the base path, so this stays correct under /repo/ deployments too).
+const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -42,7 +42,7 @@ const canonical = chapter
     <link rel="canonical" href={canonical} />
   </head>
   <body>
-    <div class="watermark" aria-hidden="true"></div>
+    <div class="watermark" aria-hidden="true" style={`background-image:url(${asset('brand/filigrana.jpg')})`}></div>
 
     <header class="site-header" data-od-id="site-header">
       <div class="site-header__inner">

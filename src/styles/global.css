@@ -105,7 +105,8 @@ p { max-width: 68ch; }
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background-image: url('/assets/brand/filigrana.jpg');
+  /* background-image is set inline from Layout via the BASE_URL-aware asset() helper
+     so the watermark also works under a base path (e.g. /repo/ on GitHub Pages). */
   background-size: cover;
   background-position: center;
   opacity: 0.055;
@@ -372,6 +373,16 @@ figure.inset {
 .callout--rose { border-left-color: var(--cherry-rose); }
 
 /* Data tables (finance, visa, excursions) */
+.data-caption {
+  font-style: normal;
+  font-family: var(--font-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: var(--text-xs);
+  font-weight: 650;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
 .table-wrap {
   margin: 1.5rem 0;
   overflow-x: auto;

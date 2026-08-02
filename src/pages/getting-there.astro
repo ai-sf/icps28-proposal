@@ -3,14 +3,12 @@
 import Layout from '../layouts/Layout.astro';
 import { chapters } from '../data/site';
 import Callout from '../components/Callout.astro';
+import ChapterHead from '../components/ChapterHead.astro';
 
 const ch = chapters.find((c) => c.id === 'getting-there')!;
 ---
 <Layout title={ch.title} description="How to reach Torino and Milano — by plane, train, bus, and car, plus visa requirements." chapter={ch.id}>
-  <header class="chapter-head">
-    <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
-    <h1>{ch.title}</h1>
-  </header>
+  <ChapterHead chapter={ch.id} />
 
   <article class="prose">
     <section>
