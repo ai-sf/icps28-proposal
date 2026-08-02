@@ -253,10 +253,13 @@ const blocks: { title: string; members: Member[] }[] = [
     <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
     <h1>{ch.title}</h1>
     <p class="chapter-head__lead">{lead}</p>
-    <p class="chapter-head__lead">The committee is structured into seven teams:</p>
   </header>
 
   <article class="prose">
+    <p>
+      The committee is structured into seven teams:
+    </p>
+
     {teams.map((t) => (
       <section>
         <h4>{t.title}</h4>
