@@ -1,17 +1,12 @@
 ---
 // Chapter 03 — A few words about Italy (chapters/02_cities.tex)
 import Layout from '../layouts/Layout.astro';
-import { chapters } from '../data/site';
 import ChapterHead from '../components/ChapterHead.astro';
 import Figure from '../components/Figure.astro';
 
-const ch = chapters.find((c) => c.id === 'italy')!;
-
-const lead =
-  'Located in Southern Europe, Italy shares borders with France, Switzerland, Austria, and Slovenia, while its central position in the Mediterranean Sea makes it easily accessible from Europe, North Africa, and West Asia. This strategic location has made Italy a crossroads of different cultures, ideas, trade, and scientific exchange for centuries. Every Italian region bears its own unique history and culture, enriched by the diverse peoples who have crossed it. This intricate web of different legacies ultimately gives rise to a feeling of complex uniqueness, characterizing every possible location on the Italian map.';
 ---
-<Layout title={ch.title} description="The host cities of ICPS 2028 — a few words about Italy, Torino, and Milano." chapter={ch.id}>
-  <ChapterHead chapter={ch.id} lead={lead} />
+<Layout chapter="italy">
+  <ChapterHead chapter="italy" />
 
   <article class="prose">
     <p>One of Italy's greatest strengths lies in the extraordinary diversity of its landscapes. Within a relatively compact territory, visitors can experience an exceptional variety of natural environments.</p>

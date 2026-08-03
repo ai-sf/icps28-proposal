@@ -1,7 +1,8 @@
 ---
 // Figure — image with optional caption; supports two-column (image+text) insets
 // as used throughout the proposal.
-import { asset } from '../utils';
+import { Image } from 'astro:assets';
+import { assetImage } from '../images';
 
 interface Props {
   src: string; // path relative to /assets/ (no leading slash)
@@ -15,6 +16,7 @@ interface Props {
 }
 
 const { src, alt, caption, layout = 'full', imageFirst = true, wide = false } = Astro.props;
+const img = assetImage(src);
 ---
 
 {
@@ -22,7 +24,7 @@ const { src, alt, caption, layout = 'full', imageFirst = true, wide = false } = 
     <figure class={['inset', wide ? 'wide' : ''].filter(Boolean).join(' ')}>
       {imageFirst ? (
         <>
-          <img src={asset(src)} alt={alt} loading="lazy" />
+          <Image src={img} alt={alt} loading="lazy" densities={[1, 2]} />
           <div>
             <slot />
             {caption && <figcaption>{caption}</figcaption>}
@@ -34,13 +36,13 @@ const { src, alt, caption, layout = 'full', imageFirst = true, wide = false } = 
             <slot />
             {caption && <figcaption>{caption}</figcaption>}
           </div>
-          <img src={asset(src)} alt={alt} loading="lazy" />
+          <Image src={img} alt={alt} loading="lazy" densities={[1, 2]} />
         </>
       )}
     </figure>
   ) : (
     <figure class={wide ? 'wide' : ''}>
-      <img src={asset(src)} alt={alt} loading="lazy" />
+      <Image src={img} alt={alt} loading="lazy" densities={[1, 2]} />
       {caption && <figcaption>{caption}</figcaption>}
       <slot />
     </figure>

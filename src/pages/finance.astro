@@ -2,15 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import ChapterHead from '../components/ChapterHead.astro';
 import DataTable from '../components/DataTable.astro';
-import { chapters } from '../data/site';
-
-const ch = chapters.find((c) => c.id === 'finance')!;
-const lead =
-  'To ensure a comprehensive and resilient financial overview for ICPS28, the following section outlines our financial planning structured across two distinct attendance scenarios: a 500 participants model and a 400 participants model.';
 ---
 
-<Layout title={ch.title} description="ICPS 2028 project proposal — Finance chapter." chapter={ch.id}>
-  <ChapterHead chapter={ch.id} lead={lead} />
+<Layout chapter="finance">
+  <ChapterHead chapter="finance" />
 
   <article class="prose">
     <p>

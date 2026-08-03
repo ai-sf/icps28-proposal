@@ -10,15 +10,10 @@ British spellings and even quirks ("Accomodation", "exploraing") stay as-is.
 ```astro
 ---
 import Layout from '../layouts/Layout.astro';
-import { chapters } from '../data/site';
-const ch = chapters.find((c) => c.id === 'introduction')!; // use YOUR chapter id
+import ChapterHead from '../components/ChapterHead.astro';
 ---
-<Layout title={ch.title} description="…" chapter={ch.id}>
-  <header class="chapter-head">
-    <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
-    <h1>{ch.title}</h1>
-    {lead && <p class="chapter-head__lead">{lead}</p>}
-  </header>
+<Layout chapter="introduction">
+  <ChapterHead chapter="introduction" />
 
   <article class="prose">
     <!-- sections -->
@@ -26,7 +21,7 @@ const ch = chapters.find((c) => c.id === 'introduction')!; // use YOUR chapter i
 </Layout>
 ```
 
-- The chapter lead is the intro paragraph(s) of the chapter (before the first `\section`), shortened only by *splitting*; if long, put the rest as the first prose paragraph.
+- Chapter title, description, and lead (the intro paragraph before the first `\section`, shortened only by *splitting*) live in `src/data/site.ts` — edit them there, never inline in the page. If the lead is long, put the rest as the first prose paragraph.
 - Every `\section{...}` → `<section>` with `<h2>` (add `<span class="sec-num">N.</span>` only when the source numbers sections).
 - `\subsection*{...}` → `<h3>`. `\paragraph*{...}` / `\subsubsection*{...}` → `<h4>`.
 - `\item` lists → `<ul>/<ol><li>`. Inline `\textbf`→`<strong>`, `\textit`→`<em>`.
@@ -38,7 +33,7 @@ const ch = chapters.find((c) => c.id === 'introduction')!; // use YOUR chapter i
 
 | Component | Import | Props | Use for |
 |---|---|---|---|
-| `Figure` | `../components/Figure.astro` | `src` (relative to `/assets/`, no slash), `alt`, `caption?`, `layout: 'full'\|'inset'`, `imageFirst?`, `wide?` | any image; `inset` = image + text side by side (use the default slot for the text) |
+| `Figure` | `../components/Figure.astro` | `src` (relative to `src/assets/`, no slash), `alt`, `caption?`, `layout: 'full'\|'inset'`, `imageFirst?`, `wide?` | any image; `inset` = image + text side by side (use the default slot for the text) |
 | `Callout` | `../components/Callout.astro` | `variant: 'default'\|'rose'` | quoted asides (e.g. sustainability note), default slot text |
 | `DataTable` | `../components/DataTable.astro` | `headers: string[]`, `rows: (string\|number)[][]`, `foot?`, `caption?` | finance, visa, excursion tables |
 | `PersonCard` | `../components/PersonCard.astro` | `photo` (name under `/assets/oc/`), `name`, `role?`, `bio` | OC members |
@@ -48,7 +43,7 @@ const ch = chapters.find((c) => c.id === 'introduction')!; // use YOUR chapter i
 Wrapping utilities (plain HTML + classes from global.css):
 - `.team-block` + `.team-block__title` — OC team sections.
 - `.keywords` list with `.keywords__term` / `.keywords__def` — the 5 keywords.
-- `.logo-row` + `.logo-row__label` + `<img>` — sponsor logo bars.
+- `.logo-row` + `.logo-row__label` — sponsor logo bars (each logo via `<Image src={assetImage('sponsors/…')} />`).
 - `.tag-list` — two-column country lists (visa).
 - `.card-grid` + `.card` + `.card__title` / `.card__body` / `.card__meta` — museum/venue cards.
 - `.link-table` — contact / social media table.
@@ -56,7 +51,7 @@ Wrapping utilities (plain HTML + classes from global.css):
 - `.eyebrow` — small caps label. `.grid-2` — two columns.
 - `.chip` — small tag/badge; `.chip--rose` variant.
 
-## 3. Image slug manifest (tex source → `/assets/<path>`)
+## 3. Image slug manifest (tex source → `src/assets/<path>`)
 
 ### oc (photos/oc or photos_orig/oc)
 `Cante.png→oc/federico-canterucci.png`, `Julia.png→oc/julia-favaro.png`, `Deb.png→oc/debora-marrone.png`, `Valerio.png→oc/valerio-tinari.png`, `Luca.png→oc/luca-attina.png`, `Cla.png→oc/claudia-franco.png`, `Giacomo.png→oc/giacomo-galli.png`, `Cicca.png→oc/roberto-ciccarelli.png`, `Adele.png (orig)→oc/adele-peluso.png`, `Davide.png→oc/davide-perillo.png`, `Tomislav.png (orig)→oc/tomislav-vojvodic.png`, `Francesco.png→oc/francesco-ottone.png`, `Giorgia.png→oc/giorgia-cantore.png`, `Raimondo.png→oc/raimondo-lucariello.png`, `Sara.png→oc/sara-atlante.png`, `Tassa.png→oc/valerio-tassarotti.png`, `Virginia.png→oc/virginia-marchignoli.png`, `Rares.png→oc/rares-drosu.png`, `Mario.png→oc/mario-lisciandrello.png`, `Elisa.png→oc/elisa-sogno.png`, `Marta.png→oc/marta-giacomet.png`, `Dario.png→oc/dario-zarcone.png`, `Alice.png→oc/alice-dautilio.png`, `Claudio.png→oc/claudio-scarasciullo.png`, `Mattia.png→oc/mattia-magaletti.png`, `Lorenzo.png→oc/lorenzo-sabadini.png`, `Alessandro.png→oc/alessandro-lupi.png`, `Mara.png→oc/maria-rosaria-sivo.png`, `gruppo.jpg→oc/gruppo.jpg`
@@ -94,6 +89,6 @@ Wrapping utilities (plain HTML + classes from global.css):
 - No new CSS files. Use existing classes/components only.
 - No `<style>` blocks in pages. No inline `style=` unless the component contract shows one.
 - Accent (`--accent`, blue) appears max 2× per screen: it's used for the kicker + links. Keep links as `<a>` only.
-- Every `<img>` must have `alt`. `loading="lazy"` is already in components.
+- Use `<Image>` from `astro:assets` with `assetImage('path')` (see `src/images.ts`) — never a raw `<img>` or `/assets/…` URL. `alt` is required; components already set `loading="lazy"`.
 - Keep the verbatim text EXACTLY; if a paragraph is very long, you may split it into multiple `<p>` — never reword.
 - `\LaTeX` renders as "LaTeX". Math `\(2 \pm 1\)` → `2 ± 1` (plain text is fine).

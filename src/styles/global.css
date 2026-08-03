@@ -105,7 +105,7 @@ p { max-width: 68ch; }
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  /* background-image is set inline from Layout via the BASE_URL-aware asset() helper
+  /* background-image is set inline from Layout via an imported astro:assets image
      so the watermark also works under a base path (e.g. /repo/ on GitHub Pages). */
   background-size: cover;
   background-position: center;

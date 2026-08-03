@@ -1,14 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import ChapterHead from '../components/ChapterHead.astro';
-import { chapters } from '../data/site';
-import { asset } from '../utils';
-
-const ch = chapters.find((c) => c.id === 'sponsorships')!;
+import { assetImage } from '../images';
 ---
 
-<Layout title={ch.title} description="ICPS 2028 project proposal — Sponsorship strategy chapter." chapter={ch.id}>
-  <ChapterHead chapter={ch.id} />
+<Layout chapter="sponsorships">
+  <ChapterHead chapter="sponsorships" />
 
   <article class="prose">
     <p>
@@ -63,9 +61,9 @@ const ch = chapters.find((c) => c.id === 'sponsorships')!;
 
     <div class="logo-row">
       <span class="logo-row__label">Scientific patronage</span>
-      <img src={asset('sponsors/iaps.jpg')} alt="IAPS logo" />
-      <img src={asset('sponsors/iupap.png')} alt="IUPAP logo" />
-      <img src={asset('sponsors/eps.png')} alt="EPS logo" />
+      <Image src={assetImage('sponsors/iaps.jpg')} alt="IAPS logo" />
+      <Image src={assetImage('sponsors/iupap.png')} alt="IUPAP logo" />
+      <Image src={assetImage('sponsors/eps.png')} alt="EPS logo" />
     </div>
 
     <p>
@@ -85,13 +83,13 @@ const ch = chapters.find((c) => c.id === 'sponsorships')!;
 
     <div class="logo-row">
       <span class="logo-row__label">Core institutional partners</span>
-      <img src={asset('sponsors/unito.png')} alt="University of Torino logo" />
-      <img src={asset('sponsors/unimi.png')} alt="University of Milano logo" />
-      <img src={asset('sponsors/unimib.png')} alt="University of Milano-Bicocca logo" />
-      <img src={asset('sponsors/infn.jpg')} alt="INFN logo" />
-      <img src={asset('sponsors/inrim.jpg')} alt="INRiM logo" />
-      <img src={asset('sponsors/polimi.png')} alt="Politecnico di Milano logo" />
-      <img src={asset('sponsors/polito.png')} alt="Politecnico di Torino logo" />
+      <Image src={assetImage('sponsors/unito.png')} alt="University of Torino logo" />
+      <Image src={assetImage('sponsors/unimi.png')} alt="University of Milano logo" />
+      <Image src={assetImage('sponsors/unimib.png')} alt="University of Milano-Bicocca logo" />
+      <Image src={assetImage('sponsors/infn.jpg')} alt="INFN logo" />
+      <Image src={assetImage('sponsors/inrim.jpg')} alt="INRiM logo" />
+      <Image src={assetImage('sponsors/polimi.png')} alt="Politecnico di Milano logo" />
+      <Image src={assetImage('sponsors/polito.png')} alt="Politecnico di Torino logo" />
     </div>
 
     <p>
@@ -120,7 +118,7 @@ const ch = chapters.find((c) => c.id === 'sponsorships')!;
 
     <div class="logo-row">
       <span class="logo-row__label">Intesa Sanpaolo</span>
-      <img src={asset('sponsors/intesa-sanpaolo.png')} alt="Intesa Sanpaolo logo" />
+      <Image src={assetImage('sponsors/intesa-sanpaolo.png')} alt="Intesa Sanpaolo logo" />
     </div>
 
     <p>

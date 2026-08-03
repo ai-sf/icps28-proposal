@@ -1,12 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ChapterHead from '../components/ChapterHead.astro';
-import { chapters } from '../data/site';
-
-const ch = chapters.find((c) => c.id === 'internal-communication')!;
 ---
-<Layout title={ch.title} description="How ICPS 2028 will keep participants informed and connected: newsletters, the conference handbook and digital platform, internet access, phone connections, accessibility and inclusion measures, and medical emergencies." chapter={ch.id}>
-  <ChapterHead chapter={ch.id} />
+<Layout chapter="internal-communication">
+  <ChapterHead chapter="internal-communication" />
 
   <article class="prose">
     <section>

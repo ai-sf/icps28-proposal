@@ -1,22 +1,16 @@
 ---
 // Chapter 06 — Scientific program.
 // Verbatim transcription of chapters/05_scientific.tex.
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import { chapters } from '../data/site';
-import { asset } from '../utils';
 import ChapterHead from '../components/ChapterHead.astro';
 import SpeakerCard from '../components/SpeakerCard.astro';
 import Figure from '../components/Figure.astro';
-
-const ch = chapters.find((c) => c.id === 'scientific-program')!;
+import { assetImage } from '../images';
 ---
 
-<Layout
-  title={ch.title}
-  description="The scientific program of ICPS 2028 — thematic tracks and keynote speakers, roundtable discussions, workshops, scientific lab visits and student contributions across Torino and Milano."
-  chapter={ch.id}
->
-  <ChapterHead chapter={ch.id} lead="The scientific program of the conference is designed as a journey through the core questions of modern physics. Moving beyond the boundaries of isolated subfields, the program encourages an intellectual journey where the laws of the subatomic world, the patterns of complexity, and the architecture of the cosmos continuously echo and challenge one another." />
+<Layout chapter="scientific-program">
+  <ChapterHead chapter="scientific-program" />
 
   <article class="prose">
     <p>The conference is structured across <strong>two parallel historical and academic hubs</strong>, each embodying a distinct approach to the physical reality: Torino and Milano.</p>
@@ -207,21 +201,21 @@ const ch = chapters.find((c) => c.id === 'scientific-program')!;
       </ul>
       <div class="round-speakers">
         <div class="round-speaker">
-          <img class="round-speaker__photo" src={asset('speakers/fosca-giannotti.png')} alt="Portrait of Fosca Giannotti" loading="lazy" />
+          <Image class="round-speaker__photo" src={assetImage('speakers/fosca-giannotti.png')} alt="Portrait of Fosca Giannotti" loading="lazy" width={128} />
           <div>
             <p class="round-speaker__name">Fosca Giannotti</p>
             <p class="round-speaker__role">Scuola Normale Superiore</p>
           </div>
         </div>
         <div class="round-speaker">
-          <img class="round-speaker__photo" src={asset('speakers/ivana-bartoletti.png')} alt="Portrait of Ivana Bartoletti" loading="lazy" />
+          <Image class="round-speaker__photo" src={assetImage('speakers/ivana-bartoletti.png')} alt="Portrait of Ivana Bartoletti" loading="lazy" width={128} />
           <div>
             <p class="round-speaker__name">Ivana Bartoletti</p>
             <p class="round-speaker__role">Digital Ethics Center, Oxford University</p>
           </div>
         </div>
         <div class="round-speaker">
-          <img class="round-speaker__photo" src={asset('speakers/adriano-fabris.png')} alt="Portrait of Adriano Fabris" loading="lazy" />
+          <Image class="round-speaker__photo" src={assetImage('speakers/adriano-fabris.png')} alt="Portrait of Adriano Fabris" loading="lazy" width={128} />
           <div>
             <p class="round-speaker__name">Adriano Fabris</p>
             <p class="round-speaker__role">Digital Ethics, University of Pisa</p>
@@ -235,7 +229,7 @@ const ch = chapters.find((c) => c.id === 'scientific-program')!;
       <p>As part of the discussion, the Organizing Committee will explore the possibility of hosting a remote interview with <strong>BobbyBroccoli</strong>, a popular science communicator known for his in-depth investigations of scientific controversies, research misconduct, and the sociology of science. Such a contribution would provide an engaging perspective on the importance of transparency, integrity, and critical thinking in modern research.</p>
       <div class="round-speakers">
         <div class="round-speaker">
-          <img class="round-speaker__photo" src={asset('speakers/bobbybroccoli.png')} alt="Portrait of BobbyBroccoli" loading="lazy" />
+          <Image class="round-speaker__photo" src={assetImage('speakers/bobbybroccoli.png')} alt="Portrait of BobbyBroccoli" loading="lazy" width={128} />
           <div>
             <p class="round-speaker__name">BobbyBroccoli</p>
             <p class="round-speaker__role">Science communicator</p>
@@ -255,35 +249,35 @@ const ch = chapters.find((c) => c.id === 'scientific-program')!;
       </ul>
       <div class="round-speakers">
         <div class="round-speaker">
-          <img class="round-speaker__photo" src={asset('speakers/roberto-battiston.png')} alt="Portrait of Roberto Battiston" loading="lazy" />
+          <Image class="round-speaker__photo" src={assetImage('speakers/roberto-battiston.png')} alt="Portrait of Roberto Battiston" loading="lazy" width={128} />
           <div>
             <p class="round-speaker__name">Roberto Battiston</p>
             <p class="round-speaker__role">Former President of the Italian Space Agency</p>
           </div>
         </div>
         <div class="round-speaker">
-          <img class="round-speaker__photo" src={asset('speakers/andrea-ferrero.png')} alt="Portrait of Andrea Ferrero" loading="lazy" />
+          <Image class="round-speaker__photo" src={assetImage('speakers/andrea-ferrero.png')} alt="Portrait of Andrea Ferrero" loading="lazy" width={128} />
           <div>
             <p class="round-speaker__name">Andrea Ferrero</p>
             <p class="round-speaker__role">Former President of CICAP and science communicator</p>
           </div>
         </div>
         <div class="round-speaker">
-          <img class="round-speaker__photo" src={asset('speakers/ersilia-vaudo-scarpetta.png')} alt="Portrait of Ersilia Vaudo Scarpetta" loading="lazy" />
+          <Image class="round-speaker__photo" src={assetImage('speakers/ersilia-vaudo-scarpetta.png')} alt="Portrait of Ersilia Vaudo Scarpetta" loading="lazy" width={128} />
           <div>
             <p class="round-speaker__name">Ersilia Vaudo Scarpetta</p>
             <p class="round-speaker__role">Science communicator at ESA</p>
           </div>
         </div>
         <div class="round-speaker">
-          <img class="round-speaker__photo" src={asset('speakers/samanta-cristoforetti.png')} alt="Portrait of Samanta Cristoforetti" loading="lazy" />
+          <Image class="round-speaker__photo" src={assetImage('speakers/samanta-cristoforetti.png')} alt="Portrait of Samanta Cristoforetti" loading="lazy" width={128} />
           <div>
             <p class="round-speaker__name">Samanta Cristoforetti</p>
             <p class="round-speaker__role">Italian astronaut</p>
           </div>
         </div>
         <div class="round-speaker">
-          <img class="round-speaker__photo" src={asset('speakers/luca-parmitano.png')} alt="Portrait of Luca Parmitano" loading="lazy" />
+          <Image class="round-speaker__photo" src={assetImage('speakers/luca-parmitano.png')} alt="Portrait of Luca Parmitano" loading="lazy" width={128} />
           <div>
             <p class="round-speaker__name">Luca Parmitano</p>
             <p class="round-speaker__role">Italian astronaut</p>

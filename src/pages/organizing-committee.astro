@@ -4,12 +4,6 @@
 import Layout from '../layouts/Layout.astro';
 import ChapterHead from '../components/ChapterHead.astro';
 import PersonCard from '../components/PersonCard.astro';
-import { chapters } from '../data/site';
-
-const ch = chapters.find((c) => c.id === 'organizing-committee')!;
-
-const lead =
-  "The Organizing Committee currently consists of 28 students from universities across Italy, bringing together diverse academic backgrounds, physics field knowledge, and regional representation. Each member has already contributed to previous AISF events, committed to other scientific engagement, or both.";
 
 const teams = [
   {
@@ -245,12 +239,8 @@ const blocks: { title: string; members: Member[] }[] = [
 ];
 ---
 
-<Layout
-  title={ch.title}
-  description="The ICPS 2028 Organizing Committee — 28 students from universities across Italy, structured into seven teams."
-  chapter={ch.id}
->
-  <ChapterHead chapter={ch.id} lead={lead} />
+<Layout chapter="organizing-committee">
+  <ChapterHead chapter="organizing-committee" />
 
   <article class="prose">
     <p>

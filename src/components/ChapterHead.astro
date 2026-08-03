@@ -1,21 +1,19 @@
 ---
-// ChapterHead — standard chapter opener: kicker ("Chapter NN"), title, optional lead.
-// Mirrors the PDF chapter-opening block; used by every chapter page.
+// ChapterHead — standard chapter opener: kicker ("Chapter NN"), title, lead.
+// All data comes from the chapter registry in src/data/site.ts.
 import { chapters } from '../data/site';
 
 interface Props {
-  /** Chapter id from data/site.ts (drives number + title). */
+  /** Chapter id from data/site.ts (drives number, title, and lead). */
   chapter: string;
-  /** Optional lead paragraph shown under the title. */
-  lead?: string;
 }
 
-const { chapter, lead } = Astro.props;
+const { chapter } = Astro.props;
 const ch = chapters.find((c) => c.id === chapter)!;
 ---
 
 <header class="chapter-head">
   <p class="chapter-head__kicker">Chapter {String(ch.num).padStart(2, '0')}</p>
   <h1>{ch.title}</h1>
-  {lead && <p class="chapter-head__lead">{lead}</p>}
+  {ch.lead && <p class="chapter-head__lead">{ch.lead}</p>}
 </header>

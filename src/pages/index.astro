@@ -2,9 +2,10 @@
 // Cover page — mirrors the LaTeX frontespizio (firstPage.tex):
 // AISF logo + association name, "Project Proposal to host", ICPS 2028,
 // motto, ICPS28 logo, presentation info — followed by the table of contents.
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import { chapters } from '../data/site';
-import { asset } from '../utils';
+import { assetImage } from '../images';
 
 const base = import.meta.env.BASE_URL;
 ---
@@ -14,7 +15,7 @@ const base = import.meta.env.BASE_URL;
     <div class="cover__band" aria-hidden="true"></div>
     <div class="cover__inner">
       <p class="cover__aisf">
-        <img src={asset('brand/aisf-logo-bg.png')} alt="AISF — Associazione Italiana Studenti di Fisica" />
+        <Image src={assetImage('brand/aisf-logo-bg.png')} alt="AISF — Associazione Italiana Studenti di Fisica" loading="eager" width={288} />
       </p>
       <p class="cover__aisf-name">Associazione Italiana Studenti di Fisica</p>
 
@@ -24,7 +25,7 @@ const base = import.meta.env.BASE_URL;
       <p class="cover__motto">“Curiosity takes flight”</p>
 
       <p class="cover__logo">
-        <img src={asset('brand/logo-icps28.jpg')} alt="ICPS 2028 — Italy logo" />
+        <Image src={assetImage('brand/logo-icps28.jpg')} alt="ICPS 2028 — Italy logo" loading="eager" width={512} densities={[1, 2]} />
       </p>
 
       <p class="cover__meta">

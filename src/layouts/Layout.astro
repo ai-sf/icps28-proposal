@@ -2,15 +2,20 @@
 // Layout: global chrome for the proposal site.
 // Mirrors the PDF's fancyhdr: PaleOak header rule, CherryRose footer rule,
 // logo footer, "ICPS 2028 · ITALY" header right, filigrana watermark.
+import { Image } from 'astro:assets';
 import '@fontsource-variable/archivo';
 import '@fontsource-variable/source-serif-4';
 import '../styles/global.css';
 import { chapters } from '../data/site';
+import logo from '../assets/brand/logo-icps28.jpg';
+import filigrana from '../assets/brand/filigrana.jpg';
 
 interface Props {
-  title: string;
+  /** Page <title>; defaults to the chapter title from data/site.ts. */
+  title?: string;
+  /** Meta description; defaults to the chapter description from data/site.ts. */
   description?: string;
-  /** Chapter id from data/site.ts — drives sidebar active state + pager. */
+  /** Chapter id from data/site.ts — drives title, description, sidebar active state + pager. */
   chapter?: string;
   /** Hide sidebar chrome? (cover page uses false) */
   bare?: boolean;
@@ -18,14 +23,21 @@ interface Props {
 
 const { title, description = '', chapter, bare = false } = Astro.props;
 const base = import.meta.env.BASE_URL;
-const asset = (p: string) => `${base}assets/${p}`;
 
 const idx = chapter ? chapters.findIndex((c) => c.id === chapter) : -1;
+const current = idx >= 0 ? chapters[idx] : null;
+const pageTitle = title ?? (current?.title ?? 'ICPS 2028 · Italy');
+const pageDescription =
+  description ||
+  current?.description ||
+  'ICPS 2028 Project Proposal — hosted in Torino and Milano.';
 const prev = idx > 0 ? chapters[idx - 1] : null;
 const next = idx >= 0 && idx < chapters.length - 1 ? chapters[idx + 1] : null;
-// Absolute canonical URL from Astro's site config (Astro.url.pathname already
-// includes the base path, so this stays correct under /repo/ deployments too).
+
+// Absolute canonical + social URLs from Astro's site config (Astro.url.pathname
+// already includes the base path, so these stay correct under /repo/ deploys).
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(logo.src, Astro.site);
 ---
 
 <!doctype html>
@@ -33,24 +45,27 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} — ICPS 2028 · Italy</title>
-    <meta name="description" content={description || 'ICPS 2028 Project Proposal — hosted in Torino and Milano.'} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description || 'ICPS 2028 Project Proposal'} />
+    <title>{pageTitle} — ICPS 2028 · Italy</title>
+    <meta name="description" content={pageDescription} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content="website" />
-    <link rel="icon" href={asset('brand/logo-icps28.jpg')} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href={logo.src} />
     <link rel="canonical" href={canonical} />
   </head>
   <body>
-    <div class="watermark" aria-hidden="true" style={`background-image:url(${asset('brand/filigrana.jpg')})`}></div>
+    <div class="watermark" aria-hidden="true" style={`background-image:url(${filigrana.src})`}></div>
 
     <header class="site-header" data-od-id="site-header">
       <div class="site-header__inner">
         <a class="site-header__logo" href={base} aria-label="ICPS 2028 home" data-od-id="site-logo">
-          <img src={asset('brand/logo-icps28.jpg')} alt="ICPS 2028 logo" />
+          <Image src={logo} alt="ICPS 2028 logo" loading="eager" width={80} />
           <span class="site-header__wordmark">ICPS 2028<em> · ITALY</em></span>
         </a>
-        <span class="site-header__right">{chapter ? chapters[idx].title : 'Project Proposal'}</span>
+        <span class="site-header__right">{chapter ? current!.title : 'Project Proposal'}</span>
         <button class="site-header__burger" data-burger aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
             <path d="M3 6h18M3 12h18M3 18h18" />
@@ -113,7 +128,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <footer class="site-footer" data-od-id="site-footer">
       <div class="site-footer__inner">
         <span class="site-footer__logo">
-          <img src={asset('brand/logo-icps28.jpg')} alt="ICPS 2028 logo" />
+          <Image src={logo} alt="ICPS 2028 logo" loading="eager" width={64} />
         </span>
         <span class="site-footer__center">Project Proposal</span>
         <span class="site-footer__right"><b>ICPS 2028</b> · Italy</span>

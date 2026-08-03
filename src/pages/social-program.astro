@@ -1,20 +1,13 @@
 ---
 // Chapter 07 — Social program (verbatim from chapters/06_social.tex).
 import Layout from '../layouts/Layout.astro';
-import { chapters } from '../data/site';
 import ChapterHead from '../components/ChapterHead.astro';
 import Figure from '../components/Figure.astro';
 import DataTable from '../components/DataTable.astro';
-
-const ch = chapters.find((c) => c.id === 'social-program')!;
 ---
 
-<Layout
-  title={ch.title}
-  description="The ICPS 2028 social program: opening ceremony, excursion day, Milano treasure hunt, FantaICPS, Nations Party and unforgettable evenings in Milano and Torino."
-  chapter={ch.id}
->
-  <ChapterHead chapter={ch.id} lead="If the scientific program has already sparked your curiosity, just wait until you discover what we have prepared for the Social Program!" />
+<Layout chapter="social-program">
+  <ChapterHead chapter="social-program" />
 
   <article class="prose">
     <p>The ICPS we are proposing is designed as a travelling experience, taking you on a journey through some of the most fascinating places our country has to offer. We don't simply want to show you Italy- we want you to experience it through the eyes of those who live here, turning each city into an opportunity to discover its culture, traditions, and the moments that bring people together. The first four days will be spent in <strong>Milano</strong>, the starting point of our journey. During your stay, you will have the opportunity to personalize your experience by choosing the location of a full-day excursion. You can either be captivated by the maritime charm and rich history of <strong>Liguria</strong>, immerse yourself in the breathtaking landscapes and relaxed atmosphere of <strong>Lake Como</strong> or go trekking in the <strong>Lombard Prealps</strong>. <strong>The choice is yours</strong>; which side of Northern Italy would you like to discover?</p>

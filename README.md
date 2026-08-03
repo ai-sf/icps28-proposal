@@ -71,9 +71,10 @@ src/
   pages/           one page per chapter + index (cover)
   components/      Figure, DataTable, PersonCard, SpeakerCard, Callout, Motto…
   layouts/         Layout.astro (header, sidebar, footer, watermark, drawer)
-  data/site.ts     chapter registry
+  data/site.ts     chapter registry (number, id, title, description, lead)
+  images.ts        astro:assets image lookup (src/assets/<category>/<slug>)
+  assets/          proposal images, optimized at build time by astro:assets
   styles/global.css  design-system tokens + all styling
   COMPONENTS.md    component + content contract (for contributors)
-public/assets/     proposal images, copied verbatim by scripts/copy-assets.sh
-scripts/copy-assets.sh  copies referenced images from ../ICPS28_Project_Proposal
+public/            static files copied as-is (robots.txt)
 ```

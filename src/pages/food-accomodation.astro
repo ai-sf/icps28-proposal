@@ -4,13 +4,10 @@ import Layout from '../layouts/Layout.astro';
 import ChapterHead from '../components/ChapterHead.astro';
 import Figure from '../components/Figure.astro';
 import DataTable from '../components/DataTable.astro';
-import { chapters } from '../data/site';
-
-const ch = chapters.find((c) => c.id === 'food-accomodation')!;
 ---
 
-<Layout title={ch.title} description="Food and accommodation for ICPS 2028: programs, venues, and menus in Milano and Torino." chapter={ch.id}>
-  <ChapterHead chapter={ch.id} />
+<Layout chapter="food-accomodation">
+  <ChapterHead chapter="food-accomodation" />
 
   <article class="prose">
     <section>

@@ -3,12 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import ChapterHead from '../components/ChapterHead.astro';
 import Figure from '../components/Figure.astro';
 import Motto from '../components/Motto.astro';
-import { chapters } from '../data/site';
-
-const ch = chapters.find((c) => c.id === 'pr-socials')!;
 ---
-<Layout title={ch.title} description="PR and socials strategy for ICPS 2028: values and mission statement, visual identity, editorial line and social engagement, communication offices and media connections, and legal and privacy considerations." chapter={ch.id}>
-  <ChapterHead chapter={ch.id} />
+<Layout chapter="pr-socials">
+  <ChapterHead chapter="pr-socials" />
 
   <article class="prose">
     <section>

@@ -1,14 +1,11 @@
 ---
 // Chapter 04 — How do I get there? (chapters/03_travel.tex)
 import Layout from '../layouts/Layout.astro';
-import { chapters } from '../data/site';
 import Callout from '../components/Callout.astro';
 import ChapterHead from '../components/ChapterHead.astro';
-
-const ch = chapters.find((c) => c.id === 'getting-there')!;
 ---
-<Layout title={ch.title} description="How to reach Torino and Milano — by plane, train, bus, and car, plus visa requirements." chapter={ch.id}>
-  <ChapterHead chapter={ch.id} />
+<Layout chapter="getting-there">
+  <ChapterHead chapter="getting-there" />
 
   <article class="prose">
     <section>

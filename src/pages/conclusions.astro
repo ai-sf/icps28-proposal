@@ -2,15 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import ChapterHead from '../components/ChapterHead.astro';
 import Figure from '../components/Figure.astro';
-import { chapters } from '../data/site';
-
-const ch = chapters.find((c) => c.id === 'conclusions')!;
-const lead =
-  'Throughout this proposal, we have presented a conference designed around complementary scientific themes, enriched by interactive formats and a social program celebrating the cultural heritage of the two cities it would be hosted by. Every aspect of the conference has been conceived to encourage interaction and strengthen the international network that makes IAPS such a unique organization.';
 ---
 
-<Layout title={ch.title} description="ICPS 2028 project proposal — Conclusions chapter." chapter={ch.id}>
-  <ChapterHead chapter={ch.id} lead={lead} />
+<Layout chapter="conclusions">
+  <ChapterHead chapter="conclusions" />
 
   <article class="prose">
     <p>
