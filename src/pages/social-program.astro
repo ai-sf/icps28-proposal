@@ -45,7 +45,8 @@ import DataTable from '../components/DataTable.astro';
 
       <p>Participants will be <strong>divided into groups</strong> according to their preferences and transported by chartered coaches departing from Milano in the morning and arriving in Torino in the evening. The program has been designed to accommodate both the expected attendance of 400 participants and a possible increase to 500 participants while maintaining a balanced distribution across the proposed destinations.</p>
 
-      <DataTable
+<DataTable
+        id="data-table-excursion-day"
         headers={['Destination', 'Scenario A People', 'Scenario A Coaches', 'Scenario B People', 'Scenario B Coaches']}
         rows={[
           ['Genova', 80, 2, 100, 2],

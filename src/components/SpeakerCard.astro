@@ -3,6 +3,7 @@
 // optional "Connection to AISF" note with link).
 import { Image } from 'astro:assets';
 import { assetImage } from '../images';
+import { slugify } from '../ids';
 
 interface Props {
   photo: string; // path relative to /assets/speakers/
@@ -17,7 +18,7 @@ const { photo, name, affiliation, detail, connection, reverse = false } = Astro.
 const img = assetImage(`speakers/${photo}`);
 ---
 
-<article class={['speaker', reverse ? 'speaker--reverse' : ''].join(' ')}>
+<article class={['speaker', reverse ? 'speaker--reverse' : ''].join(' ')} data-od-id={'speaker-' + slugify(name)}>
   <Image class="speaker__photo" src={img} alt={`Portrait of ${name}`} loading="lazy" width={288} />
   <div>
     <h3 class="speaker__name">{name}</h3>

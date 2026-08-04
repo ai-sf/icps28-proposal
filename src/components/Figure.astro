@@ -3,6 +3,7 @@
 // as used throughout the proposal.
 import { Image } from 'astro:assets';
 import { assetImage } from '../images';
+import { slugify } from '../ids';
 
 interface Props {
   src: string; // path relative to /assets/ (no leading slash)
@@ -17,11 +18,12 @@ interface Props {
 
 const { src, alt, caption, layout = 'full', imageFirst = true, wide = false } = Astro.props;
 const img = assetImage(src);
+const figureId = 'figure-' + slugify(src.replace(/\.[^./]+$/, ''));
 ---
 
 {
   layout === 'inset' ? (
-    <figure class={['inset', wide ? 'wide' : ''].filter(Boolean).join(' ')}>
+    <figure class={['inset', wide ? 'wide' : ''].filter(Boolean).join(' ')} data-od-id={figureId}>
       {imageFirst ? (
         <>
           <Image src={img} alt={alt} loading="lazy" densities={[1, 2]} />
@@ -41,7 +43,7 @@ const img = assetImage(src);
       )}
     </figure>
   ) : (
-    <figure class={wide ? 'wide' : ''}>
+    <figure class={wide ? 'wide' : ''} data-od-id={figureId}>
       <Image src={img} alt={alt} loading="lazy" densities={[1, 2]} />
       {caption && <figcaption>{caption}</figcaption>}
       <slot />

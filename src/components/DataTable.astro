@@ -1,6 +1,8 @@
 ---
 // DataTable — finance/visa/excursion tables with right-aligned numeric columns,
 // optional footer totals row.
+import { slugify } from '../ids';
+
 interface Props {
   /** Column headers */
   headers: string[];
@@ -10,12 +12,14 @@ interface Props {
   foot?: (string | number)[];
   /** Caption shown above the table */
   caption?: string;
+  /** Optional stable id for Open Design element targeting (defaults to a caption slug). */
+  id?: string;
 }
 
-const { headers, rows, foot, caption } = Astro.props;
+const { headers, rows, foot, caption, id } = Astro.props;
 ---
 
-<figure>
+<figure data-od-id={id ?? (caption ? 'data-table-' + slugify(caption) : undefined)}>
   {caption && <figcaption class="data-caption">{caption}</figcaption>}
   <div class="table-wrap">
     <table class="data">

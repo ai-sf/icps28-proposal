@@ -2,6 +2,7 @@
 // PersonCard — Organizing Committee member (photo, name, role, bio).
 import { Image } from 'astro:assets';
 import { assetImage } from '../images';
+import { slugify } from '../ids';
 
 interface Props {
   photo: string; // path relative to /assets/oc/
@@ -13,7 +14,7 @@ const { photo, name, role, bio } = Astro.props;
 const img = assetImage(`oc/${photo}`);
 ---
 
-<article class="person">
+<article class="person" data-od-id={'person-' + slugify(name)}>
   <Image class="person__photo" src={img} alt={`Portrait of ${name}`} loading="lazy" width={176} />
   <div>
     <h3 class="person__name">{name}</h3>

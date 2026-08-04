@@ -36,8 +36,7 @@ plus a cover page reproducing the frontespizio (logo, motto
   `#382514`, BrightBalticBlue `#0060A6`, CarbonBlack `#242424`, CherryRose
   `#991E3B`. Derived tints use `oklch()`.
 - **Type**: display headings, cover title, and the motto use **SEGO** (bundled
-  from the proposal's design system as woff2 in `src/fonts/`, with the source
-  files kept in `fonts/`), at its natural single weight; Archivo remains the
+  from the proposal's design system as woff2 in `src/fonts/`), at its natural single weight; Archivo remains the
   fallback for glyphs SEGO lacks (`·`, `→`, `°`, `—`, `…`). Body text uses
   Georgia with Source Serif 4 Variable as the bundled web fallback.
 - **Layout**: filigrana watermark background, PaleOak header rule, CherryRose
@@ -51,6 +50,11 @@ npm run dev       # local dev server
 npm run build     # astro check + astro build → dist/
 npm run preview   # serve the built site locally
 ```
+
+Review loop (Open Design): keep `npm run dev` running and ask the assistant to
+audit the site in the browser. Repeated elements carry `data-od-id` hooks
+(`speaker-…`, `person-…`, `figure-…`, `data-table-…`, `round-speaker-…`,
+`logo-row-…`) so feedback can target a specific element precisely.
 
 ## Deploy to GitHub Pages
 
